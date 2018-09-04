@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OlympusBooking
 {
-    public partial class login : Form
+    public partial class frmGuest : Form
     {
-        public login()
+        public frmGuest()
         {
             InitializeComponent();
         }
