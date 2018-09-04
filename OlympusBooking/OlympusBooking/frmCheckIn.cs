@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace OlympusBooking
 {
-    public partial class Check_In : Form
+    public partial class frmCheckIn : Form
     {
-        public Check_In()
+        public frmCheckIn()
         {
             InitializeComponent();
         }

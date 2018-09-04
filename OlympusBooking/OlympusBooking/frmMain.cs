@@ -20,12 +20,26 @@ namespace OlympusBooking
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            System.Windows.Forms.Application.Exit();
         }
 
-        private void ToolStripButton10_Click(object sender, EventArgs e)
+
+        //When Guest is clicked it opens the Guest form.
+        private void ToolStripGuest_Click(object sender, EventArgs e)
+        {
+            frmGuest fGuest = new frmGuest();
+            fGuest.ShowDialog();
+            
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void ToolStripButton13_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
         }
     }
 }

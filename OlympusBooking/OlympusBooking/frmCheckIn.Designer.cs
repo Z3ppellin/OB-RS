@@ -1,6 +1,6 @@
 ﻿namespace OlympusBooking
 {
-    partial class Check_In
+    partial class frmCheckIn
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.SuspendLayout();
             // 
-            // Check_In
+            // frmCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 472);
-            this.Name = "Check_In";
+            this.Name = "frmCheckIn";
             this.Text = "Check_In";
             this.ResumeLayout(false);
 
