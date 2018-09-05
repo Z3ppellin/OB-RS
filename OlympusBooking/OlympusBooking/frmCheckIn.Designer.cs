@@ -96,8 +96,6 @@ namespace OlympusBooking
             this.label1.Text = "LOG-IN";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // login
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
