@@ -2815,7 +2815,7 @@ namespace OlympusBooking.App_Data.databaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::OlympusBooking.Properties.Settings.Default.databaseConnectionString7;
+            this._connection.ConnectionString = global::OlympusBooking.Properties.Settings.Default.databaseConnectionString3;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3337,7 +3337,7 @@ namespace OlympusBooking.App_Data.databaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::OlympusBooking.Properties.Settings.Default.databaseConnectionString7;
+            this._connection.ConnectionString = global::OlympusBooking.Properties.Settings.Default.databaseConnectionString3;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3845,7 +3845,7 @@ namespace OlympusBooking.App_Data.databaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::OlympusBooking.Properties.Settings.Default.databaseConnectionString7;
+            this._connection.ConnectionString = global::OlympusBooking.Properties.Settings.Default.databaseConnectionString3;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4283,7 +4283,7 @@ namespace OlympusBooking.App_Data.databaseDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::OlympusBooking.Properties.Settings.Default.databaseConnectionString7;
+            this._connection.ConnectionString = global::OlympusBooking.Properties.Settings.Default.databaseConnectionString3;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

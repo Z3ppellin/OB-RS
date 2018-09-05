@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-using System.Configuration;
 
 namespace OlympusBooking
 {
@@ -22,42 +21,24 @@ namespace OlympusBooking
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Declaring variables for use of guest form
-            string fName;
-            string lName;
-            string mName;
-            string add;
-            string contNum;
-            string gender;
-            string email;
-            string status;
+            string sName = txtName.Text;
+            string sSurname = txtSurname.Text;
+            string sAddress = txtAddress.Text;
+            string sNum = txtNum.Text;
+            string sGender = cbGender.Text;
+            string sEmail = tbEmail.Text;
+            string sStatus = "Checked-In";
 
-            //Initialising variables for guest form
-            fName = tbfName.Text;
-            lName = tblName.Text;
-            status = "S";
-            add = tbAdd.Text;
-            contNum = tbNum.Text;
-            gender = cbGender.Text;
-            email = tbEmail.Text;
-
-            OleDbConnection con = new OleDbConnection();
-            
-
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
             useDb.ConnectToDatabase();
-
-            useDb.addGuest(fName,lName,add,contNum,gender,email,status);
-
+            useDb.addGuest(sName,sSurname,sAddress,sNum,sGender,sEmail,sStatus);
             useDb.DisconnectDatabase();
-
         }
-              
+
         //Closes the guest form and reverts back to main
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();                        
+            this.Close();
         }
     }
 }
