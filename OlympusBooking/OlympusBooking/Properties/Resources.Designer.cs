@@ -63,6 +63,26 @@ namespace OlympusBooking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _lock {
+            get {
+                object obj = ResourceManager.GetObject("lock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dark_blue_background {
+            get {
+                object obj = ResourceManager.GetObject("dark-blue-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap guest {
             get {
                 object obj = ResourceManager.GetObject("guest", resourceCulture);
@@ -73,9 +93,9 @@ namespace OlympusBooking.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap guest1 {
+        internal static System.Drawing.Bitmap light_blue_background {
             get {
-                object obj = ResourceManager.GetObject("guest1", resourceCulture);
+                object obj = ResourceManager.GetObject("light-blue-background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
