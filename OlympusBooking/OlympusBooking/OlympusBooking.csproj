@@ -56,6 +56,12 @@
     <Compile Include="frmCheckIn.Designer.cs">
       <DependentUpon>frmCheckIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCheckOut.Designer.cs">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGuest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +80,26 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReservation.Designer.cs">
+      <DependentUpon>frmReservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoom.Designer.cs">
+      <DependentUpon>frmRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App_Code\UseDatabase.cs" />
     <EmbeddedResource Include="frmCheckIn.resx">
       <DependentUpon>frmCheckIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCheckOut.resx">
+      <DependentUpon>frmCheckOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGuest.resx">
       <DependentUpon>frmGuest.cs</DependentUpon>
@@ -88,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReservation.resx">
+      <DependentUpon>frmReservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRoom.resx">
+      <DependentUpon>frmRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

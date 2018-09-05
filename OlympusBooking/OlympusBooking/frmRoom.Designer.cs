@@ -1,6 +1,6 @@
 ﻿namespace OlympusBooking
 {
-    partial class frmGuest
+    partial class frmRoom
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // frmGuest
+            // frmRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "frmGuest";
+            this.ClientSize = new System.Drawing.Size(592, 412);
+            this.Name = "frmRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Guest";
+            this.Text = "frmRoom";
             this.ResumeLayout(false);
 
         }
