@@ -1,6 +1,6 @@
 ﻿namespace OlympusBooking
 {
-    partial class login
+    partial class frmCheckIn
     {
         /// <summary>
         /// Required designer variable.
@@ -93,8 +93,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "LOG-IN";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
