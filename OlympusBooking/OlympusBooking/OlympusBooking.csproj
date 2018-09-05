@@ -32,7 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,11 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\databaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>databaseDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="databaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>databaseDataSet.xsd</DependentUpon>
@@ -143,17 +140,6 @@
     <None Include="App_Data\databaseDataSet.xss">
       <DependentUpon>databaseDataSet.xsd</DependentUpon>
     </None>
-    <None Include="databaseDataSet.xsc">
-      <DependentUpon>databaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="databaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>databaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="databaseDataSet.xss">
-      <DependentUpon>databaseDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -168,12 +154,9 @@
     <None Include="App_Code\App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\database.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\light-blue-background.jpg" />
     <None Include="Resources\dark-blue-background.jpg" />
-    <Content Include="database.accdb">
+    <Content Include="App_Data\database.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\guest.png" />

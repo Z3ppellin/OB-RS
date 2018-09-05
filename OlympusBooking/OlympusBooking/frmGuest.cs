@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace OlympusBooking
 {
@@ -36,8 +37,17 @@ namespace OlympusBooking
             contNum = tbNum.Text;
             gender = cbGender.Text;
             email = tbEmail.Text;
-                
+
+            UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
+            useDb.ConnectToDatabase();
+
+            useDb.addGuest(fName,mName,lName,add,contNum,gender,email);
+
+            useDb.DisconnectDatabase();
+
         }
+              
+        
 
         //Closes the guest form and reverts back to main
         private void btnCancel_Click(object sender, EventArgs e)
