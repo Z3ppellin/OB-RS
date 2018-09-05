@@ -28,11 +28,12 @@ namespace OlympusBooking
             string contNum;
             string gender;
             string email;
+            string status;
 
             //Initialising variables for guest form
             fName = tbfName.Text;
             lName = tblName.Text;
-            mName = tbmname.Text;
+            status = "S";
             add = tbAdd.Text;
             contNum = tbNum.Text;
             gender = cbGender.Text;
@@ -41,7 +42,7 @@ namespace OlympusBooking
             UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
             useDb.ConnectToDatabase();
 
-            useDb.addGuest(fName,mName,lName,add,contNum,gender,email);
+            useDb.addGuest(fName,lName,add,contNum,gender,email,status);
 
             useDb.DisconnectDatabase();
 
