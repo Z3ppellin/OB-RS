@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.OleDb;
-using System.Data.SqlClient;
 
 namespace OlympusBooking
 {
@@ -19,51 +17,28 @@ namespace OlympusBooking
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
+            //Declaring variables used in the new room form
+            string roomNum;
+            string roomType;
+            string roomRate;
+            string numPeople;
 
+            //Initialising variables used in new room form
+
+            roomNum = tbRoomNumber.Text;
+            roomType = tbRoomType.Text;
+            roomRate = tbRoomRate.Text.ToString();
+            numPeople = cbNumPeople.Text.ToString();
+                                   
+            
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {                     
-            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source = database.accdb");
-           
-            OleDbCommand cmd = new OleDbCommand();
-            int i =0;
-            try
-            {
-                if ((Username.Text == string.Empty) || tbPassword.Text == string.Empty)
-                {
-                    MessageBox.Show("Please enter your username and password");
-                }
-
-                cmd = new OleDbCommand("SELECT count(*) FROM tblUser WHERE username = '" + Username.Text + "' AND password = '" + tbPassword.Text + "'", conn);
-                if (conn.State == ConnectionState.Closed)
-                {
-                    conn.Open();
-                    i = (int)cmd.ExecuteScalar();
-
-                }
-                conn.Close();
-                if (i > 0)
-                {
-                    this.Close();
-                    MessageBox.Show("Yass");
-                }
-                else
-                {
-                    MessageBox.Show("Invalid login!");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-           
-                
+        //Closing room form when canceled
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
-
     }
 }
