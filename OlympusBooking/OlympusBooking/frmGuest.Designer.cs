@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblGuestList2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.tbEmail = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -88,6 +88,14 @@
             this.tabPage1.Size = new System.Drawing.Size(761, 393);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Guest";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(157, 275);
+            this.tbEmail.Multiline = true;
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(188, 28);
+            this.tbEmail.TabIndex = 8;
             // 
             // cbGender
             // 
@@ -159,7 +167,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(45, 287);
+            this.lblEmail.Location = new System.Drawing.Point(45, 278);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(96, 16);
             this.lblEmail.TabIndex = 7;
@@ -169,7 +177,7 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(45, 253);
+            this.lblGender.Location = new System.Drawing.Point(46, 248);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(53, 16);
             this.lblGender.TabIndex = 6;
@@ -179,7 +187,7 @@
             // 
             this.lblNum.AutoSize = true;
             this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum.Location = new System.Drawing.Point(45, 223);
+            this.lblNum.Location = new System.Drawing.Point(45, 214);
             this.lblNum.Name = "lblNum";
             this.lblNum.Size = new System.Drawing.Size(104, 16);
             this.lblNum.TabIndex = 5;
@@ -189,7 +197,7 @@
             // 
             this.lblAdd.AutoSize = true;
             this.lblAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdd.Location = new System.Drawing.Point(45, 189);
+            this.lblAdd.Location = new System.Drawing.Point(45, 180);
             this.lblAdd.Name = "lblAdd";
             this.lblAdd.Size = new System.Drawing.Size(59, 16);
             this.lblAdd.TabIndex = 4;
@@ -254,14 +262,6 @@
             this.listView1.Size = new System.Drawing.Size(714, 278);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(157, 275);
-            this.tbEmail.Multiline = true;
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(188, 28);
-            this.tbEmail.TabIndex = 8;
             // 
             // frmGuest
             // 

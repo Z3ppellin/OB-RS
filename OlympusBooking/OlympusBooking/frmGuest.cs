@@ -13,6 +13,9 @@ namespace OlympusBooking
 {
     public partial class frmGuest : Form
     {
+        OleDbConnection connect;
+        OleDbCommand command;
+
         public frmGuest()
         {
             InitializeComponent();
@@ -31,17 +34,14 @@ namespace OlympusBooking
 
             UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
             useDb.ConnectToDatabase();
-            useDb.addGuest(sName,sSurname,sAddress,sNum,sGender,sEmail,sStatus);
+            command.CommandText = "INSERT INTO Guest (GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,Status) VALUES ('" + sSurname + "','" + sName + "','" + sAddress + "','" + sNum + "','" + sGender + "','" + sEmail + "','" + sStatus + "')";
             useDb.DisconnectDatabase();
-
         }
-              
-        
 
         //Closes the guest form and reverts back to main
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();                        
+            this.Close();
         }
     }
 }
