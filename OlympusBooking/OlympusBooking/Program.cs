@@ -16,7 +16,7 @@ namespace OlympusBooking
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new login());
         }
     }
 }
