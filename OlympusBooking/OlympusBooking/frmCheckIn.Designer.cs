@@ -1,6 +1,8 @@
-﻿namespace OlympusBooking
+﻿using System;
+
+namespace OlympusBooking
 {
-    partial class login
+    partial class frmCheckIn
     {
         /// <summary>
         /// Required designer variable.
@@ -111,6 +113,16 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
