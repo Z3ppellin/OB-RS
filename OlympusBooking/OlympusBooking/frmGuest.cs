@@ -21,29 +21,17 @@ namespace OlympusBooking
         private void btnSave_Click(object sender, EventArgs e)
         {
             //Declaring variables for use of guest form
-            string fName;
-            string lName;
-            string mName;
-            string add;
-            string contNum;
-            string gender;
-            string email;
-            string status;
-
-            //Initialising variables for guest form
-            fName = tbfName.Text;
-            lName = tblName.Text;
-            status = "S";
-            add = tbAdd.Text;
-            contNum = tbNum.Text;
-            gender = cbGender.Text;
-            email = tbEmail.Text;
+            string sSurname = txtSurname.Text;
+            string sName = txtName.Text;
+            string sAddress = txtAddress.Text;
+            string sNum = txtNum.Text;
+            string sGender = cbGender.Text;
+            string sEmail = tbEmail.Text;
+            string sStatus = "Checked-In";
 
             UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
             useDb.ConnectToDatabase();
-
-            useDb.addGuest(fName,lName,add,contNum,gender,email,status);
-
+            useDb.addGuest(sName,sSurname,sAddress,sNum,sGender,sEmail,sStatus);
             useDb.DisconnectDatabase();
 
         }
