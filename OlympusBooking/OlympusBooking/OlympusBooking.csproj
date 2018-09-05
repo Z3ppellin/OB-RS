@@ -154,11 +154,11 @@
     <None Include="App_Code\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\light-blue-background.jpg" />
+    <None Include="Resources\dark-blue-background.jpg" />
     <Content Include="App_Data\database.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="Resources\light-blue-background.jpg" />
-    <None Include="Resources\dark-blue-background.jpg" />
     <Content Include="Resources\guest.png" />
     <None Include="Resources\lock.jpg" />
   </ItemGroup>
