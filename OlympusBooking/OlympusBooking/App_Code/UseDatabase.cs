@@ -21,7 +21,7 @@ namespace OlympusBooking
     public class UseDatabase
     {
         //Declares the databse path.
-        OleDbConnection conn;
+        OleDbConnection conn = new OleDbConnection();
         string databasePath = "";
 
         public UseDatabase(string databasePath)
@@ -33,8 +33,9 @@ namespace OlympusBooking
         //Connect to database.
         public void ConnectToDatabase()
         { 
-        conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;
+            conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;
                                         Data Source=" + databasePath);
+
             conn.Open();
         }
 
@@ -68,17 +69,35 @@ namespace OlympusBooking
             {
                 OleDbCommand cmd = conn.CreateCommand();
                 cmd.CommandText = (@"INSERT INTO User([Username], [Password])
-                                VALUES('" + userName + "','" + pass + "')");
+                                   VALUES('" + userName + "','" + pass + "')");
                 cmd.ExecuteNonQuery();
                 return "success";
             }
             catch (OleDbException)
             {
                 return "fail";
-            }
-            
+            }                
+                        
         }
-
         #endregion
+        public string addGuest(string fName,string lName,string add,string number,string gender, string email,string status)
+        {
+            try
+            {
+                OleDbCommand cmd = conn.CreateCommand();
+
+                cmd.CommandText = "INSERT INTO Guest (GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,Status) VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" + email + "','" + status + "')";
+
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                return "success";
+            }
+            catch (OleDbException)
+            {
+                return "fail";
+            }
+
+        }
+       
     }
 }

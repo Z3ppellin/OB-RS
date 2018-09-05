@@ -30,26 +30,24 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lblNewGuest = new System.Windows.Forms.Label();
-            this.lblfName = new System.Windows.Forms.Label();
-            this.lbllName = new System.Windows.Forms.Label();
-            this.lblmName = new System.Windows.Forms.Label();
-            this.lblAdd = new System.Windows.Forms.Label();
-            this.lblNum = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.tbNum = new System.Windows.Forms.TextBox();
-            this.tbfName = new System.Windows.Forms.TextBox();
-            this.tblName = new System.Windows.Forms.TextBox();
-            this.tbmname = new System.Windows.Forms.TextBox();
-            this.tbAdd = new System.Windows.Forms.TextBox();
-            this.tbEmail = new System.Windows.Forms.TextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtNum = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.lblAdd = new System.Windows.Forms.Label();
+            this.lbllName = new System.Windows.Forms.Label();
+            this.lblfName = new System.Windows.Forms.Label();
+            this.lblNewGuest = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblGuestList2 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.tbEmail = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -68,20 +66,18 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tabPage1.Controls.Add(this.cbGender);
             this.tabPage1.Controls.Add(this.tbEmail);
-            this.tabPage1.Controls.Add(this.tbAdd);
-            this.tabPage1.Controls.Add(this.tbmname);
-            this.tabPage1.Controls.Add(this.tblName);
-            this.tabPage1.Controls.Add(this.tbfName);
-            this.tabPage1.Controls.Add(this.tbNum);
+            this.tabPage1.Controls.Add(this.cbGender);
+            this.tabPage1.Controls.Add(this.txtAddress);
+            this.tabPage1.Controls.Add(this.txtSurname);
+            this.tabPage1.Controls.Add(this.txtName);
+            this.tabPage1.Controls.Add(this.txtNum);
             this.tabPage1.Controls.Add(this.btnCancel);
             this.tabPage1.Controls.Add(this.btnSave);
             this.tabPage1.Controls.Add(this.lblEmail);
             this.tabPage1.Controls.Add(this.lblGender);
             this.tabPage1.Controls.Add(this.lblNum);
             this.tabPage1.Controls.Add(this.lblAdd);
-            this.tabPage1.Controls.Add(this.lblmName);
             this.tabPage1.Controls.Add(this.lbllName);
             this.tabPage1.Controls.Add(this.lblfName);
             this.tabPage1.Controls.Add(this.lblNewGuest);
@@ -92,6 +88,142 @@
             this.tabPage1.Size = new System.Drawing.Size(761, 393);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Guest";
+            // 
+            // cbGender
+            // 
+            this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGender.FormattingEnabled = true;
+            this.cbGender.Items.AddRange(new object[] {
+            "M",
+            "F"});
+            this.cbGender.Location = new System.Drawing.Point(157, 245);
+            this.cbGender.Name = "cbGender";
+            this.cbGender.Size = new System.Drawing.Size(121, 24);
+            this.cbGender.TabIndex = 4;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(157, 177);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(188, 28);
+            this.txtAddress.TabIndex = 2;
+            // 
+            // txtSurname
+            // 
+            this.txtSurname.Location = new System.Drawing.Point(157, 139);
+            this.txtSurname.Multiline = true;
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(188, 28);
+            this.txtSurname.TabIndex = 1;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(157, 105);
+            this.txtName.Multiline = true;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(188, 28);
+            this.txtName.TabIndex = 0;
+            // 
+            // txtNum
+            // 
+            this.txtNum.Location = new System.Drawing.Point(157, 211);
+            this.txtNum.Multiline = true;
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(188, 28);
+            this.txtNum.TabIndex = 3;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnCancel.Location = new System.Drawing.Point(380, 334);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 37);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSave.Location = new System.Drawing.Point(277, 334);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(98, 37);
+            this.btnSave.TabIndex = 6;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(45, 287);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(96, 16);
+            this.lblEmail.TabIndex = 7;
+            this.lblEmail.Text = "Email Address";
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(45, 253);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(53, 16);
+            this.lblGender.TabIndex = 6;
+            this.lblGender.Text = "Gender";
+            // 
+            // lblNum
+            // 
+            this.lblNum.AutoSize = true;
+            this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum.Location = new System.Drawing.Point(45, 223);
+            this.lblNum.Name = "lblNum";
+            this.lblNum.Size = new System.Drawing.Size(104, 16);
+            this.lblNum.TabIndex = 5;
+            this.lblNum.Text = "Contact Number";
+            // 
+            // lblAdd
+            // 
+            this.lblAdd.AutoSize = true;
+            this.lblAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdd.Location = new System.Drawing.Point(45, 189);
+            this.lblAdd.Name = "lblAdd";
+            this.lblAdd.Size = new System.Drawing.Size(59, 16);
+            this.lblAdd.TabIndex = 4;
+            this.lblAdd.Text = "Address";
+            // 
+            // lbllName
+            // 
+            this.lbllName.AutoSize = true;
+            this.lbllName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbllName.Location = new System.Drawing.Point(45, 151);
+            this.lbllName.Name = "lbllName";
+            this.lbllName.Size = new System.Drawing.Size(73, 16);
+            this.lbllName.TabIndex = 2;
+            this.lbllName.Text = "Last Name";
+            // 
+            // lblfName
+            // 
+            this.lblfName.AutoSize = true;
+            this.lblfName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfName.Location = new System.Drawing.Point(45, 117);
+            this.lblfName.Name = "lblfName";
+            this.lblfName.Size = new System.Drawing.Size(73, 16);
+            this.lblfName.TabIndex = 1;
+            this.lblfName.Text = "First Name";
+            // 
+            // lblNewGuest
+            // 
+            this.lblNewGuest.AutoSize = true;
+            this.lblNewGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewGuest.Location = new System.Drawing.Point(45, 38);
+            this.lblNewGuest.Name = "lblNewGuest";
+            this.lblNewGuest.Size = new System.Drawing.Size(143, 20);
+            this.lblNewGuest.TabIndex = 0;
+            this.lblNewGuest.Text = "New Guest Form";
             // 
             // tabPage2
             // 
@@ -105,172 +237,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Guest List";
             // 
-            // lblNewGuest
-            // 
-            this.lblNewGuest.AutoSize = true;
-            this.lblNewGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewGuest.Location = new System.Drawing.Point(45, 38);
-            this.lblNewGuest.Name = "lblNewGuest";
-            this.lblNewGuest.Size = new System.Drawing.Size(143, 20);
-            this.lblNewGuest.TabIndex = 0;
-            this.lblNewGuest.Text = "New Guest Form";
-            // 
-            // lblfName
-            // 
-            this.lblfName.AutoSize = true;
-            this.lblfName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfName.Location = new System.Drawing.Point(45, 87);
-            this.lblfName.Name = "lblfName";
-            this.lblfName.Size = new System.Drawing.Size(73, 16);
-            this.lblfName.TabIndex = 1;
-            this.lblfName.Text = "First Name";
-            // 
-            // lbllName
-            // 
-            this.lbllName.AutoSize = true;
-            this.lbllName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllName.Location = new System.Drawing.Point(45, 121);
-            this.lbllName.Name = "lbllName";
-            this.lbllName.Size = new System.Drawing.Size(73, 16);
-            this.lbllName.TabIndex = 2;
-            this.lbllName.Text = "Last Name";
-            // 
-            // lblmName
-            // 
-            this.lblmName.AutoSize = true;
-            this.lblmName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmName.Location = new System.Drawing.Point(45, 155);
-            this.lblmName.Name = "lblmName";
-            this.lblmName.Size = new System.Drawing.Size(89, 16);
-            this.lblmName.TabIndex = 3;
-            this.lblmName.Text = "Middle Name";
-            // 
-            // lblAdd
-            // 
-            this.lblAdd.AutoSize = true;
-            this.lblAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdd.Location = new System.Drawing.Point(45, 189);
-            this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(59, 16);
-            this.lblAdd.TabIndex = 4;
-            this.lblAdd.Text = "Address";
-            // 
-            // lblNum
-            // 
-            this.lblNum.AutoSize = true;
-            this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum.Location = new System.Drawing.Point(45, 223);
-            this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(104, 16);
-            this.lblNum.TabIndex = 5;
-            this.lblNum.Text = "Contact Number";
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(45, 253);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(53, 16);
-            this.lblGender.TabIndex = 6;
-            this.lblGender.Text = "Gender";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(45, 287);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(96, 16);
-            this.lblEmail.TabIndex = 7;
-            this.lblEmail.Text = "Email Address";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnSave.Location = new System.Drawing.Point(277, 334);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(98, 37);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnCancel.Location = new System.Drawing.Point(380, 334);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(98, 37);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // tbNum
-            // 
-            this.tbNum.Location = new System.Drawing.Point(157, 211);
-            this.tbNum.Multiline = true;
-            this.tbNum.Name = "tbNum";
-            this.tbNum.Size = new System.Drawing.Size(188, 28);
-            this.tbNum.TabIndex = 10;
-            // 
-            // tbfName
-            // 
-            this.tbfName.Location = new System.Drawing.Point(157, 75);
-            this.tbfName.Multiline = true;
-            this.tbfName.Name = "tbfName";
-            this.tbfName.Size = new System.Drawing.Size(188, 28);
-            this.tbfName.TabIndex = 11;
-            // 
-            // tblName
-            // 
-            this.tblName.Location = new System.Drawing.Point(157, 109);
-            this.tblName.Multiline = true;
-            this.tblName.Name = "tblName";
-            this.tblName.Size = new System.Drawing.Size(188, 28);
-            this.tblName.TabIndex = 12;
-            // 
-            // tbmname
-            // 
-            this.tbmname.Location = new System.Drawing.Point(157, 143);
-            this.tbmname.Multiline = true;
-            this.tbmname.Name = "tbmname";
-            this.tbmname.Size = new System.Drawing.Size(188, 28);
-            this.tbmname.TabIndex = 13;
-            // 
-            // tbAdd
-            // 
-            this.tbAdd.Location = new System.Drawing.Point(157, 177);
-            this.tbAdd.Multiline = true;
-            this.tbAdd.Name = "tbAdd";
-            this.tbAdd.Size = new System.Drawing.Size(188, 28);
-            this.tbAdd.TabIndex = 14;
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(157, 275);
-            this.tbEmail.Multiline = true;
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(188, 28);
-            this.tbEmail.TabIndex = 15;
-            // 
-            // cbGender
-            // 
-            this.cbGender.FormattingEnabled = true;
-            this.cbGender.Location = new System.Drawing.Point(157, 245);
-            this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(121, 24);
-            this.cbGender.TabIndex = 16;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(25, 61);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(714, 278);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // lblGuestList2
             // 
             this.lblGuestList2.AutoSize = true;
@@ -280,6 +246,22 @@
             this.lblGuestList2.Size = new System.Drawing.Size(92, 20);
             this.lblGuestList2.TabIndex = 1;
             this.lblGuestList2.Text = "Guest List";
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(25, 61);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(714, 278);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(157, 275);
+            this.tbEmail.Multiline = true;
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(188, 28);
+            this.tbEmail.TabIndex = 8;
             // 
             // frmGuest
             // 
@@ -304,24 +286,22 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ComboBox cbGender;
-        private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.TextBox tbAdd;
-        private System.Windows.Forms.TextBox tbmname;
-        private System.Windows.Forms.TextBox tblName;
-        private System.Windows.Forms.TextBox tbfName;
-        private System.Windows.Forms.TextBox tbNum;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtSurname;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Label lblAdd;
-        private System.Windows.Forms.Label lblmName;
         private System.Windows.Forms.Label lbllName;
         private System.Windows.Forms.Label lblfName;
         private System.Windows.Forms.Label lblNewGuest;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label lblGuestList2;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox tbEmail;
     }
 }
