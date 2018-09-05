@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
+using System.Data.SqlClient;
 
 namespace OlympusBooking
 {   
@@ -32,9 +33,9 @@ namespace OlympusBooking
         #region Connect/Disconnect
         //Connect to database.
         public void ConnectToDatabase()
-        { 
-            conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;
-                                        Data Source=" + databasePath);
+        {
+            conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source = '" + databasePath + "'; Persist Security Info=False; ");
+            //conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" + databasePath);
 
             conn.Open();
         }
@@ -84,13 +85,20 @@ namespace OlympusBooking
         {
             try
             {
-                OleDbCommand cmd = conn.CreateCommand();
+                String my_querry = "INSERT INTO Guest (GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,Status) VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" + email + "','" + status + "')";
 
-                cmd.CommandText = "INSERT INTO Guest (GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,Status) VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" + email + "','" + status + "')";
-
+                OleDbCommand cmd = new OleDbCommand(my_querry, conn);
                 cmd.ExecuteNonQuery();
                 conn.Close();
+
                 return "success";
+
+                //OleDbCommand cmd = conn.CreateCommand();
+
+                //cmd.CommandText = ("INSERT INTO Guest (GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,Status) VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" + email + "','" + status + "')";
+
+                //cmd.ExecuteNonQuery();
+                //return "success";
             }
             catch (OleDbException)
             {
