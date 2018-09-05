@@ -68,17 +68,34 @@ namespace OlympusBooking
             {
                 OleDbCommand cmd = conn.CreateCommand();
                 cmd.CommandText = (@"INSERT INTO User([Username], [Password])
-                                VALUES('" + userName + "','" + pass + "')");
+                                   VALUES('" + userName + "','" + pass + "')");
                 cmd.ExecuteNonQuery();
                 return "success";
             }
             catch (OleDbException)
             {
                 return "fail";
-            }
-            
+            }                
+                        
         }
-
         #endregion
+        public string addGuest(string fName,string lName,string add,string number,string gender, string email,string status)
+        {
+            try
+            {
+                OleDbCommand cmd = conn.CreateCommand();
+                cmd.CommandText = (@"INSERT INTO tblguest([GuestName],[GuestSurname],[GuestAddress],[GuestContactNumber],[GuestGender],[GuestEmail],[status])
+                                   VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" +email + "','" + status + "')");
+                cmd.ExecuteNonQuery();
+                return "success";
+                
+            }
+            catch (OleDbException)
+            {
+                return "fail";
+            }
+
+        }
+       
     }
 }

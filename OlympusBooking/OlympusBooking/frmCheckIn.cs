@@ -50,6 +50,8 @@ namespace OlympusBooking
             subTotal = tbTotal.Text.ToString();
             totalBalance = tbBalance.Text.ToString();
 
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ///
             UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
             useDb.ConnectToDatabase();
 

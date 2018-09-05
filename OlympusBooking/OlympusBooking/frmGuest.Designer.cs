@@ -60,7 +60,7 @@
             this.tabControl1.Location = new System.Drawing.Point(19, 19);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(769, 390);
+            this.tabControl1.Size = new System.Drawing.Size(769, 419);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -85,21 +85,21 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(761, 364);
+            this.tabPage1.Size = new System.Drawing.Size(761, 393);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Guest";
             // 
             // cbGender
             // 
             this.cbGender.FormattingEnabled = true;
-            this.cbGender.Location = new System.Drawing.Point(157, 211);
+            this.cbGender.Location = new System.Drawing.Point(157, 245);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(121, 24);
             this.cbGender.TabIndex = 16;
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(157, 241);
+            this.tbEmail.Location = new System.Drawing.Point(157, 275);
             this.tbEmail.Multiline = true;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(188, 28);
@@ -107,7 +107,7 @@
             // 
             // tbAdd
             // 
-            this.tbAdd.Location = new System.Drawing.Point(157, 143);
+            this.tbAdd.Location = new System.Drawing.Point(157, 177);
             this.tbAdd.Multiline = true;
             this.tbAdd.Name = "tbAdd";
             this.tbAdd.Size = new System.Drawing.Size(188, 28);
@@ -115,7 +115,7 @@
             // 
             // tblName
             // 
-            this.tblName.Location = new System.Drawing.Point(157, 109);
+            this.tblName.Location = new System.Drawing.Point(157, 139);
             this.tblName.Multiline = true;
             this.tblName.Name = "tblName";
             this.tblName.Size = new System.Drawing.Size(188, 28);
@@ -123,7 +123,7 @@
             // 
             // tbfName
             // 
-            this.tbfName.Location = new System.Drawing.Point(157, 75);
+            this.tbfName.Location = new System.Drawing.Point(157, 105);
             this.tbfName.Multiline = true;
             this.tbfName.Name = "tbfName";
             this.tbfName.Size = new System.Drawing.Size(188, 28);
@@ -131,7 +131,7 @@
             // 
             // tbNum
             // 
-            this.tbNum.Location = new System.Drawing.Point(157, 177);
+            this.tbNum.Location = new System.Drawing.Point(157, 211);
             this.tbNum.Multiline = true;
             this.tbNum.Name = "tbNum";
             this.tbNum.Size = new System.Drawing.Size(188, 28);
@@ -140,7 +140,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnCancel.Location = new System.Drawing.Point(377, 300);
+            this.btnCancel.Location = new System.Drawing.Point(380, 334);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 37);
             this.btnCancel.TabIndex = 9;
@@ -151,7 +151,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnSave.Location = new System.Drawing.Point(274, 300);
+            this.btnSave.Location = new System.Drawing.Point(277, 334);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(98, 37);
             this.btnSave.TabIndex = 8;
@@ -163,7 +163,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(45, 253);
+            this.lblEmail.Location = new System.Drawing.Point(45, 287);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(96, 16);
             this.lblEmail.TabIndex = 7;
@@ -173,7 +173,7 @@
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(45, 219);
+            this.lblGender.Location = new System.Drawing.Point(45, 253);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(53, 16);
             this.lblGender.TabIndex = 6;
@@ -183,7 +183,7 @@
             // 
             this.lblNum.AutoSize = true;
             this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum.Location = new System.Drawing.Point(45, 189);
+            this.lblNum.Location = new System.Drawing.Point(45, 223);
             this.lblNum.Name = "lblNum";
             this.lblNum.Size = new System.Drawing.Size(104, 16);
             this.lblNum.TabIndex = 5;
@@ -193,7 +193,7 @@
             // 
             this.lblAdd.AutoSize = true;
             this.lblAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdd.Location = new System.Drawing.Point(45, 155);
+            this.lblAdd.Location = new System.Drawing.Point(45, 189);
             this.lblAdd.Name = "lblAdd";
             this.lblAdd.Size = new System.Drawing.Size(59, 16);
             this.lblAdd.TabIndex = 4;
@@ -203,7 +203,7 @@
             // 
             this.lbllName.AutoSize = true;
             this.lbllName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllName.Location = new System.Drawing.Point(45, 121);
+            this.lbllName.Location = new System.Drawing.Point(45, 151);
             this.lbllName.Name = "lbllName";
             this.lbllName.Size = new System.Drawing.Size(73, 16);
             this.lbllName.TabIndex = 2;
@@ -213,7 +213,7 @@
             // 
             this.lblfName.AutoSize = true;
             this.lblfName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfName.Location = new System.Drawing.Point(45, 87);
+            this.lblfName.Location = new System.Drawing.Point(45, 117);
             this.lblfName.Name = "lblfName";
             this.lblfName.Size = new System.Drawing.Size(73, 16);
             this.lblfName.TabIndex = 1;
@@ -263,7 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 425);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmGuest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
