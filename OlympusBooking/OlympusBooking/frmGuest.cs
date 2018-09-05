@@ -54,8 +54,6 @@ namespace OlympusBooking
 
         }
               
-        
-
         //Closes the guest form and reverts back to main
         private void btnCancel_Click(object sender, EventArgs e)
         {
