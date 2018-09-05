@@ -50,6 +50,15 @@ namespace OlympusBooking
             subTotal = tbTotal.Text.ToString();
             totalBalance = tbBalance.Text.ToString();
 
+            UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
+            useDb.ConnectToDatabase();
+
+            OleDbCommand cmd = new OleDbCommand("INSERT into Guest(guestName) VALUES(@guestName) ");
+            cmd.Parameters.Add("@guestName", OleDbType.VarChar).Value = guestName;
+
+
+            useDb.DisconnectDatabase();
+
         }
 
 
