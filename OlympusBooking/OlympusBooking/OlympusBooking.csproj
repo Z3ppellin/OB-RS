@@ -61,13 +61,13 @@
     <Compile Include="frmCheckOut.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCheckOut.Designer.cs">
+    <Compile Include="frmCheckOut.designer.cs">
       <DependentUpon>frmCheckOut.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGuest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGuest.Designer.cs">
+    <Compile Include="frmGuest.designer.cs">
       <DependentUpon>frmGuest.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -85,13 +85,13 @@
     <Compile Include="frmReservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReservation.Designer.cs">
+    <Compile Include="frmReservation.designer.cs">
       <DependentUpon>frmReservation.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRoom.Designer.cs">
+    <Compile Include="frmRoom.designer.cs">
       <DependentUpon>frmRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
