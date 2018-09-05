@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Configuration;
 
 namespace OlympusBooking
 {
@@ -39,6 +40,11 @@ namespace OlympusBooking
             gender = cbGender.Text;
             email = tbEmail.Text;
 
+            OleDbConnection con = new OleDbConnection();
+            
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
             useDb.ConnectToDatabase();
 

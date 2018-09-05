@@ -140,6 +140,31 @@
     <None Include="App_Data\databaseDataSet.xss">
       <DependentUpon>databaseDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+CheckInDataTable.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+CheckInRow.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+CheckInRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+CheckInRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+GuestDataTable.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+GuestRow.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+GuestRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+GuestRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+RoomDataTable.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+RoomRow.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+RoomRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+RoomRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+UserDataTable.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+UserRow.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+UserRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet+UserRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSet.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSetTableAdapters.CheckInTableAdapter.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSetTableAdapters.GuestTableAdapter.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSetTableAdapters.RoomTableAdapter.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.App_Data.databaseDataSetTableAdapters.UserTableAdapter.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\OlympusBooking.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

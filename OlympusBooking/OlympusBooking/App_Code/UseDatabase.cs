@@ -14,7 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
-
+using System.Data.SqlClient;
 namespace OlympusBooking
 {   
     //Class to handle all database methods.
@@ -32,9 +32,8 @@ namespace OlympusBooking
         #region Connect/Disconnect
         //Connect to database.
         public void ConnectToDatabase()
-        { 
-        conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;
-                                        Data Source=" + databasePath);
+        {
+            conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source = '" + databasePath + "'; Persist Security Info=False; ");
             conn.Open();
         }
 
@@ -83,14 +82,35 @@ namespace OlympusBooking
         {
             try
             {
-                OleDbCommand cmd = conn.CreateCommand();
-                cmd.CommandText = (@"INSERT INTO tblguest([GuestName],[GuestSurname],[GuestAddress],[GuestContactNumber],[GuestGender],[GuestEmail],[status])
-                                   VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" +email + "','" + status + "')");
-                cmd.ExecuteNonQuery();
+                string sqlQuery = "INSERT INTO Guest (`GuestName`,`GuestSurname`) values ('" + fName + "','" + lName + "')";
+                using (OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\database.accdb"))
+                using (OleDbCommand cmd = new OleDbCommand(sqlQuery, conn))
+                {
+
+                    conn.Open();
+                    cmd.Parameters.AddWithValue("@GuestName", fName);
+                    cmd.Parameters.AddWithValue("@GuestSurname", lName);
+                    cmd.ExecuteNonQuery();
+                }
+                //String my_querry = "INSERT INTO Guest (GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,Status) VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" + email + "','" + status + "')";
+
+                // OleDbCommand cmd = new OleDbCommand(my_querry, conn);
+                //cmd.ExecuteNonQuery();
+                //conn.Close();
+
+                return "success";
+                ///////////////////////////////////////////////////////////////////////////////////////
+                // string sqlQuery = "INSERT INTO Guest (`GuestName`,`GuestSurnam`) values (?,?)";
+
+                //OleDbCommand cmd = conn.CreateCommand();
+                //cmd.CommandText = "INSERT INTO database.Guest(GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,status) VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" + email + "','" + status + "';)";
+
+                //cmd.ExecuteNonQuery();
+
                 return "success";
                 
             }
-            catch (OleDbException)
+            catch (Exception)
             {
                 return "fail";
             }
