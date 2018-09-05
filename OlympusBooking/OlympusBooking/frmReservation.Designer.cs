@@ -30,38 +30,38 @@
         {
             this.tcReservation = new System.Windows.Forms.TabControl();
             this.tpReservation = new System.Windows.Forms.TabPage();
-            this.tpReservationList = new System.Windows.Forms.TabPage();
-            this.lblReservationForm = new System.Windows.Forms.Label();
-            this.lblGuestName = new System.Windows.Forms.Label();
-            this.lblRoomNumber = new System.Windows.Forms.Label();
-            this.lblRoomType = new System.Windows.Forms.Label();
-            this.lblRoomRate = new System.Windows.Forms.Label();
-            this.lblCheckIn = new System.Windows.Forms.Label();
-            this.lblCheckOut = new System.Windows.Forms.Label();
-            this.lblDays = new System.Windows.Forms.Label();
-            this.lblAdults = new System.Windows.Forms.Label();
-            this.lblChildren = new System.Windows.Forms.Label();
-            this.lblSubTotal = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.tbGuestName = new System.Windows.Forms.TextBox();
-            this.tbRoomNum = new System.Windows.Forms.TextBox();
-            this.tbRoomType = new System.Windows.Forms.TextBox();
-            this.tbRoomRate = new System.Windows.Forms.TextBox();
-            this.tbNoDays = new System.Windows.Forms.TextBox();
-            this.tbSubTotal = new System.Windows.Forms.TextBox();
-            this.tbTotal = new System.Windows.Forms.TextBox();
-            this.cbAdults = new System.Windows.Forms.ComboBox();
-            this.cbChildren = new System.Windows.Forms.ComboBox();
-            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
-            this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
-            this.btnReserve = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lvReservation = new System.Windows.Forms.ListView();
-            this.lblReservationList = new System.Windows.Forms.Label();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.btnCheckInRes = new System.Windows.Forms.Button();
+            this.btnReserve = new System.Windows.Forms.Button();
+            this.dtpCheckOut = new System.Windows.Forms.DateTimePicker();
+            this.dtpCheckIn = new System.Windows.Forms.DateTimePicker();
+            this.cbChildren = new System.Windows.Forms.ComboBox();
+            this.cbAdults = new System.Windows.Forms.ComboBox();
+            this.tbTotal = new System.Windows.Forms.TextBox();
+            this.tbSubTotal = new System.Windows.Forms.TextBox();
+            this.tbNoDays = new System.Windows.Forms.TextBox();
+            this.tbRoomRate = new System.Windows.Forms.TextBox();
+            this.tbRoomType = new System.Windows.Forms.TextBox();
+            this.tbRoomNum = new System.Windows.Forms.TextBox();
+            this.tbGuestName = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
+            this.lblChildren = new System.Windows.Forms.Label();
+            this.lblAdults = new System.Windows.Forms.Label();
+            this.lblDays = new System.Windows.Forms.Label();
+            this.lblCheckOut = new System.Windows.Forms.Label();
+            this.lblCheckIn = new System.Windows.Forms.Label();
+            this.lblRoomRate = new System.Windows.Forms.Label();
+            this.lblRoomType = new System.Windows.Forms.Label();
+            this.lblRoomNumber = new System.Windows.Forms.Label();
+            this.lblGuestName = new System.Windows.Forms.Label();
+            this.lblReservationForm = new System.Windows.Forms.Label();
+            this.tpReservationList = new System.Windows.Forms.TabPage();
             this.btnCancelRes = new System.Windows.Forms.Button();
+            this.btnCheckInRes = new System.Windows.Forms.Button();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.lblReservationList = new System.Windows.Forms.Label();
+            this.lvReservation = new System.Windows.Forms.ListView();
             this.tcReservation.SuspendLayout();
             this.tpReservation.SuspendLayout();
             this.tpReservationList.SuspendLayout();
@@ -112,197 +112,57 @@
             this.tpReservation.TabIndex = 0;
             this.tpReservation.Text = "Reservation Form";
             // 
-            // tpReservationList
+            // btnCancel
             // 
-            this.tpReservationList.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tpReservationList.Controls.Add(this.btnCancelRes);
-            this.tpReservationList.Controls.Add(this.btnCheckInRes);
-            this.tpReservationList.Controls.Add(this.dtpTo);
-            this.tpReservationList.Controls.Add(this.dtpFrom);
-            this.tpReservationList.Controls.Add(this.lblReservationList);
-            this.tpReservationList.Controls.Add(this.lvReservation);
-            this.tpReservationList.Location = new System.Drawing.Point(4, 22);
-            this.tpReservationList.Name = "tpReservationList";
-            this.tpReservationList.Padding = new System.Windows.Forms.Padding(3);
-            this.tpReservationList.Size = new System.Drawing.Size(760, 395);
-            this.tpReservationList.TabIndex = 1;
-            this.tpReservationList.Text = "Reservation List";
+            this.btnCancel.Location = new System.Drawing.Point(598, 348);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(109, 33);
+            this.btnCancel.TabIndex = 31;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // lblReservationForm
+            // btnReserve
             // 
-            this.lblReservationForm.AutoSize = true;
-            this.lblReservationForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationForm.Location = new System.Drawing.Point(271, 30);
-            this.lblReservationForm.Name = "lblReservationForm";
-            this.lblReservationForm.Size = new System.Drawing.Size(151, 20);
-            this.lblReservationForm.TabIndex = 0;
-            this.lblReservationForm.Text = "Reservation Form";
+            this.btnReserve.Location = new System.Drawing.Point(471, 348);
+            this.btnReserve.Name = "btnReserve";
+            this.btnReserve.Size = new System.Drawing.Size(109, 33);
+            this.btnReserve.TabIndex = 30;
+            this.btnReserve.Text = "Reserve";
+            this.btnReserve.UseVisualStyleBackColor = true;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
-            // lblGuestName
+            // dtpCheckOut
             // 
-            this.lblGuestName.AutoSize = true;
-            this.lblGuestName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuestName.Location = new System.Drawing.Point(39, 82);
-            this.lblGuestName.Name = "lblGuestName";
-            this.lblGuestName.Size = new System.Drawing.Size(99, 20);
-            this.lblGuestName.TabIndex = 2;
-            this.lblGuestName.Text = "Guest Name";
+            this.dtpCheckOut.Location = new System.Drawing.Point(214, 271);
+            this.dtpCheckOut.Name = "dtpCheckOut";
+            this.dtpCheckOut.Size = new System.Drawing.Size(200, 20);
+            this.dtpCheckOut.TabIndex = 29;
             // 
-            // lblRoomNumber
+            // dtpCheckIn
             // 
-            this.lblRoomNumber.AutoSize = true;
-            this.lblRoomNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNumber.Location = new System.Drawing.Point(39, 125);
-            this.lblRoomNumber.Name = "lblRoomNumber";
-            this.lblRoomNumber.Size = new System.Drawing.Size(112, 20);
-            this.lblRoomNumber.TabIndex = 3;
-            this.lblRoomNumber.Text = "Room Number";
+            this.dtpCheckIn.Location = new System.Drawing.Point(214, 236);
+            this.dtpCheckIn.Name = "dtpCheckIn";
+            this.dtpCheckIn.Size = new System.Drawing.Size(200, 20);
+            this.dtpCheckIn.TabIndex = 28;
             // 
-            // lblRoomType
+            // cbChildren
             // 
-            this.lblRoomType.AutoSize = true;
-            this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomType.Location = new System.Drawing.Point(39, 163);
-            this.lblRoomType.Name = "lblRoomType";
-            this.lblRoomType.Size = new System.Drawing.Size(90, 20);
-            this.lblRoomType.TabIndex = 4;
-            this.lblRoomType.Text = "Room Type";
-            // 
-            // lblRoomRate
-            // 
-            this.lblRoomRate.AutoSize = true;
-            this.lblRoomRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomRate.Location = new System.Drawing.Point(39, 200);
-            this.lblRoomRate.Name = "lblRoomRate";
-            this.lblRoomRate.Size = new System.Drawing.Size(91, 20);
-            this.lblRoomRate.TabIndex = 5;
-            this.lblRoomRate.Text = "Room Rate";
-            // 
-            // lblCheckIn
-            // 
-            this.lblCheckIn.AutoSize = true;
-            this.lblCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckIn.Location = new System.Drawing.Point(39, 236);
-            this.lblCheckIn.Name = "lblCheckIn";
-            this.lblCheckIn.Size = new System.Drawing.Size(111, 20);
-            this.lblCheckIn.TabIndex = 6;
-            this.lblCheckIn.Text = "Check In Date";
-            // 
-            // lblCheckOut
-            // 
-            this.lblCheckOut.AutoSize = true;
-            this.lblCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOut.Location = new System.Drawing.Point(39, 271);
-            this.lblCheckOut.Name = "lblCheckOut";
-            this.lblCheckOut.Size = new System.Drawing.Size(123, 20);
-            this.lblCheckOut.TabIndex = 7;
-            this.lblCheckOut.Text = "Check Out Date";
-            // 
-            // lblDays
-            // 
-            this.lblDays.AutoSize = true;
-            this.lblDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDays.Location = new System.Drawing.Point(39, 309);
-            this.lblDays.Name = "lblDays";
-            this.lblDays.Size = new System.Drawing.Size(94, 20);
-            this.lblDays.TabIndex = 8;
-            this.lblDays.Text = "No. Of Days";
-            // 
-            // lblAdults
-            // 
-            this.lblAdults.AutoSize = true;
-            this.lblAdults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdults.Location = new System.Drawing.Point(457, 82);
-            this.lblAdults.Name = "lblAdults";
-            this.lblAdults.Size = new System.Drawing.Size(54, 20);
-            this.lblAdults.TabIndex = 9;
-            this.lblAdults.Text = "Adults";
-            // 
-            // lblChildren
-            // 
-            this.lblChildren.AutoSize = true;
-            this.lblChildren.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChildren.Location = new System.Drawing.Point(457, 125);
-            this.lblChildren.Name = "lblChildren";
-            this.lblChildren.Size = new System.Drawing.Size(67, 20);
-            this.lblChildren.TabIndex = 10;
-            this.lblChildren.Text = "Children";
-            // 
-            // lblSubTotal
-            // 
-            this.lblSubTotal.AutoSize = true;
-            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.Location = new System.Drawing.Point(457, 163);
-            this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(77, 20);
-            this.lblSubTotal.TabIndex = 12;
-            this.lblSubTotal.Text = "Sub Total";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(457, 291);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(44, 20);
-            this.lblTotal.TabIndex = 14;
-            this.lblTotal.Text = "Total";
-            // 
-            // tbGuestName
-            // 
-            this.tbGuestName.Location = new System.Drawing.Point(214, 75);
-            this.tbGuestName.Multiline = true;
-            this.tbGuestName.Name = "tbGuestName";
-            this.tbGuestName.Size = new System.Drawing.Size(164, 27);
-            this.tbGuestName.TabIndex = 15;
-            // 
-            // tbRoomNum
-            // 
-            this.tbRoomNum.Location = new System.Drawing.Point(214, 118);
-            this.tbRoomNum.Multiline = true;
-            this.tbRoomNum.Name = "tbRoomNum";
-            this.tbRoomNum.Size = new System.Drawing.Size(164, 27);
-            this.tbRoomNum.TabIndex = 16;
-            // 
-            // tbRoomType
-            // 
-            this.tbRoomType.Location = new System.Drawing.Point(214, 156);
-            this.tbRoomType.Multiline = true;
-            this.tbRoomType.Name = "tbRoomType";
-            this.tbRoomType.Size = new System.Drawing.Size(164, 27);
-            this.tbRoomType.TabIndex = 17;
-            // 
-            // tbRoomRate
-            // 
-            this.tbRoomRate.Location = new System.Drawing.Point(214, 193);
-            this.tbRoomRate.Multiline = true;
-            this.tbRoomRate.Name = "tbRoomRate";
-            this.tbRoomRate.Size = new System.Drawing.Size(164, 27);
-            this.tbRoomRate.TabIndex = 18;
-            // 
-            // tbNoDays
-            // 
-            this.tbNoDays.Location = new System.Drawing.Point(214, 302);
-            this.tbNoDays.Multiline = true;
-            this.tbNoDays.Name = "tbNoDays";
-            this.tbNoDays.Size = new System.Drawing.Size(164, 27);
-            this.tbNoDays.TabIndex = 21;
-            // 
-            // tbSubTotal
-            // 
-            this.tbSubTotal.Location = new System.Drawing.Point(568, 156);
-            this.tbSubTotal.Multiline = true;
-            this.tbSubTotal.Name = "tbSubTotal";
-            this.tbSubTotal.Size = new System.Drawing.Size(164, 27);
-            this.tbSubTotal.TabIndex = 24;
-            // 
-            // tbTotal
-            // 
-            this.tbTotal.Location = new System.Drawing.Point(598, 291);
-            this.tbTotal.Multiline = true;
-            this.tbTotal.Name = "tbTotal";
-            this.tbTotal.Size = new System.Drawing.Size(109, 27);
-            this.tbTotal.TabIndex = 25;
+            this.cbChildren.FormattingEnabled = true;
+            this.cbChildren.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"});
+            this.cbChildren.Location = new System.Drawing.Point(568, 118);
+            this.cbChildren.Name = "cbChildren";
+            this.cbChildren.Size = new System.Drawing.Size(121, 21);
+            this.cbChildren.TabIndex = 27;
+            this.cbChildren.Text = "0";
             // 
             // cbAdults
             // 
@@ -324,65 +184,229 @@
             this.cbAdults.TabIndex = 26;
             this.cbAdults.Text = "0";
             // 
-            // cbChildren
+            // tbTotal
             // 
-            this.cbChildren.FormattingEnabled = true;
-            this.cbChildren.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"});
-            this.cbChildren.Location = new System.Drawing.Point(568, 118);
-            this.cbChildren.Name = "cbChildren";
-            this.cbChildren.Size = new System.Drawing.Size(121, 21);
-            this.cbChildren.TabIndex = 27;
-            this.cbChildren.Text = "0";
+            this.tbTotal.Location = new System.Drawing.Point(598, 291);
+            this.tbTotal.Multiline = true;
+            this.tbTotal.Name = "tbTotal";
+            this.tbTotal.Size = new System.Drawing.Size(109, 27);
+            this.tbTotal.TabIndex = 25;
             // 
-            // dtpCheckIn
+            // tbSubTotal
             // 
-            this.dtpCheckIn.Location = new System.Drawing.Point(214, 236);
-            this.dtpCheckIn.Name = "dtpCheckIn";
-            this.dtpCheckIn.Size = new System.Drawing.Size(200, 20);
-            this.dtpCheckIn.TabIndex = 28;
+            this.tbSubTotal.Location = new System.Drawing.Point(568, 156);
+            this.tbSubTotal.Multiline = true;
+            this.tbSubTotal.Name = "tbSubTotal";
+            this.tbSubTotal.Size = new System.Drawing.Size(164, 27);
+            this.tbSubTotal.TabIndex = 24;
             // 
-            // dtpCheckOut
+            // tbNoDays
             // 
-            this.dtpCheckOut.Location = new System.Drawing.Point(214, 271);
-            this.dtpCheckOut.Name = "dtpCheckOut";
-            this.dtpCheckOut.Size = new System.Drawing.Size(200, 20);
-            this.dtpCheckOut.TabIndex = 29;
+            this.tbNoDays.Location = new System.Drawing.Point(214, 302);
+            this.tbNoDays.Multiline = true;
+            this.tbNoDays.Name = "tbNoDays";
+            this.tbNoDays.Size = new System.Drawing.Size(164, 27);
+            this.tbNoDays.TabIndex = 21;
             // 
-            // btnReserve
+            // tbRoomRate
             // 
-            this.btnReserve.Location = new System.Drawing.Point(471, 348);
-            this.btnReserve.Name = "btnReserve";
-            this.btnReserve.Size = new System.Drawing.Size(109, 33);
-            this.btnReserve.TabIndex = 30;
-            this.btnReserve.Text = "Reserve";
-            this.btnReserve.UseVisualStyleBackColor = true;
-            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
+            this.tbRoomRate.Location = new System.Drawing.Point(214, 193);
+            this.tbRoomRate.Multiline = true;
+            this.tbRoomRate.Name = "tbRoomRate";
+            this.tbRoomRate.Size = new System.Drawing.Size(164, 27);
+            this.tbRoomRate.TabIndex = 18;
             // 
-            // btnCancel
+            // tbRoomType
             // 
-            this.btnCancel.Location = new System.Drawing.Point(598, 348);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(109, 33);
-            this.btnCancel.TabIndex = 31;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.tbRoomType.Location = new System.Drawing.Point(214, 156);
+            this.tbRoomType.Multiline = true;
+            this.tbRoomType.Name = "tbRoomType";
+            this.tbRoomType.Size = new System.Drawing.Size(164, 27);
+            this.tbRoomType.TabIndex = 17;
             // 
-            // lvReservation
+            // tbRoomNum
             // 
-            this.lvReservation.Location = new System.Drawing.Point(20, 53);
-            this.lvReservation.Name = "lvReservation";
-            this.lvReservation.Size = new System.Drawing.Size(718, 301);
-            this.lvReservation.TabIndex = 0;
-            this.lvReservation.UseCompatibleStateImageBehavior = false;
+            this.tbRoomNum.Location = new System.Drawing.Point(214, 118);
+            this.tbRoomNum.Multiline = true;
+            this.tbRoomNum.Name = "tbRoomNum";
+            this.tbRoomNum.Size = new System.Drawing.Size(164, 27);
+            this.tbRoomNum.TabIndex = 16;
+            // 
+            // tbGuestName
+            // 
+            this.tbGuestName.Location = new System.Drawing.Point(214, 75);
+            this.tbGuestName.Multiline = true;
+            this.tbGuestName.Name = "tbGuestName";
+            this.tbGuestName.Size = new System.Drawing.Size(164, 27);
+            this.tbGuestName.TabIndex = 15;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(457, 291);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(44, 20);
+            this.lblTotal.TabIndex = 14;
+            this.lblTotal.Text = "Total";
+            // 
+            // lblSubTotal
+            // 
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.Location = new System.Drawing.Point(457, 163);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(77, 20);
+            this.lblSubTotal.TabIndex = 12;
+            this.lblSubTotal.Text = "Sub Total";
+            // 
+            // lblChildren
+            // 
+            this.lblChildren.AutoSize = true;
+            this.lblChildren.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChildren.Location = new System.Drawing.Point(457, 125);
+            this.lblChildren.Name = "lblChildren";
+            this.lblChildren.Size = new System.Drawing.Size(67, 20);
+            this.lblChildren.TabIndex = 10;
+            this.lblChildren.Text = "Children";
+            // 
+            // lblAdults
+            // 
+            this.lblAdults.AutoSize = true;
+            this.lblAdults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdults.Location = new System.Drawing.Point(457, 82);
+            this.lblAdults.Name = "lblAdults";
+            this.lblAdults.Size = new System.Drawing.Size(54, 20);
+            this.lblAdults.TabIndex = 9;
+            this.lblAdults.Text = "Adults";
+            // 
+            // lblDays
+            // 
+            this.lblDays.AutoSize = true;
+            this.lblDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDays.Location = new System.Drawing.Point(39, 309);
+            this.lblDays.Name = "lblDays";
+            this.lblDays.Size = new System.Drawing.Size(94, 20);
+            this.lblDays.TabIndex = 8;
+            this.lblDays.Text = "No. Of Days";
+            // 
+            // lblCheckOut
+            // 
+            this.lblCheckOut.AutoSize = true;
+            this.lblCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckOut.Location = new System.Drawing.Point(39, 271);
+            this.lblCheckOut.Name = "lblCheckOut";
+            this.lblCheckOut.Size = new System.Drawing.Size(123, 20);
+            this.lblCheckOut.TabIndex = 7;
+            this.lblCheckOut.Text = "Check Out Date";
+            // 
+            // lblCheckIn
+            // 
+            this.lblCheckIn.AutoSize = true;
+            this.lblCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckIn.Location = new System.Drawing.Point(39, 236);
+            this.lblCheckIn.Name = "lblCheckIn";
+            this.lblCheckIn.Size = new System.Drawing.Size(111, 20);
+            this.lblCheckIn.TabIndex = 6;
+            this.lblCheckIn.Text = "Check In Date";
+            // 
+            // lblRoomRate
+            // 
+            this.lblRoomRate.AutoSize = true;
+            this.lblRoomRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomRate.Location = new System.Drawing.Point(39, 200);
+            this.lblRoomRate.Name = "lblRoomRate";
+            this.lblRoomRate.Size = new System.Drawing.Size(91, 20);
+            this.lblRoomRate.TabIndex = 5;
+            this.lblRoomRate.Text = "Room Rate";
+            // 
+            // lblRoomType
+            // 
+            this.lblRoomType.AutoSize = true;
+            this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomType.Location = new System.Drawing.Point(39, 163);
+            this.lblRoomType.Name = "lblRoomType";
+            this.lblRoomType.Size = new System.Drawing.Size(90, 20);
+            this.lblRoomType.TabIndex = 4;
+            this.lblRoomType.Text = "Room Type";
+            // 
+            // lblRoomNumber
+            // 
+            this.lblRoomNumber.AutoSize = true;
+            this.lblRoomNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNumber.Location = new System.Drawing.Point(39, 125);
+            this.lblRoomNumber.Name = "lblRoomNumber";
+            this.lblRoomNumber.Size = new System.Drawing.Size(112, 20);
+            this.lblRoomNumber.TabIndex = 3;
+            this.lblRoomNumber.Text = "Room Number";
+            // 
+            // lblGuestName
+            // 
+            this.lblGuestName.AutoSize = true;
+            this.lblGuestName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGuestName.Location = new System.Drawing.Point(39, 91);
+            this.lblGuestName.Name = "lblGuestName";
+            this.lblGuestName.Size = new System.Drawing.Size(99, 20);
+            this.lblGuestName.TabIndex = 2;
+            this.lblGuestName.Text = "Guest Name";
+            // 
+            // lblReservationForm
+            // 
+            this.lblReservationForm.AutoSize = true;
+            this.lblReservationForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservationForm.Location = new System.Drawing.Point(271, 30);
+            this.lblReservationForm.Name = "lblReservationForm";
+            this.lblReservationForm.Size = new System.Drawing.Size(151, 20);
+            this.lblReservationForm.TabIndex = 0;
+            this.lblReservationForm.Text = "Reservation Form";
+            // 
+            // tpReservationList
+            // 
+            this.tpReservationList.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tpReservationList.Controls.Add(this.btnCancelRes);
+            this.tpReservationList.Controls.Add(this.btnCheckInRes);
+            this.tpReservationList.Controls.Add(this.dtpTo);
+            this.tpReservationList.Controls.Add(this.dtpFrom);
+            this.tpReservationList.Controls.Add(this.lblReservationList);
+            this.tpReservationList.Controls.Add(this.lvReservation);
+            this.tpReservationList.Location = new System.Drawing.Point(4, 22);
+            this.tpReservationList.Name = "tpReservationList";
+            this.tpReservationList.Padding = new System.Windows.Forms.Padding(3);
+            this.tpReservationList.Size = new System.Drawing.Size(760, 395);
+            this.tpReservationList.TabIndex = 1;
+            this.tpReservationList.Text = "Reservation List";
+            // 
+            // btnCancelRes
+            // 
+            this.btnCancelRes.Location = new System.Drawing.Point(611, 357);
+            this.btnCancelRes.Name = "btnCancelRes";
+            this.btnCancelRes.Size = new System.Drawing.Size(127, 35);
+            this.btnCancelRes.TabIndex = 5;
+            this.btnCancelRes.Text = "Cancel Reservation";
+            this.btnCancelRes.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckInRes
+            // 
+            this.btnCheckInRes.Location = new System.Drawing.Point(503, 357);
+            this.btnCheckInRes.Name = "btnCheckInRes";
+            this.btnCheckInRes.Size = new System.Drawing.Size(92, 35);
+            this.btnCheckInRes.TabIndex = 4;
+            this.btnCheckInRes.Text = "Check In";
+            this.btnCheckInRes.UseVisualStyleBackColor = true;
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Location = new System.Drawing.Point(226, 360);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(200, 20);
+            this.dtpTo.TabIndex = 3;
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Location = new System.Drawing.Point(20, 360);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
+            this.dtpFrom.TabIndex = 2;
             // 
             // lblReservationList
             // 
@@ -394,37 +418,13 @@
             this.lblReservationList.TabIndex = 1;
             this.lblReservationList.Text = "Reservation List";
             // 
-            // dtpFrom
+            // lvReservation
             // 
-            this.dtpFrom.Location = new System.Drawing.Point(20, 360);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
-            this.dtpFrom.TabIndex = 2;
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.Location = new System.Drawing.Point(226, 360);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 20);
-            this.dtpTo.TabIndex = 3;
-            // 
-            // btnCheckInRes
-            // 
-            this.btnCheckInRes.Location = new System.Drawing.Point(503, 357);
-            this.btnCheckInRes.Name = "btnCheckInRes";
-            this.btnCheckInRes.Size = new System.Drawing.Size(92, 35);
-            this.btnCheckInRes.TabIndex = 4;
-            this.btnCheckInRes.Text = "Check In";
-            this.btnCheckInRes.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelRes
-            // 
-            this.btnCancelRes.Location = new System.Drawing.Point(611, 357);
-            this.btnCancelRes.Name = "btnCancelRes";
-            this.btnCancelRes.Size = new System.Drawing.Size(127, 35);
-            this.btnCancelRes.TabIndex = 5;
-            this.btnCancelRes.Text = "Cancel Reservation";
-            this.btnCancelRes.UseVisualStyleBackColor = true;
+            this.lvReservation.Location = new System.Drawing.Point(20, 53);
+            this.lvReservation.Name = "lvReservation";
+            this.lvReservation.Size = new System.Drawing.Size(718, 301);
+            this.lvReservation.TabIndex = 0;
+            this.lvReservation.UseCompatibleStateImageBehavior = false;
             // 
             // frmReservation
             // 
