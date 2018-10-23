@@ -49,11 +49,13 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblGuestList2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.epContactNo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epContact = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epEmail = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epContactNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epContact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmail)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -98,6 +100,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(188, 22);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // cbGender
             // 
@@ -263,9 +266,13 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // epContactNo
+            // epContact
             // 
-            this.epContactNo.ContainerControl = this;
+            this.epContact.ContainerControl = this;
+            // 
+            // epEmail
+            // 
+            this.epEmail.ContainerControl = this;
             // 
             // frmGuest
             // 
@@ -281,7 +288,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epContactNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epContact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epEmail)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,6 +316,7 @@
         private System.Windows.Forms.Label lblGuestList2;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.ErrorProvider epContactNo;
+        private System.Windows.Forms.ErrorProvider epContact;
+        private System.Windows.Forms.ErrorProvider epEmail;
     }
 }

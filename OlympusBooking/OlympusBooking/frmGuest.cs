@@ -17,6 +17,7 @@ namespace OlympusBooking
         public frmGuest()
         {
             InitializeComponent();
+            cbGender.SelectedIndex = 0; //Sets the default of the combobox to the first index.
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -30,14 +31,31 @@ namespace OlympusBooking
             string sEmail = txtEmail.Text;
             string sStatus = "";
 
-            //Calls methods form the UseDatabase case to add a new quest.
-            UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
-            useDb.ConnectToDatabase();
-            useDb.addGuest(sName,sSurname,sAddress,sNum,sGender,sEmail,sStatus);
-            MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            useDb.DisconnectDatabase();
+            //Validates if all the fields are entered and that there are no error messages before saving the data to the database.
+            if ((txtName.Text == "") || (txtSurname.Text == "") || (txtAddress.Text == "") || (txtNum.Text == "") || (txtEmail.Text == ""))
+            {
+                //Message box to inform the user of errors.
+                MessageBox.Show("Please ensure all fields have values entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {    
+                if ((epContact.GetError(this.txtNum).Length > 0) || (epEmail.GetError(this.txtEmail).Length > 0))
+                {
+                    //Message box to inform the user of errors.
+                    MessageBox.Show("Please attend to any error messages", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //Calls methods form the UseDatabase case to add a new quest.
+                    UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
+                    useDb.ConnectToDatabase();
+                    useDb.addGuest(sName, sSurname, sAddress, sNum, sGender, sEmail, sStatus);
+                    MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    useDb.DisconnectDatabase();
 
-            this.Close();
+                    this.Close();
+                }
+            }           
         }
 
         //Closes the guest form and reverts back to main form.
@@ -54,22 +72,33 @@ namespace OlympusBooking
             {
                 try
                 {
-                    epContactNo.Clear();
                     int temp = Convert.ToInt32(txtNum.Text);
-                    btnSave.Enabled = true;
+                    epContact.Clear();
                 }
                 catch (Exception h)
                 {
-                    epContactNo.SetError(this.txtNum, "Please enter a valid number");
-                    btnSave.Enabled = false;
+                    epContact.SetError(this.txtNum, "Please enter a valid number");
+                    return;
                 }
             }
             else
             {
-                epContactNo.SetError(this.txtNum, "Please enter a valid number");
-                btnSave.Enabled = false;
+                epContact.SetError(this.txtNum, "Please enter a valid number");
+            }         
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            string pattern = @"^[\w!#$%&'*+\-/=?\^_`{|}~]+(\.[\w!#$%&'*+\-/=?\^_`{|}~]+)*" + "@" + @"((([\-\w]+\.)+[a-zA-Z]{2,4})|(([0-9]{1,3}\.){3}[0-9]{1,3}))$";
+            if (Regex.IsMatch(txtEmail.Text, pattern))
+            {
+                epEmail.Clear();   
             }
-            
+            else
+            {
+                epEmail.SetError(this.txtEmail, "Please enter a valid email address");
+                return;
+            }
         }
         #endregion
     }
