@@ -49,29 +49,30 @@
             this.checkInListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.checkOutListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsMenu = new System.Windows.Forms.ToolStrip();
+            this.toolbarGuest = new System.Windows.Forms.ToolStripButton();
             this.ToolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolbarRoom = new System.Windows.Forms.ToolStripButton();
             this.ToolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolbarCheckIn = new System.Windows.Forms.ToolStripButton();
             this.ToolStripButton11 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolbarCheckOut = new System.Windows.Forms.ToolStripButton();
             this.ToolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolbarReserve = new System.Windows.Forms.ToolStripButton();
             this.ToolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolbarLogout = new System.Windows.Forms.ToolStripButton();
             this.ToolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolbarExit = new System.Windows.Forms.ToolStripButton();
             this.status = new System.Windows.Forms.StatusStrip();
             this.lblLoggedIn = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblSysName = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblDateTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolbarGuest = new System.Windows.Forms.ToolStripButton();
-            this.toolbarRoom = new System.Windows.Forms.ToolStripButton();
-            this.toolbarCheckIn = new System.Windows.Forms.ToolStripButton();
-            this.toolbarCheckOut = new System.Windows.Forms.ToolStripButton();
-            this.toolbarReserve = new System.Windows.Forms.ToolStripButton();
-            this.toolbarLogout = new System.Windows.Forms.ToolStripButton();
-            this.toolbarExit = new System.Windows.Forms.ToolStripButton();
+            this.pbMain = new System.Windows.Forms.PictureBox();
+            this.tCurrentTime = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
-            this.ToolStrip1.SuspendLayout();
+            this.tsMenu.SuspendLayout();
             this.status.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -207,10 +208,10 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // ToolStrip1
+            // tsMenu
             // 
-            this.ToolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.ToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.tsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolbarGuest,
             this.ToolStripSeparator7,
             this.toolbarRoom,
@@ -224,41 +225,111 @@
             this.toolbarLogout,
             this.ToolStripSeparator10,
             this.toolbarExit});
-            this.ToolStrip1.Location = new System.Drawing.Point(0, 24);
-            this.ToolStrip1.Name = "ToolStrip1";
-            this.ToolStrip1.Size = new System.Drawing.Size(1007, 39);
-            this.ToolStrip1.TabIndex = 15;
-            this.ToolStrip1.Text = "ToolStrip1";
+            this.tsMenu.Location = new System.Drawing.Point(0, 24);
+            this.tsMenu.Name = "tsMenu";
+            this.tsMenu.Size = new System.Drawing.Size(1007, 39);
+            this.tsMenu.TabIndex = 15;
+            this.tsMenu.Text = "ToolStrip1";
+            // 
+            // toolbarGuest
+            // 
+            this.toolbarGuest.Image = ((System.Drawing.Image)(resources.GetObject("toolbarGuest.Image")));
+            this.toolbarGuest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolbarGuest.Name = "toolbarGuest";
+            this.toolbarGuest.Size = new System.Drawing.Size(73, 36);
+            this.toolbarGuest.Text = "Guest";
+            this.toolbarGuest.ToolTipText = "Guest";
+            this.toolbarGuest.Click += new System.EventHandler(this.toolbarGuest_Click);
             // 
             // ToolStripSeparator7
             // 
             this.ToolStripSeparator7.Name = "ToolStripSeparator7";
             this.ToolStripSeparator7.Size = new System.Drawing.Size(6, 39);
             // 
+            // toolbarRoom
+            // 
+            this.toolbarRoom.Image = ((System.Drawing.Image)(resources.GetObject("toolbarRoom.Image")));
+            this.toolbarRoom.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolbarRoom.Name = "toolbarRoom";
+            this.toolbarRoom.Size = new System.Drawing.Size(80, 36);
+            this.toolbarRoom.Text = "Rooms";
+            this.toolbarRoom.ToolTipText = "Room";
+            this.toolbarRoom.Click += new System.EventHandler(this.toolbarRoom_Click);
+            // 
             // ToolStripSeparator9
             // 
             this.ToolStripSeparator9.Name = "ToolStripSeparator9";
             this.ToolStripSeparator9.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolbarCheckIn
+            // 
+            this.toolbarCheckIn.Image = ((System.Drawing.Image)(resources.GetObject("toolbarCheckIn.Image")));
+            this.toolbarCheckIn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolbarCheckIn.Name = "toolbarCheckIn";
+            this.toolbarCheckIn.Size = new System.Drawing.Size(91, 36);
+            this.toolbarCheckIn.Text = "Check-in";
+            this.toolbarCheckIn.ToolTipText = "Checkin";
+            this.toolbarCheckIn.Click += new System.EventHandler(this.toolbarCheckIn_Click);
             // 
             // ToolStripButton11
             // 
             this.ToolStripButton11.Name = "ToolStripButton11";
             this.ToolStripButton11.Size = new System.Drawing.Size(6, 39);
             // 
+            // toolbarCheckOut
+            // 
+            this.toolbarCheckOut.Image = ((System.Drawing.Image)(resources.GetObject("toolbarCheckOut.Image")));
+            this.toolbarCheckOut.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolbarCheckOut.Name = "toolbarCheckOut";
+            this.toolbarCheckOut.Size = new System.Drawing.Size(94, 36);
+            this.toolbarCheckOut.Text = "Checkout";
+            this.toolbarCheckOut.ToolTipText = "Checkout";
+            this.toolbarCheckOut.Click += new System.EventHandler(this.toolbarCheckOut_Click);
+            // 
             // ToolStripSeparator6
             // 
             this.ToolStripSeparator6.Name = "ToolStripSeparator6";
             this.ToolStripSeparator6.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolbarReserve
+            // 
+            this.toolbarReserve.Image = ((System.Drawing.Image)(resources.GetObject("toolbarReserve.Image")));
+            this.toolbarReserve.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolbarReserve.Name = "toolbarReserve";
+            this.toolbarReserve.Size = new System.Drawing.Size(104, 36);
+            this.toolbarReserve.Text = "Reservation";
+            this.toolbarReserve.ToolTipText = "Reserve";
+            this.toolbarReserve.Click += new System.EventHandler(this.toolbarReserve_Click);
             // 
             // ToolStripSeparator8
             // 
             this.ToolStripSeparator8.Name = "ToolStripSeparator8";
             this.ToolStripSeparator8.Size = new System.Drawing.Size(6, 39);
             // 
+            // toolbarLogout
+            // 
+            this.toolbarLogout.Image = ((System.Drawing.Image)(resources.GetObject("toolbarLogout.Image")));
+            this.toolbarLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolbarLogout.Name = "toolbarLogout";
+            this.toolbarLogout.Size = new System.Drawing.Size(81, 36);
+            this.toolbarLogout.Text = "Logout";
+            this.toolbarLogout.ToolTipText = "Logout";
+            this.toolbarLogout.Click += new System.EventHandler(this.toolbarLogout_Click);
+            // 
             // ToolStripSeparator10
             // 
             this.ToolStripSeparator10.Name = "ToolStripSeparator10";
             this.ToolStripSeparator10.Size = new System.Drawing.Size(6, 39);
+            // 
+            // toolbarExit
+            // 
+            this.toolbarExit.Image = ((System.Drawing.Image)(resources.GetObject("toolbarExit.Image")));
+            this.toolbarExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolbarExit.Name = "toolbarExit";
+            this.toolbarExit.Size = new System.Drawing.Size(61, 36);
+            this.toolbarExit.Text = "Exit";
+            this.toolbarExit.ToolTipText = "Exit";
+            this.toolbarExit.Click += new System.EventHandler(this.toolbarExit_Click);
             // 
             // status
             // 
@@ -302,86 +373,21 @@
             this.lblDateTime.Spring = true;
             this.lblDateTime.Text = "Date and Time :";
             // 
-            // pictureBox1
+            // pbMain
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::OlympusBooking.Properties.Resources.light_blue_background;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1007, 551);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
+            this.pbMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbMain.Image = global::OlympusBooking.Properties.Resources.light_blue_background;
+            this.pbMain.Location = new System.Drawing.Point(0, 63);
+            this.pbMain.Name = "pbMain";
+            this.pbMain.Size = new System.Drawing.Size(1007, 551);
+            this.pbMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbMain.TabIndex = 16;
+            this.pbMain.TabStop = false;
             // 
-            // toolbarGuest
+            // tCurrentTime
             // 
-            this.toolbarGuest.Image = ((System.Drawing.Image)(resources.GetObject("toolbarGuest.Image")));
-            this.toolbarGuest.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolbarGuest.Name = "toolbarGuest";
-            this.toolbarGuest.Size = new System.Drawing.Size(73, 36);
-            this.toolbarGuest.Text = "Guest";
-            this.toolbarGuest.ToolTipText = "Guest";
-            this.toolbarGuest.Click += new System.EventHandler(this.toolbarGuest_Click);
-            // 
-            // toolbarRoom
-            // 
-            this.toolbarRoom.Image = ((System.Drawing.Image)(resources.GetObject("toolbarRoom.Image")));
-            this.toolbarRoom.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolbarRoom.Name = "toolbarRoom";
-            this.toolbarRoom.Size = new System.Drawing.Size(80, 36);
-            this.toolbarRoom.Text = "Rooms";
-            this.toolbarRoom.ToolTipText = "Room";
-            this.toolbarRoom.Click += new System.EventHandler(this.toolbarRoom_Click);
-            // 
-            // toolbarCheckIn
-            // 
-            this.toolbarCheckIn.Image = ((System.Drawing.Image)(resources.GetObject("toolbarCheckIn.Image")));
-            this.toolbarCheckIn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolbarCheckIn.Name = "toolbarCheckIn";
-            this.toolbarCheckIn.Size = new System.Drawing.Size(91, 36);
-            this.toolbarCheckIn.Text = "Check-in";
-            this.toolbarCheckIn.ToolTipText = "Checkin";
-            this.toolbarCheckIn.Click += new System.EventHandler(this.toolbarCheckIn_Click);
-            // 
-            // toolbarCheckOut
-            // 
-            this.toolbarCheckOut.Image = ((System.Drawing.Image)(resources.GetObject("toolbarCheckOut.Image")));
-            this.toolbarCheckOut.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolbarCheckOut.Name = "toolbarCheckOut";
-            this.toolbarCheckOut.Size = new System.Drawing.Size(94, 36);
-            this.toolbarCheckOut.Text = "Checkout";
-            this.toolbarCheckOut.ToolTipText = "Checkout";
-            this.toolbarCheckOut.Click += new System.EventHandler(this.toolbarCheckOut_Click);
-            // 
-            // toolbarReserve
-            // 
-            this.toolbarReserve.Image = ((System.Drawing.Image)(resources.GetObject("toolbarReserve.Image")));
-            this.toolbarReserve.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolbarReserve.Name = "toolbarReserve";
-            this.toolbarReserve.Size = new System.Drawing.Size(104, 36);
-            this.toolbarReserve.Text = "Reservation";
-            this.toolbarReserve.ToolTipText = "Reserve";
-            this.toolbarReserve.Click += new System.EventHandler(this.toolbarReserve_Click);
-            // 
-            // toolbarLogout
-            // 
-            this.toolbarLogout.Image = ((System.Drawing.Image)(resources.GetObject("toolbarLogout.Image")));
-            this.toolbarLogout.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolbarLogout.Name = "toolbarLogout";
-            this.toolbarLogout.Size = new System.Drawing.Size(81, 36);
-            this.toolbarLogout.Text = "Logout";
-            this.toolbarLogout.ToolTipText = "Logout";
-            this.toolbarLogout.Click += new System.EventHandler(this.toolbarLogout_Click);
-            // 
-            // toolbarExit
-            // 
-            this.toolbarExit.Image = ((System.Drawing.Image)(resources.GetObject("toolbarExit.Image")));
-            this.toolbarExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolbarExit.Name = "toolbarExit";
-            this.toolbarExit.Size = new System.Drawing.Size(61, 36);
-            this.toolbarExit.Text = "Exit";
-            this.toolbarExit.ToolTipText = "Exit";
-            this.toolbarExit.Click += new System.EventHandler(this.toolbarExit_Click);
+            this.tCurrentTime.Interval = 1000;
+            this.tCurrentTime.Tick += new System.EventHandler(this.tCurrentTime_Tick);
             // 
             // frmMain
             // 
@@ -389,21 +395,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 614);
             this.Controls.Add(this.status);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.ToolStrip1);
+            this.Controls.Add(this.pbMain);
+            this.Controls.Add(this.tsMenu);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Olympus Booking and Reservations";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.ToolStrip1.ResumeLayout(false);
-            this.ToolStrip1.PerformLayout();
+            this.tsMenu.ResumeLayout(false);
+            this.tsMenu.PerformLayout();
             this.status.ResumeLayout(false);
             this.status.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMain)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,7 +419,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        internal System.Windows.Forms.ToolStrip ToolStrip1;
+        internal System.Windows.Forms.ToolStrip tsMenu;
         internal System.Windows.Forms.ToolStripButton toolbarCheckIn;
         internal System.Windows.Forms.ToolStripSeparator ToolStripButton11;
         internal System.Windows.Forms.ToolStripButton toolbarCheckOut;
@@ -435,7 +440,7 @@
         private System.Windows.Forms.ToolStripMenuItem checkOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbMain;
         internal System.Windows.Forms.StatusStrip status;
         internal System.Windows.Forms.ToolStripStatusLabel lblLoggedIn;
         internal System.Windows.Forms.ToolStripStatusLabel lblSysName;
@@ -449,5 +454,6 @@
         private System.Windows.Forms.ToolStripMenuItem checkInListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkOutListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.Timer tCurrentTime;
     }
 }

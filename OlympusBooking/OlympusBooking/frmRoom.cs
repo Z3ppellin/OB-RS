@@ -31,8 +31,12 @@ namespace OlympusBooking
             roomType = tbRoomType.Text;
             roomRate = tbRoomRate.Text.ToString();
             numPeople = cbNumPeople.Text.ToString();
-                                   
-            
+
+            //UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
+            //useDb.ConnectToDatabase();
+            //useDb.addRoom(sName, sSurname, sAddress, sNum, sGender, sEmail, sStatus);
+            //useDb.DisconnectDatabase();
+
         }
 
         //Closing room form when canceled

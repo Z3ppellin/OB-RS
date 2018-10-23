@@ -34,6 +34,7 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblForgotPass = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(217, 114);
+            this.btnLogIn.Location = new System.Drawing.Point(203, 126);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(75, 23);
             this.btnLogIn.TabIndex = 2;
@@ -90,12 +91,26 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // lblForgotPass
+            // 
+            this.lblForgotPass.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
+            this.lblForgotPass.AutoSize = true;
+            this.lblForgotPass.LinkColor = System.Drawing.Color.Black;
+            this.lblForgotPass.Location = new System.Drawing.Point(223, 94);
+            this.lblForgotPass.Name = "lblForgotPass";
+            this.lblForgotPass.Size = new System.Drawing.Size(91, 13);
+            this.lblForgotPass.TabIndex = 7;
+            this.lblForgotPass.TabStop = true;
+            this.lblForgotPass.Text = "Forgot password?";
+            this.lblForgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblForgotPass_LinkClicked);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(358, 174);
+            this.Controls.Add(this.lblForgotPass);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
@@ -120,5 +135,6 @@
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel lblForgotPass;
     }
 }

@@ -13,10 +13,6 @@ namespace OlympusBooking
 {
     public partial class frmLogin : Form
     {
-        //Global variables
-        string sName;
-        string sPassword;
-
         public frmLogin()
         {
             InitializeComponent();
@@ -25,34 +21,44 @@ namespace OlympusBooking
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             //Variables.
-            sName = txtUsername.Text.ToLower();
-            sPassword = txtPassword.Text;
+            string sName = txtUsername.Text;
+            string sPassword = txtPassword.Text;
 
             //New instance of UseDatabase class.
-            UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
+            UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
 
             //Connect database.
             useDb.ConnectToDatabase();
 
+            //Generates a query for the database containing the username and password
             string queryString = "SELECT * FROM [User] WHERE Username = '";
-            queryString += sName + "'AND Password = '";
+            queryString += sName.ToLower() + "'AND Password = '";   //changes the username to lowercase since it is not case sensitive to avoid errors.
             queryString += sPassword + "';";
 
-            //Execute query to check for matches.
+            //Execute query to check for matches in the database.
             OleDbDataReader dbReader = useDb.ExecuteQuery(queryString);
 
-            //If there are rows in the result from the ExecuteQuery then the check was successful.
+            //If there are rows in the result from the ExecuteQuery then the check was successful meaning there was a match.
             if (dbReader != null && dbReader.HasRows)
             {
+                //Informs the user that the login was successfull with a warming message.
                 this.Hide();
-                MessageBox.Show("You have successfully logged in.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmMain fM = new frmMain();
+                MessageBox.Show("Welcome " + sName , "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMain fM = new frmMain(txtUsername.Text);
                 fM.ShowDialog();
             }
             else
             {
+                //Informs the user that either the username or password is incorrect.
                 MessageBox.Show("Incorrect username or password!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsername.Clear();
+                txtPassword.Clear();
             }
+        }
+
+        private void lblForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Well too bad", "Oops", MessageBoxButtons.OK, MessageBoxIcon.None);
         }
     }
 }

@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
@@ -48,9 +49,11 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblGuestList2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.epContactNo = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epContactNo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -66,7 +69,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tabPage1.Controls.Add(this.tbEmail);
+            this.tabPage1.Controls.Add(this.txtEmail);
             this.tabPage1.Controls.Add(this.cbGender);
             this.tabPage1.Controls.Add(this.txtAddress);
             this.tabPage1.Controls.Add(this.txtSurname);
@@ -89,57 +92,54 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Guest";
             // 
-            // tbEmail
+            // txtEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(157, 275);
-            this.tbEmail.Multiline = true;
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(188, 28);
-            this.tbEmail.TabIndex = 8;
+            this.txtEmail.Location = new System.Drawing.Point(202, 262);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(188, 22);
+            this.txtEmail.TabIndex = 5;
             // 
             // cbGender
             // 
             this.cbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGender.FormattingEnabled = true;
             this.cbGender.Items.AddRange(new object[] {
-            "M",
-            "F"});
-            this.cbGender.Location = new System.Drawing.Point(157, 245);
+            "Male",
+            "Female"});
+            this.cbGender.Location = new System.Drawing.Point(202, 228);
             this.cbGender.Name = "cbGender";
-            this.cbGender.Size = new System.Drawing.Size(121, 24);
+            this.cbGender.Size = new System.Drawing.Size(85, 24);
             this.cbGender.TabIndex = 4;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(157, 177);
-            this.txtAddress.Multiline = true;
+            this.txtAddress.Location = new System.Drawing.Point(202, 165);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(188, 28);
+            this.txtAddress.Size = new System.Drawing.Size(188, 22);
             this.txtAddress.TabIndex = 2;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(157, 139);
-            this.txtSurname.Multiline = true;
+            this.txtSurname.Location = new System.Drawing.Point(202, 135);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(188, 28);
+            this.txtSurname.Size = new System.Drawing.Size(188, 22);
             this.txtSurname.TabIndex = 1;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(157, 105);
-            this.txtName.Multiline = true;
+            this.txtName.Location = new System.Drawing.Point(202, 105);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(188, 28);
+            this.txtName.Size = new System.Drawing.Size(188, 22);
             this.txtName.TabIndex = 0;
             // 
             // txtNum
             // 
-            this.txtNum.Location = new System.Drawing.Point(157, 211);
-            this.txtNum.Multiline = true;
+            this.txtNum.Location = new System.Drawing.Point(202, 198);
+            this.txtNum.MaxLength = 10;
             this.txtNum.Name = "txtNum";
-            this.txtNum.Size = new System.Drawing.Size(188, 28);
+            this.txtNum.Size = new System.Drawing.Size(188, 22);
             this.txtNum.TabIndex = 3;
+            this.txtNum.Leave += new System.EventHandler(this.txtNum_Leave);
             // 
             // btnCancel
             // 
@@ -167,61 +167,61 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(45, 278);
+            this.lblEmail.Location = new System.Drawing.Point(46, 265);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(96, 16);
+            this.lblEmail.Size = new System.Drawing.Size(126, 16);
             this.lblEmail.TabIndex = 7;
-            this.lblEmail.Text = "Email Address";
+            this.lblEmail.Text = "Email Address         :";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(46, 248);
+            this.lblGender.Location = new System.Drawing.Point(46, 231);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(53, 16);
+            this.lblGender.Size = new System.Drawing.Size(125, 16);
             this.lblGender.TabIndex = 6;
-            this.lblGender.Text = "Gender";
+            this.lblGender.Text = "Gender                       :";
             // 
             // lblNum
             // 
             this.lblNum.AutoSize = true;
             this.lblNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNum.Location = new System.Drawing.Point(45, 214);
+            this.lblNum.Location = new System.Drawing.Point(46, 198);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(104, 16);
+            this.lblNum.Size = new System.Drawing.Size(125, 16);
             this.lblNum.TabIndex = 5;
-            this.lblNum.Text = "Contact Number";
+            this.lblNum.Text = "Contact Number      :";
             // 
             // lblAdd
             // 
             this.lblAdd.AutoSize = true;
             this.lblAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdd.Location = new System.Drawing.Point(45, 180);
+            this.lblAdd.Location = new System.Drawing.Point(46, 168);
             this.lblAdd.Name = "lblAdd";
-            this.lblAdd.Size = new System.Drawing.Size(59, 16);
+            this.lblAdd.Size = new System.Drawing.Size(125, 16);
             this.lblAdd.TabIndex = 4;
-            this.lblAdd.Text = "Address";
+            this.lblAdd.Text = "Address                     :";
             // 
             // lbllName
             // 
             this.lbllName.AutoSize = true;
             this.lbllName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbllName.Location = new System.Drawing.Point(45, 151);
+            this.lbllName.Location = new System.Drawing.Point(46, 138);
             this.lbllName.Name = "lbllName";
-            this.lbllName.Size = new System.Drawing.Size(73, 16);
+            this.lbllName.Size = new System.Drawing.Size(124, 16);
             this.lbllName.TabIndex = 2;
-            this.lbllName.Text = "Last Name";
+            this.lbllName.Text = "Last Name                :";
             // 
             // lblfName
             // 
             this.lblfName.AutoSize = true;
             this.lblfName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfName.Location = new System.Drawing.Point(45, 117);
+            this.lblfName.Location = new System.Drawing.Point(46, 108);
             this.lblfName.Name = "lblfName";
-            this.lblfName.Size = new System.Drawing.Size(73, 16);
+            this.lblfName.Size = new System.Drawing.Size(124, 16);
             this.lblfName.TabIndex = 1;
-            this.lblfName.Text = "First Name";
+            this.lblfName.Text = "First Name                :";
             // 
             // lblNewGuest
             // 
@@ -263,6 +263,10 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // epContactNo
+            // 
+            this.epContactNo.ContainerControl = this;
+            // 
             // frmGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +281,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epContactNo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -302,6 +307,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label lblGuestList2;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.ErrorProvider epContactNo;
     }
 }

@@ -1,4 +1,13 @@
-﻿using System.Collections.Generic;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// Filename         :                                                                             //
+// Author           :                                                                             //
+// Created          :                                                                             //
+// Created using    :                                                                             //
+// Usable on        :                                                                             //
+// Discription      :                                                                             //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Diagnostics;
@@ -13,14 +22,16 @@ namespace OlympusBooking
 {
     public partial class frmMain : Form
     {
-        public frmMain()
+        public frmMain(string sUsername)
         {
             InitializeComponent();
+            lblLoggedIn.Text = "Logged in: " + sUsername;
+            tCurrentTime.Start();
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         //When Guest is clicked it opens the Guest form.
@@ -31,15 +42,9 @@ namespace OlympusBooking
             
         }
 
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            lblDateTime.Text = "Date and Time: " + DateTime.Now.ToString();
-            lblLoggedIn.Text = "Logged in: ";
-        }
-
         private void toolbarExit_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
         private void toolbarRoom_Click(object sender, EventArgs e)
@@ -78,6 +83,12 @@ namespace OlympusBooking
         {
             frmGuest frmGuest = new frmGuest();
             frmGuest.ShowDialog();
+        }
+
+        private void tCurrentTime_Tick(object sender, EventArgs e)
+        {
+            DateTime dateTime = DateTime.Now;
+            this.lblDateTime.Text = "Time: " + dateTime.ToString();
         }
     }
 }
