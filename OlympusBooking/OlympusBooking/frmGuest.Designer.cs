@@ -62,10 +62,10 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(19, 19);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(769, 419);
+            this.tabControl1.Size = new System.Drawing.Size(776, 426);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -90,7 +90,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(761, 393);
+            this.tabPage1.Size = new System.Drawing.Size(768, 400);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "New Guest";
             // 
@@ -131,6 +131,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(202, 105);
+            this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(188, 22);
             this.txtName.TabIndex = 0;
@@ -147,7 +148,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnCancel.Location = new System.Drawing.Point(380, 334);
+            this.btnCancel.Location = new System.Drawing.Point(381, 334);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 37);
             this.btnCancel.TabIndex = 7;
@@ -232,9 +233,9 @@
             this.lblNewGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNewGuest.Location = new System.Drawing.Point(45, 38);
             this.lblNewGuest.Name = "lblNewGuest";
-            this.lblNewGuest.Size = new System.Drawing.Size(143, 20);
+            this.lblNewGuest.Size = new System.Drawing.Size(97, 20);
             this.lblNewGuest.TabIndex = 0;
-            this.lblNewGuest.Text = "New Guest Form";
+            this.lblNewGuest.Text = "New Guest";
             // 
             // tabPage2
             // 

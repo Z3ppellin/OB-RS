@@ -1,4 +1,13 @@
-﻿using System;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// Filename         :                                                                             //
+// Author           :                                                                             //
+// Created          :                                                                             //
+// Created using    :                                                                             //
+// Usable on        :                                                                             //
+// Discription      :                                                                             //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,9 +58,18 @@ namespace OlympusBooking
                     //Calls methods form the UseDatabase case to add a new quest.
                     UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
                     useDb.ConnectToDatabase();
-                    useDb.addGuest(sName, sSurname, sAddress, sNum, sGender, sEmail, sStatus);
-                    MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    string b = useDb.addGuest(sName, sSurname, sAddress, sNum, sGender, sEmail, sStatus);
                     useDb.DisconnectDatabase();
+
+                    //Informs the user if the database was updated
+                    if (b == "success")
+                    {
+                        MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("There was a problem with inserting into the database", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
                     this.Close();
                 }
@@ -75,7 +93,7 @@ namespace OlympusBooking
                     int temp = Convert.ToInt32(txtNum.Text);
                     epContact.Clear();
                 }
-                catch (Exception h)
+                catch (Exception)
                 {
                     epContact.SetError(this.txtNum, "Please enter a valid number");
                     return;

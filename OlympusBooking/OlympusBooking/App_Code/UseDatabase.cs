@@ -7,7 +7,6 @@
 // Discription      :                                                                             //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,15 +79,17 @@ namespace OlympusBooking
                         
         }
         #endregion
+
+        //Adds a new guest to the guest table.
         public string addGuest(string fName,string lName,string add,string number,string gender, string email,string status)
         {
             try
             {
-                String myQuerry = "INSERT INTO Guest (GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,Status) VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" + email + "','" + status + "')";
+                String myQuerry = "INSERT INTO Guest(GuestName,GuestSurname,GuestAddress,GuestContactNumber,GuestGender,GuestEmail,Status) " +
+                                  "VALUES('" + fName + "','" + lName + "','" + add + "','" + number + "','" + gender + "','" + email + "','" + status + "')";
 
                 OleDbCommand cmd = new OleDbCommand(myQuerry, conn);
                 cmd.ExecuteNonQuery();
-                conn.Close();
 
                 return "success";
             }
@@ -96,7 +97,42 @@ namespace OlympusBooking
             {
                 return "fail";
             }
+        }
 
+        //Adds a new room to the hotel system (e.g through expansion).
+        public string addRoom(string roomNum, string roomType, string roomRate)
+        {
+            try
+            {
+                String myQuery = "INSERT INTO Room(RoomNumber,RoomType,RoomRate) " +
+                                 "VALUES('" + roomNum + "','" + roomType + "','" + roomRate + "')";
+
+                OleDbCommand cmd = new OleDbCommand(myQuery, conn);
+                cmd.ExecuteNonQuery();
+
+                return "success";
+            }
+            catch (OleDbException)
+            {
+                return "fail";
+            }
+        }
+
+        //Updates the neccessary tables so the user status is checked-in.
+        public string CheckIn(string sName)
+        {
+            try
+            {
+                String myQuery = "UPDATE [Guest] Set [Status] = 'Checked-In' WHERE [GuestName] = '" + sName + "'";
+                OleDbCommand cmd = new OleDbCommand(myQuery, conn);
+                cmd.ExecuteNonQuery();
+
+                return "success";
+            }
+            catch (OleDbException)
+            {
+                return "fail";
+            }
         }
        
     }

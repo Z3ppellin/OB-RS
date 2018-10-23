@@ -106,59 +106,65 @@
             // newGuestToolStripMenuItem
             // 
             this.newGuestToolStripMenuItem.Name = "newGuestToolStripMenuItem";
-            this.newGuestToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.newGuestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newGuestToolStripMenuItem.Text = "New Guest";
             this.newGuestToolStripMenuItem.Click += new System.EventHandler(this.newGuestToolStripMenuItem_Click);
             // 
             // newReservationToolStripMenuItem
             // 
             this.newReservationToolStripMenuItem.Name = "newReservationToolStripMenuItem";
-            this.newReservationToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.newReservationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newReservationToolStripMenuItem.Text = "New Reservation";
+            this.newReservationToolStripMenuItem.Click += new System.EventHandler(this.newReservationToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // checkInToolStripMenuItem
             // 
             this.checkInToolStripMenuItem.Name = "checkInToolStripMenuItem";
-            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.checkInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkInToolStripMenuItem.Text = "Check-In";
+            this.checkInToolStripMenuItem.Click += new System.EventHandler(this.checkInToolStripMenuItem_Click);
             // 
             // checkOutToolStripMenuItem
             // 
             this.checkOutToolStripMenuItem.Name = "checkOutToolStripMenuItem";
-            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.checkOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkOutToolStripMenuItem.Text = "Check-Out";
+            this.checkOutToolStripMenuItem.Click += new System.EventHandler(this.checkOutToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // newUserToolStripMenuItem
             // 
             this.newUserToolStripMenuItem.Name = "newUserToolStripMenuItem";
-            this.newUserToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.newUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newUserToolStripMenuItem.Text = "New User";
+            this.newUserToolStripMenuItem.Visible = false;
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(159, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Visible = false;
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logOutToolStripMenuItem.Text = "Log-Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -177,30 +183,30 @@
             // reservationsToolStripMenuItem
             // 
             this.reservationsToolStripMenuItem.Name = "reservationsToolStripMenuItem";
-            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.reservationsToolStripMenuItem.Text = "Reservations";
+            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reservationsToolStripMenuItem.Text = "Reservation List";
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
-            this.roomsToolStripMenuItem.Text = "Rooms";
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.roomsToolStripMenuItem.Text = "Room List";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(150, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
             // 
             // checkInListToolStripMenuItem
             // 
             this.checkInListToolStripMenuItem.Name = "checkInListToolStripMenuItem";
-            this.checkInListToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.checkInListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkInListToolStripMenuItem.Text = "Check-In List";
             // 
             // checkOutListToolStripMenuItem
             // 
             this.checkOutListToolStripMenuItem.Name = "checkOutListToolStripMenuItem";
-            this.checkOutListToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.checkOutListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.checkOutListToolStripMenuItem.Text = "Check-Out List";
             // 
             // contextMenuStrip1

@@ -30,16 +30,14 @@
         {
             this.tcRoom = new System.Windows.Forms.TabControl();
             this.tpNewRoom = new System.Windows.Forms.TabPage();
-            this.cbNumPeople = new System.Windows.Forms.ComboBox();
+            this.lblRoomRate = new System.Windows.Forms.Label();
+            this.lblRoomType = new System.Windows.Forms.Label();
+            this.lblRoomNumber = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.tbRoomRate = new System.Windows.Forms.TextBox();
-            this.tbRoomType = new System.Windows.Forms.TextBox();
-            this.tbRoomNumber = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtRoomRate = new System.Windows.Forms.TextBox();
+            this.txtRoomType = new System.Windows.Forms.TextBox();
+            this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.lblNewRoom = new System.Windows.Forms.Label();
             this.tpRoomList = new System.Windows.Forms.TabPage();
             this.lblRoomList = new System.Windows.Forms.Label();
@@ -54,136 +52,114 @@
             this.tcRoom.AllowDrop = true;
             this.tcRoom.Controls.Add(this.tpNewRoom);
             this.tcRoom.Controls.Add(this.tpRoomList);
-            this.tcRoom.Location = new System.Drawing.Point(20, 21);
+            this.tcRoom.Location = new System.Drawing.Point(12, 12);
             this.tcRoom.Name = "tcRoom";
             this.tcRoom.SelectedIndex = 0;
-            this.tcRoom.Size = new System.Drawing.Size(560, 361);
+            this.tcRoom.Size = new System.Drawing.Size(669, 385);
             this.tcRoom.TabIndex = 0;
             // 
             // tpNewRoom
             // 
             this.tpNewRoom.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tpNewRoom.Controls.Add(this.cbNumPeople);
+            this.tpNewRoom.Controls.Add(this.lblRoomRate);
+            this.tpNewRoom.Controls.Add(this.lblRoomType);
+            this.tpNewRoom.Controls.Add(this.lblRoomNumber);
             this.tpNewRoom.Controls.Add(this.btnCancel);
             this.tpNewRoom.Controls.Add(this.btnSave);
-            this.tpNewRoom.Controls.Add(this.tbRoomRate);
-            this.tpNewRoom.Controls.Add(this.tbRoomType);
-            this.tpNewRoom.Controls.Add(this.tbRoomNumber);
-            this.tpNewRoom.Controls.Add(this.label4);
-            this.tpNewRoom.Controls.Add(this.label3);
-            this.tpNewRoom.Controls.Add(this.label2);
-            this.tpNewRoom.Controls.Add(this.label1);
+            this.tpNewRoom.Controls.Add(this.txtRoomRate);
+            this.tpNewRoom.Controls.Add(this.txtRoomType);
+            this.tpNewRoom.Controls.Add(this.txtRoomNumber);
             this.tpNewRoom.Controls.Add(this.lblNewRoom);
             this.tpNewRoom.Location = new System.Drawing.Point(4, 22);
             this.tpNewRoom.Name = "tpNewRoom";
             this.tpNewRoom.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNewRoom.Size = new System.Drawing.Size(552, 335);
+            this.tpNewRoom.Size = new System.Drawing.Size(661, 359);
             this.tpNewRoom.TabIndex = 1;
             this.tpNewRoom.Text = "New Room";
             // 
-            // cbNumPeople
+            // lblRoomRate
             // 
-            this.cbNumPeople.FormattingEnabled = true;
-            this.cbNumPeople.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"});
-            this.cbNumPeople.Location = new System.Drawing.Point(160, 205);
-            this.cbNumPeople.Name = "cbNumPeople";
-            this.cbNumPeople.Size = new System.Drawing.Size(121, 21);
-            this.cbNumPeople.TabIndex = 11;
-            this.cbNumPeople.Text = "0";
+            this.lblRoomRate.AutoSize = true;
+            this.lblRoomRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomRate.Location = new System.Drawing.Point(43, 168);
+            this.lblRoomRate.Name = "lblRoomRate";
+            this.lblRoomRate.Size = new System.Drawing.Size(134, 16);
+            this.lblRoomRate.TabIndex = 16;
+            this.lblRoomRate.Text = "Room Rate                  :";
+            // 
+            // lblRoomType
+            // 
+            this.lblRoomType.AutoSize = true;
+            this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomType.Location = new System.Drawing.Point(43, 138);
+            this.lblRoomType.Name = "lblRoomType";
+            this.lblRoomType.Size = new System.Drawing.Size(134, 16);
+            this.lblRoomType.TabIndex = 15;
+            this.lblRoomType.Text = "Room Type                 :";
+            // 
+            // lblRoomNumber
+            // 
+            this.lblRoomNumber.AutoSize = true;
+            this.lblRoomNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoomNumber.Location = new System.Drawing.Point(43, 111);
+            this.lblRoomNumber.Name = "lblRoomNumber";
+            this.lblRoomNumber.Size = new System.Drawing.Size(135, 16);
+            this.lblRoomNumber.TabIndex = 14;
+            this.lblRoomNumber.Text = "Room Number            :";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(415, 274);
+            this.btnCancel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(342, 286);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(94, 43);
-            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Size = new System.Drawing.Size(98, 37);
+            this.btnCancel.TabIndex = 13;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(315, 274);
+            this.btnSave.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(238, 286);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 43);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.Size = new System.Drawing.Size(98, 37);
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // tbRoomRate
+            // txtRoomRate
             // 
-            this.tbRoomRate.Location = new System.Drawing.Point(160, 174);
-            this.tbRoomRate.Multiline = true;
-            this.tbRoomRate.Name = "tbRoomRate";
-            this.tbRoomRate.Size = new System.Drawing.Size(90, 23);
-            this.tbRoomRate.TabIndex = 7;
+            this.txtRoomRate.Location = new System.Drawing.Point(204, 167);
+            this.txtRoomRate.Multiline = true;
+            this.txtRoomRate.Name = "txtRoomRate";
+            this.txtRoomRate.Size = new System.Drawing.Size(188, 22);
+            this.txtRoomRate.TabIndex = 7;
             // 
-            // tbRoomType
+            // txtRoomType
             // 
-            this.tbRoomType.Location = new System.Drawing.Point(160, 142);
-            this.tbRoomType.Multiline = true;
-            this.tbRoomType.Name = "tbRoomType";
-            this.tbRoomType.Size = new System.Drawing.Size(201, 22);
-            this.tbRoomType.TabIndex = 6;
+            this.txtRoomType.Location = new System.Drawing.Point(204, 137);
+            this.txtRoomType.Multiline = true;
+            this.txtRoomType.Name = "txtRoomType";
+            this.txtRoomType.Size = new System.Drawing.Size(188, 22);
+            this.txtRoomType.TabIndex = 6;
             // 
-            // tbRoomNumber
+            // txtRoomNumber
             // 
-            this.tbRoomNumber.Location = new System.Drawing.Point(160, 111);
-            this.tbRoomNumber.Multiline = true;
-            this.tbRoomNumber.Name = "tbRoomNumber";
-            this.tbRoomNumber.Size = new System.Drawing.Size(59, 23);
-            this.tbRoomNumber.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 208);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Number of People";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 177);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Room Rate";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Room Type";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Room Number";
+            this.txtRoomNumber.Location = new System.Drawing.Point(204, 108);
+            this.txtRoomNumber.Multiline = true;
+            this.txtRoomNumber.Name = "txtRoomNumber";
+            this.txtRoomNumber.Size = new System.Drawing.Size(188, 22);
+            this.txtRoomNumber.TabIndex = 5;
             // 
             // lblNewRoom
             // 
             this.lblNewRoom.AutoSize = true;
             this.lblNewRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewRoom.Location = new System.Drawing.Point(227, 20);
+            this.lblNewRoom.Location = new System.Drawing.Point(42, 37);
             this.lblNewRoom.Name = "lblNewRoom";
             this.lblNewRoom.Size = new System.Drawing.Size(95, 20);
             this.lblNewRoom.TabIndex = 0;
@@ -197,7 +173,7 @@
             this.tpRoomList.Location = new System.Drawing.Point(4, 22);
             this.tpRoomList.Name = "tpRoomList";
             this.tpRoomList.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRoomList.Size = new System.Drawing.Size(552, 335);
+            this.tpRoomList.Size = new System.Drawing.Size(661, 359);
             this.tpRoomList.TabIndex = 2;
             this.tpRoomList.Text = "Room List";
             // 
@@ -223,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 401);
+            this.ClientSize = new System.Drawing.Size(693, 409);
             this.Controls.Add(this.tcRoom);
             this.Name = "frmRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -241,19 +217,17 @@
 
         private System.Windows.Forms.TabControl tcRoom;
         private System.Windows.Forms.TabPage tpNewRoom;
-        private System.Windows.Forms.ComboBox cbNumPeople;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.TextBox tbRoomRate;
-        private System.Windows.Forms.TextBox tbRoomType;
-        private System.Windows.Forms.TextBox tbRoomNumber;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtRoomRate;
+        private System.Windows.Forms.TextBox txtRoomType;
+        private System.Windows.Forms.TextBox txtRoomNumber;
         private System.Windows.Forms.Label lblNewRoom;
         private System.Windows.Forms.TabPage tpRoomList;
         private System.Windows.Forms.Label lblRoomList;
         private System.Windows.Forms.ListView lvRoomList;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblRoomNumber;
+        private System.Windows.Forms.Label lblRoomRate;
+        private System.Windows.Forms.Label lblRoomType;
     }
 }

@@ -1,4 +1,13 @@
-﻿using System;
+﻿////////////////////////////////////////////////////////////////////////////////////////////////////
+// Filename         :                                                                             //
+// Author           :                                                                             //
+// Created          :                                                                             //
+// Created using    :                                                                             //
+// Usable on        :                                                                             //
+// Discription      :                                                                             //
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,20 +32,38 @@ namespace OlympusBooking
             string roomNum;
             string roomType;
             string roomRate;
-            string numPeople;
 
             //Initialising variables used in new room form
+            roomNum = txtRoomNumber.Text;
+            roomType = txtRoomType.Text;
+            roomRate = txtRoomRate.Text.ToString();
 
-            roomNum = tbRoomNumber.Text;
-            roomType = tbRoomType.Text;
-            roomRate = tbRoomRate.Text.ToString();
-            numPeople = cbNumPeople.Text.ToString();
+            if ((txtRoomNumber.Text == "") || (txtRoomType.Text == "") || (txtRoomRate.Text == ""))
+            {
+                //Message box to inform the user of errors.
+                MessageBox.Show("Please ensure all fields have values entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                //creates new instance of the Usedatabase case.
+                UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
+                useDb.ConnectToDatabase();
+                //Runs the method to add a room and returns a string as result.
+                string b = useDb.addRoom(roomNum, roomType, roomRate);
+                useDb.DisconnectDatabase();
 
-            //UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
-            //useDb.ConnectToDatabase();
-            //useDb.addRoom(sName, sSurname, sAddress, sNum, sGender, sEmail, sStatus);
-            //useDb.DisconnectDatabase();
+                //Informs the user if the room was added or if there was an error.
+                if (b == "success")
+                {
+                    MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("There was a problem with inserting into the database", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
+                this.Close();
+            }
         }
 
         //Closing room form when canceled
