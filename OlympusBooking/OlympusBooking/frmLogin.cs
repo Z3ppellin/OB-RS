@@ -31,7 +31,7 @@ namespace OlympusBooking
             useDb.ConnectToDatabase();
 
             //Generates a query for the database containing the username and password
-            string queryString = "SELECT * FROM [User] WHERE Username = '";
+            string queryString = "SELECT * FROM [Users] WHERE Username = '";
             queryString += sName.ToLower() + "'AND Password = '";   //changes the username to lowercase since it is not case sensitive to avoid errors.
             queryString += sPassword + "';";
 

@@ -71,5 +71,12 @@ namespace OlympusBooking
         {
             this.Close();
         }
+
+        private void frmRoom_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'databaseDataSet.Room' table. You can move, or remove it, as needed.
+            this.roomTableAdapter.Fill(this.databaseDataSet.Room);
+
+        }
     }
 }

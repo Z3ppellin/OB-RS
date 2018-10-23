@@ -130,5 +130,11 @@ namespace OlympusBooking
         {
             Application.Restart();
         }
+
+        private void newUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddUser frmAddUser = new frmAddUser();
+            frmAddUser.ShowDialog();
+        }
     }
 }

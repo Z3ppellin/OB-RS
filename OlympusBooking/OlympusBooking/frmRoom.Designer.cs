@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tcRoom = new System.Windows.Forms.TabControl();
             this.tpNewRoom = new System.Windows.Forms.TabPage();
             this.lblRoomRate = new System.Windows.Forms.Label();
@@ -42,9 +43,21 @@
             this.tpRoomList = new System.Windows.Forms.TabPage();
             this.lblRoomList = new System.Windows.Forms.Label();
             this.lvRoomList = new System.Windows.Forms.ListView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.databaseDataSet = new OlympusBooking.App_Data.databaseDataSet();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roomTableAdapter = new OlympusBooking.App_Data.databaseDataSetTableAdapters.RoomTableAdapter();
+            this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noOfPeopleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcRoom.SuspendLayout();
             this.tpNewRoom.SuspendLayout();
             this.tpRoomList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tcRoom
@@ -55,7 +68,7 @@
             this.tcRoom.Location = new System.Drawing.Point(12, 12);
             this.tcRoom.Name = "tcRoom";
             this.tcRoom.SelectedIndex = 0;
-            this.tcRoom.Size = new System.Drawing.Size(669, 385);
+            this.tcRoom.Size = new System.Drawing.Size(651, 389);
             this.tcRoom.TabIndex = 0;
             // 
             // tpNewRoom
@@ -73,7 +86,7 @@
             this.tpNewRoom.Location = new System.Drawing.Point(4, 22);
             this.tpNewRoom.Name = "tpNewRoom";
             this.tpNewRoom.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNewRoom.Size = new System.Drawing.Size(661, 359);
+            this.tpNewRoom.Size = new System.Drawing.Size(643, 363);
             this.tpNewRoom.TabIndex = 1;
             this.tpNewRoom.Text = "New Room";
             // 
@@ -168,12 +181,13 @@
             // tpRoomList
             // 
             this.tpRoomList.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tpRoomList.Controls.Add(this.dataGridView1);
             this.tpRoomList.Controls.Add(this.lblRoomList);
             this.tpRoomList.Controls.Add(this.lvRoomList);
             this.tpRoomList.Location = new System.Drawing.Point(4, 22);
             this.tpRoomList.Name = "tpRoomList";
             this.tpRoomList.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRoomList.Size = new System.Drawing.Size(661, 359);
+            this.tpRoomList.Size = new System.Drawing.Size(643, 363);
             this.tpRoomList.TabIndex = 2;
             this.tpRoomList.Text = "Room List";
             // 
@@ -181,7 +195,7 @@
             // 
             this.lblRoomList.AutoSize = true;
             this.lblRoomList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomList.Location = new System.Drawing.Point(223, 19);
+            this.lblRoomList.Location = new System.Drawing.Point(11, 13);
             this.lblRoomList.Name = "lblRoomList";
             this.lblRoomList.Size = new System.Drawing.Size(90, 20);
             this.lblRoomList.TabIndex = 1;
@@ -189,26 +203,99 @@
             // 
             // lvRoomList
             // 
-            this.lvRoomList.Location = new System.Drawing.Point(15, 60);
+            this.lvRoomList.Location = new System.Drawing.Point(15, 36);
             this.lvRoomList.Name = "lvRoomList";
-            this.lvRoomList.Size = new System.Drawing.Size(507, 252);
+            this.lvRoomList.Size = new System.Drawing.Size(612, 312);
             this.lvRoomList.TabIndex = 0;
             this.lvRoomList.UseCompatibleStateImageBehavior = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.roomNumberDataGridViewTextBoxColumn,
+            this.roomTypeDataGridViewTextBoxColumn,
+            this.roomRateDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.noOfPeopleDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.roomBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(637, 357);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "databaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataMember = "Room";
+            this.roomBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // roomTableAdapter
+            // 
+            this.roomTableAdapter.ClearBeforeFill = true;
+            // 
+            // roomNumberDataGridViewTextBoxColumn
+            // 
+            this.roomNumberDataGridViewTextBoxColumn.DataPropertyName = "RoomNumber";
+            this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
+            this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
+            this.roomNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // roomTypeDataGridViewTextBoxColumn
+            // 
+            this.roomTypeDataGridViewTextBoxColumn.DataPropertyName = "RoomType";
+            this.roomTypeDataGridViewTextBoxColumn.HeaderText = "RoomType";
+            this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
+            this.roomTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // roomRateDataGridViewTextBoxColumn
+            // 
+            this.roomRateDataGridViewTextBoxColumn.DataPropertyName = "RoomRate";
+            this.roomRateDataGridViewTextBoxColumn.HeaderText = "RoomRate";
+            this.roomRateDataGridViewTextBoxColumn.Name = "roomRateDataGridViewTextBoxColumn";
+            this.roomRateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // noOfPeopleDataGridViewTextBoxColumn
+            // 
+            this.noOfPeopleDataGridViewTextBoxColumn.DataPropertyName = "NoOfPeople";
+            this.noOfPeopleDataGridViewTextBoxColumn.HeaderText = "NoOfPeople";
+            this.noOfPeopleDataGridViewTextBoxColumn.Name = "noOfPeopleDataGridViewTextBoxColumn";
+            this.noOfPeopleDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 409);
+            this.ClientSize = new System.Drawing.Size(671, 413);
             this.Controls.Add(this.tcRoom);
             this.Name = "frmRoom";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Room";
+            this.Load += new System.EventHandler(this.frmRoom_Load);
             this.tcRoom.ResumeLayout(false);
             this.tpNewRoom.ResumeLayout(false);
             this.tpNewRoom.PerformLayout();
             this.tpRoomList.ResumeLayout(false);
             this.tpRoomList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,5 +316,14 @@
         private System.Windows.Forms.Label lblRoomNumber;
         private System.Windows.Forms.Label lblRoomRate;
         private System.Windows.Forms.Label lblRoomType;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private App_Data.databaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource roomBindingSource;
+        private App_Data.databaseDataSetTableAdapters.RoomTableAdapter roomTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomRateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noOfPeopleDataGridViewTextBoxColumn;
     }
 }

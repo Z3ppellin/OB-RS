@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tcReservation = new System.Windows.Forms.TabControl();
             this.tpReservation = new System.Windows.Forms.TabPage();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -56,15 +57,19 @@
             this.lblGuestName = new System.Windows.Forms.Label();
             this.lblReservationForm = new System.Windows.Forms.Label();
             this.tpReservationList = new System.Windows.Forms.TabPage();
-            this.btnCancelRes = new System.Windows.Forms.Button();
-            this.btnCheckInRes = new System.Windows.Forms.Button();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
-            this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.lblReservationList = new System.Windows.Forms.Label();
             this.lvReservation = new System.Windows.Forms.ListView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.databaseDataSet = new OlympusBooking.App_Data.databaseDataSet();
+            this.reservationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationTableAdapter = new OlympusBooking.App_Data.databaseDataSetTableAdapters.ReservationTableAdapter();
+            this.reservationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tcReservation.SuspendLayout();
             this.tpReservation.SuspendLayout();
             this.tpReservationList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tcReservation
@@ -363,10 +368,7 @@
             // tpReservationList
             // 
             this.tpReservationList.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tpReservationList.Controls.Add(this.btnCancelRes);
-            this.tpReservationList.Controls.Add(this.btnCheckInRes);
-            this.tpReservationList.Controls.Add(this.dtpTo);
-            this.tpReservationList.Controls.Add(this.dtpFrom);
+            this.tpReservationList.Controls.Add(this.dataGridView1);
             this.tpReservationList.Controls.Add(this.lblReservationList);
             this.tpReservationList.Controls.Add(this.lvReservation);
             this.tpReservationList.Location = new System.Drawing.Point(4, 22);
@@ -376,43 +378,11 @@
             this.tpReservationList.TabIndex = 1;
             this.tpReservationList.Text = "Reservation List";
             // 
-            // btnCancelRes
-            // 
-            this.btnCancelRes.Location = new System.Drawing.Point(611, 357);
-            this.btnCancelRes.Name = "btnCancelRes";
-            this.btnCancelRes.Size = new System.Drawing.Size(127, 35);
-            this.btnCancelRes.TabIndex = 5;
-            this.btnCancelRes.Text = "Cancel Reservation";
-            this.btnCancelRes.UseVisualStyleBackColor = true;
-            // 
-            // btnCheckInRes
-            // 
-            this.btnCheckInRes.Location = new System.Drawing.Point(503, 357);
-            this.btnCheckInRes.Name = "btnCheckInRes";
-            this.btnCheckInRes.Size = new System.Drawing.Size(92, 35);
-            this.btnCheckInRes.TabIndex = 4;
-            this.btnCheckInRes.Text = "Check In";
-            this.btnCheckInRes.UseVisualStyleBackColor = true;
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.Location = new System.Drawing.Point(226, 360);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(200, 20);
-            this.dtpTo.TabIndex = 3;
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.Location = new System.Drawing.Point(20, 360);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(200, 20);
-            this.dtpFrom.TabIndex = 2;
-            // 
             // lblReservationList
             // 
             this.lblReservationList.AutoSize = true;
             this.lblReservationList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationList.Location = new System.Drawing.Point(282, 20);
+            this.lblReservationList.Location = new System.Drawing.Point(16, 16);
             this.lblReservationList.Name = "lblReservationList";
             this.lblReservationList.Size = new System.Drawing.Size(139, 20);
             this.lblReservationList.TabIndex = 1;
@@ -420,11 +390,48 @@
             // 
             // lvReservation
             // 
-            this.lvReservation.Location = new System.Drawing.Point(20, 53);
+            this.lvReservation.Location = new System.Drawing.Point(20, 39);
             this.lvReservation.Name = "lvReservation";
-            this.lvReservation.Size = new System.Drawing.Size(718, 301);
+            this.lvReservation.Size = new System.Drawing.Size(718, 338);
             this.lvReservation.TabIndex = 0;
             this.lvReservation.UseCompatibleStateImageBehavior = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.reservationIDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.reservationBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(754, 389);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "databaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reservationBindingSource
+            // 
+            this.reservationBindingSource.DataMember = "Reservation";
+            this.reservationBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // reservationTableAdapter
+            // 
+            this.reservationTableAdapter.ClearBeforeFill = true;
+            // 
+            // reservationIDDataGridViewTextBoxColumn
+            // 
+            this.reservationIDDataGridViewTextBoxColumn.DataPropertyName = "ReservationID";
+            this.reservationIDDataGridViewTextBoxColumn.HeaderText = "ReservationID";
+            this.reservationIDDataGridViewTextBoxColumn.Name = "reservationIDDataGridViewTextBoxColumn";
+            this.reservationIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmReservation
             // 
@@ -435,11 +442,15 @@
             this.Name = "frmReservation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reservation";
+            this.Load += new System.EventHandler(this.frmReservation_Load);
             this.tcReservation.ResumeLayout(false);
             this.tpReservation.ResumeLayout(false);
             this.tpReservation.PerformLayout();
             this.tpReservationList.ResumeLayout(false);
             this.tpReservationList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,11 +485,12 @@
         private System.Windows.Forms.Label lblGuestName;
         private System.Windows.Forms.Label lblReservationForm;
         private System.Windows.Forms.TabPage tpReservationList;
-        private System.Windows.Forms.Button btnCancelRes;
-        private System.Windows.Forms.Button btnCheckInRes;
-        private System.Windows.Forms.DateTimePicker dtpTo;
-        private System.Windows.Forms.DateTimePicker dtpFrom;
         private System.Windows.Forms.Label lblReservationList;
         private System.Windows.Forms.ListView lvReservation;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private App_Data.databaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource reservationBindingSource;
+        private App_Data.databaseDataSetTableAdapters.ReservationTableAdapter reservationTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reservationIDDataGridViewTextBoxColumn;
     }
 }

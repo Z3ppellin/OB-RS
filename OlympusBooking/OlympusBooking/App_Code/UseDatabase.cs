@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace OlympusBooking
 {   
@@ -61,15 +62,24 @@ namespace OlympusBooking
             }
         }
 
-        //Registers a new user on the database (requiring admin password to do so)
-        public string RegisterUser(string userName, string pass, string amdinPass)
+        //Registers a new user on the database
+        public string addUser(string userName, string pass)
         {
             try
             {
-                OleDbCommand cmd = conn.CreateCommand();
-                cmd.CommandText = (@"INSERT INTO User([Username],[Password])
-                                   VALUES('" + userName + "','" + pass + "')");
+                OleDbCommand cmd = new OleDbCommand();
+                OleDbConnection conn = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\App_Data\\database.accdb");
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = @"INSERT INTO Users([Username],[Password]) VALUES (@sUserName,@sPassword)";
+                cmd.Parameters.AddWithValue("@sUserName", userName);
+                cmd.Parameters.AddWithValue("@sPassword", pass);
+
+                cmd.Connection = conn;
+                conn.Open();
                 cmd.ExecuteNonQuery();
+                conn.Close();
+
                 return "success";
             }
             catch (OleDbException)
@@ -78,10 +88,9 @@ namespace OlympusBooking
             }                
                         
         }
-        #endregion
 
         //Adds a new guest to the guest table.
-        public string addGuest(string fName,string lName,string add,string number,string gender, string email,string status)
+        public string addGuest(string fName, string lName, string add, string number, string gender, string email, string status)
         {
             try
             {
@@ -119,13 +128,17 @@ namespace OlympusBooking
         }
 
         //Updates the neccessary tables so the user status is checked-in.
-        public string CheckIn(string sName)
+        public string CheckIn(string sName, string roomNo, string noPeople)
         {
             try
             {
                 String myQuery = "UPDATE [Guest] Set [Status] = 'Checked-In' WHERE [GuestName] = '" + sName + "'";
-                OleDbCommand cmd = new OleDbCommand(myQuery, conn);
-                cmd.ExecuteNonQuery();
+                OleDbCommand cmd1 = new OleDbCommand(myQuery, conn);
+                cmd1.ExecuteNonQuery();
+
+                String myQuery2 = "UPDATE [Room] Set [Status] = 'Checked-In',[NoOfPeople] = '" + noPeople + "' WHERE [RoomNumber] = '" + roomNo + "'";
+                OleDbCommand cmd2 = new OleDbCommand(myQuery2, conn);
+                cmd2.ExecuteNonQuery();
 
                 return "success";
             }
@@ -134,6 +147,6 @@ namespace OlympusBooking
                 return "fail";
             }
         }
-       
+        #endregion
     }
 }

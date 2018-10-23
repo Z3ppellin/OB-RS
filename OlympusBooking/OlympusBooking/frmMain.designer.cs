@@ -147,6 +147,7 @@
             this.newUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newUserToolStripMenuItem.Text = "New User";
             this.newUserToolStripMenuItem.Visible = false;
+            this.newUserToolStripMenuItem.Click += new System.EventHandler(this.newUserToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -183,30 +184,30 @@
             // reservationsToolStripMenuItem
             // 
             this.reservationsToolStripMenuItem.Name = "reservationsToolStripMenuItem";
-            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.reservationsToolStripMenuItem.Text = "Reservation List";
             // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.roomsToolStripMenuItem.Text = "Room List";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(153, 6);
             // 
             // checkInListToolStripMenuItem
             // 
             this.checkInListToolStripMenuItem.Name = "checkInListToolStripMenuItem";
-            this.checkInListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkInListToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.checkInListToolStripMenuItem.Text = "Check-In List";
             // 
             // checkOutListToolStripMenuItem
             // 
             this.checkOutListToolStripMenuItem.Name = "checkOutListToolStripMenuItem";
-            this.checkOutListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkOutListToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.checkOutListToolStripMenuItem.Text = "Check-Out List";
             // 
             // contextMenuStrip1

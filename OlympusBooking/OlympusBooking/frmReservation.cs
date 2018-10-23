@@ -46,5 +46,12 @@ namespace OlympusBooking
             total = tbTotal.Text.ToString();
               
         }
+
+        private void frmReservation_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'databaseDataSet.Reservation' table. You can move, or remove it, as needed.
+            this.reservationTableAdapter.Fill(this.databaseDataSet.Reservation);
+
+        }
     }
 }

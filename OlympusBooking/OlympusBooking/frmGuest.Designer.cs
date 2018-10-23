@@ -51,11 +51,26 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.epContact = new System.Windows.Forms.ErrorProvider(this.components);
             this.epEmail = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.databaseDataSet = new OlympusBooking.App_Data.databaseDataSet();
+            this.guestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.guestTableAdapter = new OlympusBooking.App_Data.databaseDataSetTableAdapters.GuestTableAdapter();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestSurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestContactNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestGenderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guestEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epContact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -240,12 +255,13 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.lblGuestList2);
             this.tabPage2.Controls.Add(this.listView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(761, 393);
+            this.tabPage2.Size = new System.Drawing.Size(768, 400);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Guest List";
             // 
@@ -253,7 +269,7 @@
             // 
             this.lblGuestList2.AutoSize = true;
             this.lblGuestList2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuestList2.Location = new System.Drawing.Point(31, 27);
+            this.lblGuestList2.Location = new System.Drawing.Point(21, 16);
             this.lblGuestList2.Name = "lblGuestList2";
             this.lblGuestList2.Size = new System.Drawing.Size(92, 20);
             this.lblGuestList2.TabIndex = 1;
@@ -261,9 +277,9 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(25, 61);
+            this.listView1.Location = new System.Drawing.Point(25, 39);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(714, 278);
+            this.listView1.Size = new System.Drawing.Size(723, 342);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -275,6 +291,99 @@
             // 
             this.epEmail.ContainerControl = this;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.guestNameDataGridViewTextBoxColumn,
+            this.guestSurnameDataGridViewTextBoxColumn,
+            this.guestAddressDataGridViewTextBoxColumn,
+            this.guestContactNumberDataGridViewTextBoxColumn,
+            this.guestGenderDataGridViewTextBoxColumn,
+            this.guestEmailDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.guestBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(762, 394);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "databaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // guestBindingSource
+            // 
+            this.guestBindingSource.DataMember = "Guest";
+            this.guestBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // guestTableAdapter
+            // 
+            this.guestTableAdapter.ClearBeforeFill = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // guestNameDataGridViewTextBoxColumn
+            // 
+            this.guestNameDataGridViewTextBoxColumn.DataPropertyName = "GuestName";
+            this.guestNameDataGridViewTextBoxColumn.HeaderText = "GuestName";
+            this.guestNameDataGridViewTextBoxColumn.Name = "guestNameDataGridViewTextBoxColumn";
+            this.guestNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // guestSurnameDataGridViewTextBoxColumn
+            // 
+            this.guestSurnameDataGridViewTextBoxColumn.DataPropertyName = "GuestSurname";
+            this.guestSurnameDataGridViewTextBoxColumn.HeaderText = "GuestSurname";
+            this.guestSurnameDataGridViewTextBoxColumn.Name = "guestSurnameDataGridViewTextBoxColumn";
+            this.guestSurnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // guestAddressDataGridViewTextBoxColumn
+            // 
+            this.guestAddressDataGridViewTextBoxColumn.DataPropertyName = "GuestAddress";
+            this.guestAddressDataGridViewTextBoxColumn.HeaderText = "GuestAddress";
+            this.guestAddressDataGridViewTextBoxColumn.Name = "guestAddressDataGridViewTextBoxColumn";
+            this.guestAddressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // guestContactNumberDataGridViewTextBoxColumn
+            // 
+            this.guestContactNumberDataGridViewTextBoxColumn.DataPropertyName = "GuestContactNumber";
+            this.guestContactNumberDataGridViewTextBoxColumn.HeaderText = "GuestContactNumber";
+            this.guestContactNumberDataGridViewTextBoxColumn.Name = "guestContactNumberDataGridViewTextBoxColumn";
+            this.guestContactNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // guestGenderDataGridViewTextBoxColumn
+            // 
+            this.guestGenderDataGridViewTextBoxColumn.DataPropertyName = "GuestGender";
+            this.guestGenderDataGridViewTextBoxColumn.HeaderText = "GuestGender";
+            this.guestGenderDataGridViewTextBoxColumn.Name = "guestGenderDataGridViewTextBoxColumn";
+            this.guestGenderDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // guestEmailDataGridViewTextBoxColumn
+            // 
+            this.guestEmailDataGridViewTextBoxColumn.DataPropertyName = "GuestEmail";
+            this.guestEmailDataGridViewTextBoxColumn.HeaderText = "GuestEmail";
+            this.guestEmailDataGridViewTextBoxColumn.Name = "guestEmailDataGridViewTextBoxColumn";
+            this.guestEmailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frmGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,6 +393,7 @@
             this.Name = "frmGuest";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Guest";
+            this.Load += new System.EventHandler(this.frmGuest_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -291,6 +401,9 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epContact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guestBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,5 +432,17 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.ErrorProvider epContact;
         private System.Windows.Forms.ErrorProvider epEmail;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private App_Data.databaseDataSet databaseDataSet;
+        private System.Windows.Forms.BindingSource guestBindingSource;
+        private App_Data.databaseDataSetTableAdapters.GuestTableAdapter guestTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn guestNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn guestSurnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn guestAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn guestContactNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn guestGenderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn guestEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }
