@@ -20,33 +20,40 @@ namespace OlympusBooking
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			
-			String sPassword = tbAdminPassword.Text;
-						
-			//New instance of UseDatabase class.
-			UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
 
-			//Connect database.
-			useDb.ConnectToDatabase();
+            if (tbAdminPassword.Text == "")
+            {
+                epAdminPass.SetError(this.tbAdminPassword, "Please enter an admin password");
+            }
+            else
+            {
+                String sPassword = tbAdminPassword.Text;
 
-			string queryString = "SELECT * FROM [Users] WHERE Username = 'Admin' AND Password = '";
-			queryString += sPassword + "';";
+                //New instance of UseDatabase class.
+                UseDatabase useDb = new UseDatabase(Application.StartupPath + "\\App_Data\\database.accdb");
 
-			//Execute query to check for matches.
-			OleDbDataReader dbReader = useDb.ExecuteQuery(queryString);
+                //Connect database.
+                useDb.ConnectToDatabase();
 
-			//If there are rows in the result from the ExecuteQuery then the check was successful.
-			if (dbReader != null && dbReader.HasRows)
-			{
-				this.Hide();
-				MessageBox.Show("Success!","Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				frmForgotPassword FP = new frmForgotPassword();
-				FP.ShowDialog();
-			}
-			else
-			{
-				MessageBox.Show("Incorrect password!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
+                string queryString = "SELECT * FROM [Users] WHERE Username = 'Admin' AND Password = '";
+                queryString += sPassword + "';";
+
+                //Execute query to check for matches.
+                OleDbDataReader dbReader = useDb.ExecuteQuery(queryString);
+
+                //If there are rows in the result from the ExecuteQuery then the check was successful.
+                if (dbReader != null && dbReader.HasRows)
+                {
+                    this.Hide();
+                    MessageBox.Show("Success!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmForgotPassword FP = new frmForgotPassword();
+                    FP.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect password!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
 		}		
 
 		private void frmAdminConfirm_close(object sender, EventArgs e)

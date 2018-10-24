@@ -23,34 +23,42 @@ namespace OlympusBooking
 			string newPassword;
 			string userName;
 
-			//Opening connection to database
-			OleDbCommand cmd = new OleDbCommand();
-			OleDbConnection myCon = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\User\Desktop\Olympus Hotel\OlympusBooking\OlympusBooking\App_Data\database.accdb");
+            if (tbUserName.Text == "" || tbPassword.Text == "" || tbConfirmPassword.Text == "")
+            {
+                MessageBox.Show("Please ensure all fields are entered", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                //Opening connection to database
+                OleDbCommand cmd = new OleDbCommand();
+                OleDbConnection myCon = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\App_Data\\database.accdb");
 
-			//Initialising variables
-			newPassword = tbPassword.Text;
-			userName = tbUserName.Text;
-			if (tbPassword.Text != tbConfirmPassword.Text)
-			{
-				epPassword.SetError(this.tbConfirmPassword, "Passwords do not match");
-			}
-			else
-			{
-				cmd.CommandType = CommandType.Text;
-				cmd.CommandText = "UPDATE [User] SET [Password] = @newPassword WHERE [Username] = @userName";
+                //Initialising variables
+                newPassword = tbPassword.Text;
+                userName = tbUserName.Text;
 
-				cmd.Parameters.AddWithValue("@newPassword", newPassword);
-				cmd.Parameters.AddWithValue("@userName", userName);
+                if (tbPassword.Text != tbConfirmPassword.Text)
+                {
+                    epPassword.SetError(this.tbConfirmPassword, "Passwords do not match");
+                }
+                else
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "UPDATE [Users] SET [Password] = @newPassword WHERE [Username] = @userName";
 
-				cmd.Connection = myCon;
-				myCon.Open();
-				cmd.ExecuteNonQuery();
-				System.Windows.Forms.MessageBox.Show("Password has been reset!", "Caption", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-				myCon.Close();
-								
-				Application.Restart();
-				
-			}
+                    cmd.Parameters.AddWithValue("@newPassword", newPassword);
+                    cmd.Parameters.AddWithValue("@userName", userName);
+
+                    cmd.Connection = myCon;
+                    myCon.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Password has been reset!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    myCon.Close();
+
+                    //Restarts application after changing password.
+                    Application.Restart();
+                }
+            }
 		}
 
 		private void btnCancel_Click(object sender, EventArgs e)
