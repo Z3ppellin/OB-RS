@@ -54,13 +54,7 @@
             this.lblGuestName = new System.Windows.Forms.Label();
             this.lblCheckInForm = new System.Windows.Forms.Label();
             this.tbCheckInList = new System.Windows.Forms.TabPage();
-            this.lblCheckInList = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.databaseDataSet = new OlympusBooking.App_Data.databaseDataSet();
-            this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checkInBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.checkInTableAdapter = new OlympusBooking.App_Data.databaseDataSetTableAdapters.CheckInTableAdapter();
             this.transIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guestIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,14 +63,24 @@
             this.reservationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noOfChildDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noOfAdultDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkInBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new OlympusBooking.App_Data.databaseDataSet();
+            this.lblCheckInList = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.checkInTableAdapter = new OlympusBooking.App_Data.databaseDataSetTableAdapters.CheckInTableAdapter();
+            this.epRoomNo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epGuestName = new System.Windows.Forms.ErrorProvider(this.components);
             this.tbcCheckIn.SuspendLayout();
             this.tpCheckInForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAdults)).BeginInit();
             this.tbCheckInList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRoomNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epGuestName)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcCheckIn
@@ -124,9 +128,19 @@
             // numAdults
             // 
             this.numAdults.Location = new System.Drawing.Point(567, 74);
+            this.numAdults.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numAdults.Name = "numAdults";
             this.numAdults.Size = new System.Drawing.Size(63, 20);
             this.numAdults.TabIndex = 38;
+            this.numAdults.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numAdults.ValueChanged += new System.EventHandler(this.numAdults_ValueChanged);
             // 
             // txtSubTotal
@@ -146,6 +160,7 @@
             this.txtNoDays.ReadOnly = true;
             this.txtNoDays.Size = new System.Drawing.Size(63, 22);
             this.txtNoDays.TabIndex = 35;
+            this.txtNoDays.TextChanged += new System.EventHandler(this.txtNoDays_TextChanged);
             // 
             // dtpCheckOutTime
             // 
@@ -219,9 +234,11 @@
             // 
             this.dtpCheckOutDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpCheckOutDate.Location = new System.Drawing.Point(171, 248);
+            this.dtpCheckOutDate.MinDate = new System.DateTime(2018, 10, 24, 0, 0, 0, 0);
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(101, 20);
             this.dtpCheckOutDate.TabIndex = 21;
+            this.dtpCheckOutDate.Value = new System.DateTime(2018, 10, 25, 0, 0, 0, 0);
             this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
             // 
             // txtRoomNumber
@@ -240,6 +257,7 @@
             this.txtGuestName.Name = "txtGuestName";
             this.txtGuestName.Size = new System.Drawing.Size(188, 22);
             this.txtGuestName.TabIndex = 16;
+            this.txtGuestName.Leave += new System.EventHandler(this.txtGuestName_Leave);
             // 
             // lblSubTotal
             // 
@@ -344,24 +362,6 @@
             this.tbCheckInList.TabIndex = 1;
             this.tbCheckInList.Text = "Check in list";
             // 
-            // lblCheckInList
-            // 
-            this.lblCheckInList.AutoSize = true;
-            this.lblCheckInList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckInList.Location = new System.Drawing.Point(11, 14);
-            this.lblCheckInList.Name = "lblCheckInList";
-            this.lblCheckInList.Size = new System.Drawing.Size(114, 20);
-            this.lblCheckInList.TabIndex = 4;
-            this.lblCheckInList.Text = "Check In List";
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(15, 37);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(767, 327);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -384,25 +384,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(782, 392);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "databaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // databaseDataSetBindingSource
-            // 
-            this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
-            this.databaseDataSetBindingSource.Position = 0;
-            // 
-            // checkInBindingSource
-            // 
-            this.checkInBindingSource.DataMember = "CheckIn";
-            this.checkInBindingSource.DataSource = this.databaseDataSetBindingSource;
-            // 
-            // checkInTableAdapter
-            // 
-            this.checkInTableAdapter.ClearBeforeFill = true;
             // 
             // transIDDataGridViewTextBoxColumn
             // 
@@ -460,6 +441,51 @@
             this.noOfAdultDataGridViewTextBoxColumn.Name = "noOfAdultDataGridViewTextBoxColumn";
             this.noOfAdultDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // checkInBindingSource
+            // 
+            this.checkInBindingSource.DataMember = "CheckIn";
+            this.checkInBindingSource.DataSource = this.databaseDataSetBindingSource;
+            // 
+            // databaseDataSetBindingSource
+            // 
+            this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
+            this.databaseDataSetBindingSource.Position = 0;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "databaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblCheckInList
+            // 
+            this.lblCheckInList.AutoSize = true;
+            this.lblCheckInList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCheckInList.Location = new System.Drawing.Point(11, 14);
+            this.lblCheckInList.Name = "lblCheckInList";
+            this.lblCheckInList.Size = new System.Drawing.Size(114, 20);
+            this.lblCheckInList.TabIndex = 4;
+            this.lblCheckInList.Text = "Check In List";
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(15, 37);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(767, 327);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // checkInTableAdapter
+            // 
+            this.checkInTableAdapter.ClearBeforeFill = true;
+            // 
+            // epRoomNo
+            // 
+            this.epRoomNo.ContainerControl = this;
+            // 
+            // epGuestName
+            // 
+            this.epGuestName.ContainerControl = this;
+            // 
             // frmCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,9 +503,11 @@
             this.tbCheckInList.ResumeLayout(false);
             this.tbCheckInList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRoomNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epGuestName)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,5 +554,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reservationDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noOfChildDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noOfAdultDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ErrorProvider epRoomNo;
+        private System.Windows.Forms.ErrorProvider epGuestName;
     }
 }
