@@ -16,41 +16,45 @@ namespace OlympusBooking
         //Initialises 2 DateTime variables to calculate the number of days a guest will stay.
         DateTime d1;
         DateTime d2;
+        //Global variables.
+        int subTotalDays;
+        int subTotalPeople = 0;
+        int subTotal = 0;
+        int roomRate = 0;
+        int c;
+        static int first = 0, second = 0;
 
         public frmCheckIn()
         {
-            InitializeComponent();         
+            InitializeComponent();
+            dtpCheckOutDate.MinDate = DateTime.Now.AddDays(1);
+            d1 = DateTime.Now;
+            txtCheckInDate.Text = d1.ToString();
+            d2 = dtpCheckOutDate.Value;
+            int iNumDays = (Convert.ToInt32((d2 - d1).TotalDays));
+            txtNoDays.Text = iNumDays.ToString();
         }
 
         //When the Check-In button is clicked.
         private void btnCheckIn_Click(object sender, EventArgs e)
         {
             //Declaring variables used in the check form.
-            string guestName;
-            string roomNum;
-            string roomType;
-            string roomRate;
-            string checkInDate;
-            string numOfDays;
-            string numPeople;
-            string subTotal;
+            string guestName = txtGuestName.Text;
+            string roomNum = txtRoomNumber.Text;
+            string roomType = txtRoomType.Text;
+            string numPeople = (numAdults.Value).ToString();
+            
 
             //Initialising variables to given values.
-            guestName = txtGuestName.Text;
-            roomNum = txtRoomNumber.Text;
-            roomType = txtRoomType.Text;
-            roomRate = txtRoomRate.Text;
-            checkInDate = DateTime.Now.ToString();
-            numOfDays = txtNoDays.Text;
-            numPeople = (numAdults.Value).ToString();
-            subTotal = txtSubTotal.Text.ToString();
+
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
+
             //Create a new instance of the UseDatabase case.
             UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
             useDb.ConnectToDatabase();
             string b = useDb.CheckIn(guestName, roomNum, numPeople);
+
             //Informs user of success or failure of database entry.
             if (b == "success")
             {
@@ -70,8 +74,6 @@ namespace OlympusBooking
         {
             // TODO: This line of code loads data into the 'databaseDataSet.CheckIn' table. You can move, or remove it, as needed.
             this.checkInTableAdapter.Fill(this.databaseDataSet.CheckIn);
-            d1 = DateTime.Now;
-            txtCheckInDate.Text = d1.ToString();
             dtpCheckOutTime.ShowUpDown = true;
         }
 
@@ -91,37 +93,124 @@ namespace OlympusBooking
 
         private void txtRoomNumber_Leave(object sender, EventArgs e)
         {
-            //New instance of UseDatabase class.
-            UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
-
-            //Connect database.
-            useDb.ConnectToDatabase();
-
-            //Execute query to autofill room data from the room number provided.
-            string queryString = "SELECT RoomType, RoomRate FROM [Room] WHERE RoomNumber = '" + txtRoomNumber.Text + "'";
-
-            //Execute query to check for matches in the database.
-            OleDbDataReader dbReader = useDb.ExecuteQuery(queryString);
-
-            //If there are rows in the result from the ExecuteQuery then the check was successful meaning there was a match.
-            if (dbReader != null && dbReader.HasRows)
+            //Checks if the room no field is empty.
+            if (txtRoomNumber.Text != "")
             {
-                //Informs the user that the login was successfull with a warming message.
-                if (dbReader.Read())
+                epGuestName.Clear();
+
+                //New instance of UseDatabase class.
+                UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
+
+                //Connect database.
+                useDb.ConnectToDatabase();
+
+                //Execute query to autofill room data from the room number provided.
+                string queryString = "SELECT RoomType, RoomRate FROM [Room] WHERE RoomNumber = '" + txtRoomNumber.Text + "'";
+
+                //Execute query to check for matches in the database.
+                OleDbDataReader dbReader = useDb.ExecuteQuery(queryString);
+
+                //If there are rows in the result from the ExecuteQuery then the check was successful meaning there was a match.
+                if (dbReader != null && dbReader.HasRows)
                 {
-                    txtRoomType.Text = dbReader[0].ToString();
-                    txtRoomRate.Text = dbReader[1].ToString();
+                    //Checks for matches to the room no to get the room type and rate from the database.
+                    if (dbReader.Read())
+                    {
+                        txtRoomType.Text = dbReader[0].ToString();
+                        txtRoomRate.Text = dbReader[1].ToString();
+                        roomRate = Convert.ToInt32(txtRoomRate.Text);
+                        txtSubTotal.Text = "R" + txtRoomRate.Text;
+                        subTotal = Convert.ToInt32(txtNoDays.Text) * roomRate;
+                    }
+                }
+                else
+                {
+                    //Informs the user if the room was not found.
+                    epRoomNo.SetError(this.txtRoomNumber, "Room number not found");
                 }
             }
             else
             {
-                MessageBox.Show("Room no does not exist");
+                //Asks the user to enter a room no.
+                epRoomNo.SetError(this.txtRoomNumber, "Please enter a room number");
             }
         }
 
+        //Changes the subtotal value to increase the price by 30% for each person more than two living in the room.
         private void numAdults_ValueChanged(object sender, EventArgs e)
         {
-            txtSubTotal.Text = "R " + (Convert.ToInt32(txtRoomRate.Text) * numAdults.Value);
+            if (numAdults.Value > 2)
+            {
+                if (numAdults.Value >= c)
+                {
+                    roomRate = Convert.ToInt32(txtRoomRate.Text);
+                    subTotalPeople = subTotalPeople + Convert.ToInt32((roomRate * 0.3));
+                    subTotalDays = (Convert.ToInt32(txtRoomRate.Text) * Convert.ToInt32(txtNoDays.Text));
+                    subTotal = subTotalDays + subTotalPeople;
+                    txtSubTotal.Text = "R" + subTotal.ToString();
+                }
+                else if ((numAdults.Value < c) && subTotalPeople != 0)
+                {
+                    roomRate = Convert.ToInt32(txtRoomRate.Text);
+                    subTotalPeople = subTotalPeople - Convert.ToInt32((roomRate * 0.3));
+                    subTotal = subTotalDays + subTotalPeople;
+                    txtSubTotal.Text = "R" + subTotal.ToString();
+                }
+
+                c = Convert.ToInt32(numAdults.Value);
+            }
+            else if (numAdults.Value < 3)
+            {
+                subTotalPeople = 0;
+                subTotal = roomRate * Convert.ToInt32(txtNoDays.Text);
+                txtSubTotal.Text = "R" + subTotal.ToString();
+            }
+        }
+
+        private void txtGuestName_Leave(object sender, EventArgs e)
+        {
+            if (txtGuestName.Text != "")
+            {
+                //Clears the error provider for guest name.
+                epGuestName.Clear();
+
+                //New instance of UseDatabase class.
+                UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
+
+                //Connect database.
+                useDb.ConnectToDatabase();
+
+                //Execute query to autofill room data from the room number provided.
+                string queryString = "SELECT GuestName FROM [Guest] WHERE Guestname = '" + txtGuestName.Text + "'";
+
+                //Execute query to check for matches in the database.
+                OleDbDataReader dbReader = useDb.ExecuteQuery(queryString);
+
+                //If there are rows in the result from the ExecuteQuery then the check was successful meaning there was a match.
+                if (dbReader != null && dbReader.HasRows)
+                {
+                    epGuestName.Clear();
+                }
+                else
+                {
+                    epGuestName.SetError(this.txtGuestName, "Guest not found");
+                }
+            }
+            else
+            {
+                epGuestName.SetError(this.txtGuestName, "Please enter a guest name");
+            }
+        }
+
+        //Updates the cost per amount of days staying in.
+        private void txtNoDays_TextChanged(object sender, EventArgs e)
+        {
+            if (Int32.TryParse(txtRoomRate.Text, out second) && Int32.TryParse(txtNoDays.Text, out first))
+            {
+                subTotalDays = (first * second);
+                subTotal = subTotalPeople + subTotalDays;
+                txtSubTotal.Text = "R" + subTotal.ToString();
+            }
         }
     }
 }
