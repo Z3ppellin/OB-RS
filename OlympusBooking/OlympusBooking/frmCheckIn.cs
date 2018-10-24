@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.IO;
 
 namespace OlympusBooking
 {
@@ -43,7 +44,7 @@ namespace OlympusBooking
             string roomNum = txtRoomNumber.Text;
             string roomType = txtRoomType.Text;
             string numPeople = (numAdults.Value).ToString();
-
+			DateTime currentDate = DateTime.Now;
 
             //Initialising variables to given values.
 
@@ -65,7 +66,8 @@ namespace OlympusBooking
                 if (b == "success")
                 {
                     MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Check-In.txt", "Guest : " + guestName + " Has been Checked-in ,on : " + currentDate + Environment.NewLine);///////////////////////////////////////////////////////////////////////////////////////
+				}
                 else
                 {
                     MessageBox.Show("Fail");

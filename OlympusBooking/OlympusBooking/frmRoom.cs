@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace OlympusBooking
 {
@@ -32,6 +33,7 @@ namespace OlympusBooking
             string roomNum;
             string roomType;
             string roomRate;
+			DateTime currentDate = DateTime.Now;
 
             //Initialising variables used in new room form
             roomNum = txtRoomNumber.Text;
@@ -55,8 +57,9 @@ namespace OlympusBooking
                 //Informs the user if the room was added or if there was an error.
                 if (b == "success")
                 {
-                    MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                    MessageBox.Show("A Room has been successfully added", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Room.txt", "Room : " + roomNum + " Has been added :" + currentDate + Environment.NewLine);////////////////////////////////////////////////////////////////////////////////////
+				}
                 else
                 {
                     MessageBox.Show("There was a problem with inserting into the database", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Error);
