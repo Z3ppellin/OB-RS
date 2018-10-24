@@ -36,34 +36,27 @@
             this.lblCheckIn = new System.Windows.Forms.Label();
             this.lblCheckOut = new System.Windows.Forms.Label();
             this.lblNoDays = new System.Windows.Forms.Label();
-            this.lblChildren = new System.Windows.Forms.Label();
-            this.lblAdults = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
-            this.lblBalance = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tbGuestName = new System.Windows.Forms.TextBox();
-            this.tbRoomNumber = new System.Windows.Forms.TextBox();
-            this.tbRoomType = new System.Windows.Forms.TextBox();
-            this.tbRoomRate = new System.Windows.Forms.TextBox();
-            this.tbCheckIn = new System.Windows.Forms.TextBox();
-            this.tbCheckOut = new System.Windows.Forms.TextBox();
-            this.tbDays = new System.Windows.Forms.TextBox();
-            this.tbChildren = new System.Windows.Forms.TextBox();
-            this.tbAdults = new System.Windows.Forms.TextBox();
-            this.tbTotal = new System.Windows.Forms.TextBox();
-            this.tbBalance = new System.Windows.Forms.TextBox();
-            this.tbCash = new System.Windows.Forms.TextBox();
-            this.tbChange = new System.Windows.Forms.TextBox();
-            this.btnCheckout = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lblPeople = new System.Windows.Forms.Label();
+            this.lblSubTotal = new System.Windows.Forms.Label();
+            this.txtGuestName = new System.Windows.Forms.TextBox();
+            this.txtRoomNo = new System.Windows.Forms.TextBox();
+            this.txtRoomType = new System.Windows.Forms.TextBox();
+            this.txtRoomRate = new System.Windows.Forms.TextBox();
+            this.txtCheckIn = new System.Windows.Forms.TextBox();
+            this.txtCheckOut = new System.Windows.Forms.TextBox();
+            this.txtNoDays = new System.Windows.Forms.TextBox();
+            this.txtNoPeople = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
+            this.btnRoomNo = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCheckOutGuest
             // 
             this.lblCheckOutGuest.AutoSize = true;
             this.lblCheckOutGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOutGuest.Location = new System.Drawing.Point(307, 24);
+            this.lblCheckOutGuest.Location = new System.Drawing.Point(33, 23);
             this.lblCheckOutGuest.Name = "lblCheckOutGuest";
             this.lblCheckOutGuest.Size = new System.Drawing.Size(147, 20);
             this.lblCheckOutGuest.TabIndex = 0;
@@ -73,7 +66,7 @@
             // 
             this.lblGuestName.AutoSize = true;
             this.lblGuestName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGuestName.Location = new System.Drawing.Point(34, 78);
+            this.lblGuestName.Location = new System.Drawing.Point(33, 76);
             this.lblGuestName.Name = "lblGuestName";
             this.lblGuestName.Size = new System.Drawing.Size(99, 20);
             this.lblGuestName.TabIndex = 1;
@@ -83,7 +76,7 @@
             // 
             this.lblRoomNum.AutoSize = true;
             this.lblRoomNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomNum.Location = new System.Drawing.Point(33, 113);
+            this.lblRoomNum.Location = new System.Drawing.Point(33, 109);
             this.lblRoomNum.Name = "lblRoomNum";
             this.lblRoomNum.Size = new System.Drawing.Size(112, 20);
             this.lblRoomNum.TabIndex = 2;
@@ -93,7 +86,7 @@
             // 
             this.lblRoomType.AutoSize = true;
             this.lblRoomType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomType.Location = new System.Drawing.Point(34, 145);
+            this.lblRoomType.Location = new System.Drawing.Point(33, 142);
             this.lblRoomType.Name = "lblRoomType";
             this.lblRoomType.Size = new System.Drawing.Size(90, 20);
             this.lblRoomType.TabIndex = 3;
@@ -103,7 +96,7 @@
             // 
             this.lblRoomRate.AutoSize = true;
             this.lblRoomRate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRoomRate.Location = new System.Drawing.Point(34, 179);
+            this.lblRoomRate.Location = new System.Drawing.Point(33, 176);
             this.lblRoomRate.Name = "lblRoomRate";
             this.lblRoomRate.Size = new System.Drawing.Size(91, 20);
             this.lblRoomRate.TabIndex = 4;
@@ -113,7 +106,7 @@
             // 
             this.lblCheckIn.AutoSize = true;
             this.lblCheckIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckIn.Location = new System.Drawing.Point(33, 211);
+            this.lblCheckIn.Location = new System.Drawing.Point(33, 209);
             this.lblCheckIn.Name = "lblCheckIn";
             this.lblCheckIn.Size = new System.Drawing.Size(111, 20);
             this.lblCheckIn.TabIndex = 5;
@@ -123,7 +116,7 @@
             // 
             this.lblCheckOut.AutoSize = true;
             this.lblCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckOut.Location = new System.Drawing.Point(34, 243);
+            this.lblCheckOut.Location = new System.Drawing.Point(33, 243);
             this.lblCheckOut.Name = "lblCheckOut";
             this.lblCheckOut.Size = new System.Drawing.Size(123, 20);
             this.lblCheckOut.TabIndex = 6;
@@ -133,222 +126,153 @@
             // 
             this.lblNoDays.AutoSize = true;
             this.lblNoDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoDays.Location = new System.Drawing.Point(34, 275);
+            this.lblNoDays.Location = new System.Drawing.Point(430, 76);
             this.lblNoDays.Name = "lblNoDays";
-            this.lblNoDays.Size = new System.Drawing.Size(94, 20);
+            this.lblNoDays.Size = new System.Drawing.Size(91, 20);
             this.lblNoDays.TabIndex = 7;
-            this.lblNoDays.Text = "No. Of Days";
+            this.lblNoDays.Text = "No. of Days";
             // 
-            // lblChildren
+            // lblPeople
             // 
-            this.lblChildren.AutoSize = true;
-            this.lblChildren.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChildren.Location = new System.Drawing.Point(475, 78);
-            this.lblChildren.Name = "lblChildren";
-            this.lblChildren.Size = new System.Drawing.Size(116, 20);
-            this.lblChildren.TabIndex = 8;
-            this.lblChildren.Text = "No. Of Children";
+            this.lblPeople.AutoSize = true;
+            this.lblPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPeople.Location = new System.Drawing.Point(430, 109);
+            this.lblPeople.Name = "lblPeople";
+            this.lblPeople.Size = new System.Drawing.Size(104, 20);
+            this.lblPeople.TabIndex = 9;
+            this.lblPeople.Text = "No. of People";
             // 
-            // lblAdults
+            // lblSubTotal
             // 
-            this.lblAdults.AutoSize = true;
-            this.lblAdults.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdults.Location = new System.Drawing.Point(478, 117);
-            this.lblAdults.Name = "lblAdults";
-            this.lblAdults.Size = new System.Drawing.Size(103, 20);
-            this.lblAdults.TabIndex = 9;
-            this.lblAdults.Text = "No. Of Adults";
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.Location = new System.Drawing.Point(416, 236);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(131, 25);
+            this.lblSubTotal.TabIndex = 14;
+            this.lblSubTotal.Text = "SUBTOTAL";
             // 
-            // lblTotal
+            // txtGuestName
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(478, 157);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(77, 20);
-            this.lblTotal.TabIndex = 11;
-            this.lblTotal.Text = "Sub Total";
+            this.txtGuestName.Location = new System.Drawing.Point(166, 74);
+            this.txtGuestName.Multiline = true;
+            this.txtGuestName.Name = "txtGuestName";
+            this.txtGuestName.Size = new System.Drawing.Size(188, 22);
+            this.txtGuestName.TabIndex = 16;
             // 
-            // lblBalance
+            // txtRoomNo
             // 
-            this.lblBalance.AutoSize = true;
-            this.lblBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBalance.Location = new System.Drawing.Point(475, 202);
-            this.lblBalance.Name = "lblBalance";
-            this.lblBalance.Size = new System.Drawing.Size(106, 20);
-            this.lblBalance.TabIndex = 13;
-            this.lblBalance.Text = "Total Balance";
+            this.txtRoomNo.Location = new System.Drawing.Point(166, 107);
+            this.txtRoomNo.Multiline = true;
+            this.txtRoomNo.Name = "txtRoomNo";
+            this.txtRoomNo.Size = new System.Drawing.Size(188, 22);
+            this.txtRoomNo.TabIndex = 17;
             // 
-            // label14
+            // txtRoomType
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(83, 392);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 25);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "CASH";
+            this.txtRoomType.Location = new System.Drawing.Point(166, 141);
+            this.txtRoomType.Multiline = true;
+            this.txtRoomType.Name = "txtRoomType";
+            this.txtRoomType.Size = new System.Drawing.Size(188, 21);
+            this.txtRoomType.TabIndex = 18;
             // 
-            // label15
+            // txtRoomRate
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(381, 389);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(107, 25);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "CHANGE";
+            this.txtRoomRate.Location = new System.Drawing.Point(166, 175);
+            this.txtRoomRate.Multiline = true;
+            this.txtRoomRate.Name = "txtRoomRate";
+            this.txtRoomRate.Size = new System.Drawing.Size(188, 21);
+            this.txtRoomRate.TabIndex = 19;
             // 
-            // tbGuestName
+            // txtCheckIn
             // 
-            this.tbGuestName.Location = new System.Drawing.Point(166, 72);
-            this.tbGuestName.Multiline = true;
-            this.tbGuestName.Name = "tbGuestName";
-            this.tbGuestName.Size = new System.Drawing.Size(171, 26);
-            this.tbGuestName.TabIndex = 16;
+            this.txtCheckIn.Location = new System.Drawing.Point(166, 208);
+            this.txtCheckIn.Multiline = true;
+            this.txtCheckIn.Name = "txtCheckIn";
+            this.txtCheckIn.Size = new System.Drawing.Size(188, 21);
+            this.txtCheckIn.TabIndex = 20;
             // 
-            // tbRoomNumber
+            // txtCheckOut
             // 
-            this.tbRoomNumber.Location = new System.Drawing.Point(166, 107);
-            this.tbRoomNumber.Multiline = true;
-            this.tbRoomNumber.Name = "tbRoomNumber";
-            this.tbRoomNumber.Size = new System.Drawing.Size(171, 26);
-            this.tbRoomNumber.TabIndex = 17;
+            this.txtCheckOut.Location = new System.Drawing.Point(166, 242);
+            this.txtCheckOut.Multiline = true;
+            this.txtCheckOut.Name = "txtCheckOut";
+            this.txtCheckOut.Size = new System.Drawing.Size(188, 21);
+            this.txtCheckOut.TabIndex = 21;
             // 
-            // tbRoomType
+            // txtNoDays
             // 
-            this.tbRoomType.Location = new System.Drawing.Point(166, 139);
-            this.tbRoomType.Multiline = true;
-            this.tbRoomType.Name = "tbRoomType";
-            this.tbRoomType.Size = new System.Drawing.Size(171, 26);
-            this.tbRoomType.TabIndex = 18;
+            this.txtNoDays.Location = new System.Drawing.Point(566, 74);
+            this.txtNoDays.Multiline = true;
+            this.txtNoDays.Name = "txtNoDays";
+            this.txtNoDays.Size = new System.Drawing.Size(188, 22);
+            this.txtNoDays.TabIndex = 22;
             // 
-            // tbRoomRate
+            // txtNoPeople
             // 
-            this.tbRoomRate.Location = new System.Drawing.Point(166, 173);
-            this.tbRoomRate.Multiline = true;
-            this.tbRoomRate.Name = "tbRoomRate";
-            this.tbRoomRate.Size = new System.Drawing.Size(171, 26);
-            this.tbRoomRate.TabIndex = 19;
+            this.txtNoPeople.Location = new System.Drawing.Point(566, 107);
+            this.txtNoPeople.Multiline = true;
+            this.txtNoPeople.Name = "txtNoPeople";
+            this.txtNoPeople.Size = new System.Drawing.Size(188, 22);
+            this.txtNoPeople.TabIndex = 24;
             // 
-            // tbCheckIn
+            // txtSubTotal
             // 
-            this.tbCheckIn.Location = new System.Drawing.Point(166, 205);
-            this.tbCheckIn.Multiline = true;
-            this.tbCheckIn.Name = "tbCheckIn";
-            this.tbCheckIn.Size = new System.Drawing.Size(171, 26);
-            this.tbCheckIn.TabIndex = 20;
+            this.txtSubTotal.Location = new System.Drawing.Point(566, 236);
+            this.txtSubTotal.Multiline = true;
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.Size = new System.Drawing.Size(188, 30);
+            this.txtSubTotal.TabIndex = 29;
             // 
-            // tbCheckOut
+            // btnRoomNo
             // 
-            this.tbCheckOut.Location = new System.Drawing.Point(166, 237);
-            this.tbCheckOut.Multiline = true;
-            this.tbCheckOut.Name = "tbCheckOut";
-            this.tbCheckOut.Size = new System.Drawing.Size(171, 26);
-            this.tbCheckOut.TabIndex = 21;
+            this.btnRoomNo.Location = new System.Drawing.Point(360, 107);
+            this.btnRoomNo.Name = "btnRoomNo";
+            this.btnRoomNo.Size = new System.Drawing.Size(32, 22);
+            this.btnRoomNo.TabIndex = 32;
+            this.btnRoomNo.Text = "...";
+            this.btnRoomNo.UseVisualStyleBackColor = true;
             // 
-            // tbDays
+            // btnCheckOut
             // 
-            this.tbDays.Location = new System.Drawing.Point(166, 269);
-            this.tbDays.Multiline = true;
-            this.tbDays.Name = "tbDays";
-            this.tbDays.Size = new System.Drawing.Size(171, 26);
-            this.tbDays.TabIndex = 22;
+            this.btnCheckOut.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnCheckOut.Location = new System.Drawing.Point(286, 324);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(98, 37);
+            this.btnCheckOut.TabIndex = 33;
+            this.btnCheckOut.Text = "Checkout";
+            this.btnCheckOut.UseVisualStyleBackColor = false;
             // 
-            // tbChildren
+            // btnCancel
             // 
-            this.tbChildren.Location = new System.Drawing.Point(609, 68);
-            this.tbChildren.Multiline = true;
-            this.tbChildren.Name = "tbChildren";
-            this.tbChildren.Size = new System.Drawing.Size(126, 30);
-            this.tbChildren.TabIndex = 23;
-            // 
-            // tbAdults
-            // 
-            this.tbAdults.Location = new System.Drawing.Point(609, 107);
-            this.tbAdults.Multiline = true;
-            this.tbAdults.Name = "tbAdults";
-            this.tbAdults.Size = new System.Drawing.Size(126, 30);
-            this.tbAdults.TabIndex = 24;
-            // 
-            // tbTotal
-            // 
-            this.tbTotal.Location = new System.Drawing.Point(609, 147);
-            this.tbTotal.Multiline = true;
-            this.tbTotal.Name = "tbTotal";
-            this.tbTotal.Size = new System.Drawing.Size(126, 30);
-            this.tbTotal.TabIndex = 26;
-            // 
-            // tbBalance
-            // 
-            this.tbBalance.Location = new System.Drawing.Point(609, 192);
-            this.tbBalance.Multiline = true;
-            this.tbBalance.Name = "tbBalance";
-            this.tbBalance.Size = new System.Drawing.Size(126, 30);
-            this.tbBalance.TabIndex = 28;
-            // 
-            // tbCash
-            // 
-            this.tbCash.Location = new System.Drawing.Point(166, 380);
-            this.tbCash.Multiline = true;
-            this.tbCash.Name = "tbCash";
-            this.tbCash.Size = new System.Drawing.Size(174, 39);
-            this.tbCash.TabIndex = 29;
-            // 
-            // tbChange
-            // 
-            this.tbChange.Location = new System.Drawing.Point(494, 378);
-            this.tbChange.Multiline = true;
-            this.tbChange.Name = "tbChange";
-            this.tbChange.Size = new System.Drawing.Size(174, 39);
-            this.tbChange.TabIndex = 30;
-            // 
-            // btnCheckout
-            // 
-            this.btnCheckout.Location = new System.Drawing.Point(683, 378);
-            this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(105, 39);
-            this.btnCheckout.TabIndex = 31;
-            this.btnCheckout.Text = "CHECKOUT";
-            this.btnCheckout.UseVisualStyleBackColor = true;
-            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(343, 72);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 26);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "...";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnCancel.Location = new System.Drawing.Point(390, 324);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 37);
+            this.btnCancel.TabIndex = 34;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // frmCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnCheckout);
-            this.Controls.Add(this.tbChange);
-            this.Controls.Add(this.tbCash);
-            this.Controls.Add(this.tbBalance);
-            this.Controls.Add(this.tbTotal);
-            this.Controls.Add(this.tbAdults);
-            this.Controls.Add(this.tbChildren);
-            this.Controls.Add(this.tbDays);
-            this.Controls.Add(this.tbCheckOut);
-            this.Controls.Add(this.tbCheckIn);
-            this.Controls.Add(this.tbRoomRate);
-            this.Controls.Add(this.tbRoomType);
-            this.Controls.Add(this.tbRoomNumber);
-            this.Controls.Add(this.tbGuestName);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.lblBalance);
-            this.Controls.Add(this.lblTotal);
-            this.Controls.Add(this.lblAdults);
-            this.Controls.Add(this.lblChildren);
+            this.ClientSize = new System.Drawing.Size(775, 390);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnCheckOut);
+            this.Controls.Add(this.btnRoomNo);
+            this.Controls.Add(this.txtSubTotal);
+            this.Controls.Add(this.txtNoPeople);
+            this.Controls.Add(this.txtNoDays);
+            this.Controls.Add(this.txtCheckOut);
+            this.Controls.Add(this.txtCheckIn);
+            this.Controls.Add(this.txtRoomRate);
+            this.Controls.Add(this.txtRoomType);
+            this.Controls.Add(this.txtRoomNo);
+            this.Controls.Add(this.txtGuestName);
+            this.Controls.Add(this.lblSubTotal);
+            this.Controls.Add(this.lblPeople);
             this.Controls.Add(this.lblNoDays);
             this.Controls.Add(this.lblCheckOut);
             this.Controls.Add(this.lblCheckIn);
@@ -375,26 +299,19 @@
         private System.Windows.Forms.Label lblCheckIn;
         private System.Windows.Forms.Label lblCheckOut;
         private System.Windows.Forms.Label lblNoDays;
-        private System.Windows.Forms.Label lblChildren;
-        private System.Windows.Forms.Label lblAdults;
-        private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.Label lblBalance;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox tbGuestName;
-        private System.Windows.Forms.TextBox tbRoomNumber;
-        private System.Windows.Forms.TextBox tbRoomType;
-        private System.Windows.Forms.TextBox tbRoomRate;
-        private System.Windows.Forms.TextBox tbCheckIn;
-        private System.Windows.Forms.TextBox tbCheckOut;
-        private System.Windows.Forms.TextBox tbDays;
-        private System.Windows.Forms.TextBox tbChildren;
-        private System.Windows.Forms.TextBox tbAdults;
-        private System.Windows.Forms.TextBox tbTotal;
-        private System.Windows.Forms.TextBox tbBalance;
-        private System.Windows.Forms.TextBox tbCash;
-        private System.Windows.Forms.TextBox tbChange;
-        private System.Windows.Forms.Button btnCheckout;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblPeople;
+        private System.Windows.Forms.Label lblSubTotal;
+        private System.Windows.Forms.TextBox txtGuestName;
+        private System.Windows.Forms.TextBox txtRoomNo;
+        private System.Windows.Forms.TextBox txtRoomType;
+        private System.Windows.Forms.TextBox txtRoomRate;
+        private System.Windows.Forms.TextBox txtCheckIn;
+        private System.Windows.Forms.TextBox txtCheckOut;
+        private System.Windows.Forms.TextBox txtNoDays;
+        private System.Windows.Forms.TextBox txtNoPeople;
+        private System.Windows.Forms.TextBox txtSubTotal;
+        private System.Windows.Forms.Button btnRoomNo;
+        private System.Windows.Forms.Button btnCheckOut;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
