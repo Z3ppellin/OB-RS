@@ -43,7 +43,7 @@
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(55, 160);
+            this.Reset.Location = new System.Drawing.Point(76, 160);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(75, 23);
             this.Reset.TabIndex = 3;
@@ -53,7 +53,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(143, 160);
+            this.btnCancel.Location = new System.Drawing.Point(157, 160);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;

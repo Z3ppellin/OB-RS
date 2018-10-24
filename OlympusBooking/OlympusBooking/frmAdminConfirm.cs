@@ -20,7 +20,6 @@ namespace OlympusBooking
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-
             if (tbAdminPassword.Text == "")
             {
                 epAdminPass.SetError(this.tbAdminPassword, "Please enter an admin password");
