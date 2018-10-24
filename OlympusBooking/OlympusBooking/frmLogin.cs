@@ -58,7 +58,8 @@ namespace OlympusBooking
 
         private void lblForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Well too bad", "Oops", MessageBoxButtons.OK, MessageBoxIcon.None);
+			frmAdminConfirm AC = new frmAdminConfirm();
+			AC.ShowDialog();
         }
     }
 }
