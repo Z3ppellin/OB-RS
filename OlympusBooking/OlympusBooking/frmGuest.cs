@@ -124,7 +124,6 @@ namespace OlympusBooking
         {
             // TODO: This line of code loads data into the 'databaseDataSet.Guest' table. You can move, or remove it, as needed.
             this.guestTableAdapter.Fill(this.databaseDataSet.Guest);
-
         }
     }
 }

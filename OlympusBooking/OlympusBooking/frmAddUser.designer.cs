@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.tbUserName = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
+            this.epPasswordCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.epPasswordCheck)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 99);
+            this.label3.Location = new System.Drawing.Point(49, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 2;
@@ -67,7 +70,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(83, 138);
+            this.btnAdd.Location = new System.Drawing.Point(83, 150);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 3;
@@ -77,7 +80,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(164, 138);
+            this.button2.Location = new System.Drawing.Point(164, 150);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -89,21 +92,28 @@
             this.tbUserName.Location = new System.Drawing.Point(148, 28);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(100, 20);
-            this.tbUserName.TabIndex = 5;
+            this.tbUserName.TabIndex = 0;
             // 
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(148, 61);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '●';
             this.tbPassword.Size = new System.Drawing.Size(100, 20);
-            this.tbPassword.TabIndex = 6;
+            this.tbPassword.TabIndex = 1;
             // 
             // tbConfirmPassword
             // 
             this.tbConfirmPassword.Location = new System.Drawing.Point(148, 96);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.PasswordChar = '●';
             this.tbConfirmPassword.Size = new System.Drawing.Size(100, 20);
-            this.tbConfirmPassword.TabIndex = 7;
+            this.tbConfirmPassword.TabIndex = 2;
+            this.tbConfirmPassword.Leave += new System.EventHandler(this.tbConfirmPassword_Leave);
+            // 
+            // epPasswordCheck
+            // 
+            this.epPasswordCheck.ContainerControl = this;
             // 
             // frmAddUser
             // 
@@ -122,6 +132,7 @@
             this.Name = "frmAddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add User";
+            ((System.ComponentModel.ISupportInitialize)(this.epPasswordCheck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +148,6 @@
 		private System.Windows.Forms.TextBox tbUserName;
 		private System.Windows.Forms.TextBox tbPassword;
 		private System.Windows.Forms.TextBox tbConfirmPassword;
-	}
+        private System.Windows.Forms.ErrorProvider epPasswordCheck;
+    }
 }
