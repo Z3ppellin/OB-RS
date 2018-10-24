@@ -139,6 +139,7 @@ namespace OlympusBooking
         //Changes the subtotal value to increase the price by 30% for each person more than two living in the room.
         private void numAdults_ValueChanged(object sender, EventArgs e)
         {
+            if()
             if (numAdults.Value > 2)
             {
                 if (numAdults.Value >= c)

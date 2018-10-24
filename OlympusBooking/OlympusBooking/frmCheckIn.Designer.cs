@@ -71,6 +71,7 @@
             this.checkInTableAdapter = new OlympusBooking.App_Data.databaseDataSetTableAdapters.CheckInTableAdapter();
             this.epRoomNo = new System.Windows.Forms.ErrorProvider(this.components);
             this.epGuestName = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epNumPeople = new System.Windows.Forms.ErrorProvider(this.components);
             this.tbcCheckIn.SuspendLayout();
             this.tpCheckInForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAdults)).BeginInit();
@@ -81,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRoomNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epGuestName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNumPeople)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcCheckIn
@@ -128,6 +130,11 @@
             // numAdults
             // 
             this.numAdults.Location = new System.Drawing.Point(567, 74);
+            this.numAdults.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
             this.numAdults.Minimum = new decimal(new int[] {
             1,
             0,
@@ -486,6 +493,10 @@
             // 
             this.epGuestName.ContainerControl = this;
             // 
+            // epNumPeople
+            // 
+            this.epNumPeople.ContainerControl = this;
+            // 
             // frmCheckIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,6 +519,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRoomNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epGuestName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epNumPeople)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,5 +568,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn noOfAdultDataGridViewTextBoxColumn;
         private System.Windows.Forms.ErrorProvider epRoomNo;
         private System.Windows.Forms.ErrorProvider epGuestName;
+        private System.Windows.Forms.ErrorProvider epNumPeople;
     }
 }
