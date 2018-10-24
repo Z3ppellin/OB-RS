@@ -47,7 +47,6 @@
 			this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			this.checkInListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.checkOutListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.tsMenu = new System.Windows.Forms.ToolStrip();
 			this.toolbarGuest = new System.Windows.Forms.ToolStripButton();
@@ -69,6 +68,7 @@
 			this.lblDateTime = new System.Windows.Forms.ToolStripStatusLabel();
 			this.pbMain = new System.Windows.Forms.PictureBox();
 			this.tCurrentTime = new System.Windows.Forms.Timer(this.components);
+			this.guestListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.tsMenu.SuspendLayout();
 			this.status.SuspendLayout();
@@ -176,7 +176,7 @@
             this.roomsToolStripMenuItem,
             this.toolStripSeparator4,
             this.checkInListToolStripMenuItem,
-            this.checkOutListToolStripMenuItem});
+            this.guestListToolStripMenuItem});
 			this.listsToolStripMenuItem.Name = "listsToolStripMenuItem";
 			this.listsToolStripMenuItem.Size = new System.Drawing.Size(42, 20);
 			this.listsToolStripMenuItem.Text = "Lists";
@@ -184,14 +184,16 @@
 			// reservationsToolStripMenuItem
 			// 
 			this.reservationsToolStripMenuItem.Name = "reservationsToolStripMenuItem";
-			this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+			this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.reservationsToolStripMenuItem.Text = "Reservation List";
+			this.reservationsToolStripMenuItem.Click += new System.EventHandler(this.reservationsToolStripMenuItem_Click);
 			// 
 			// roomsToolStripMenuItem
 			// 
 			this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-			this.roomsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+			this.roomsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.roomsToolStripMenuItem.Text = "Room List";
+			this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
 			// 
 			// toolStripSeparator4
 			// 
@@ -201,14 +203,9 @@
 			// checkInListToolStripMenuItem
 			// 
 			this.checkInListToolStripMenuItem.Name = "checkInListToolStripMenuItem";
-			this.checkInListToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+			this.checkInListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.checkInListToolStripMenuItem.Text = "Check-In List";
-			// 
-			// checkOutListToolStripMenuItem
-			// 
-			this.checkOutListToolStripMenuItem.Name = "checkOutListToolStripMenuItem";
-			this.checkOutListToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-			this.checkOutListToolStripMenuItem.Text = "Check-Out List";
+			this.checkInListToolStripMenuItem.Click += new System.EventHandler(this.checkInListToolStripMenuItem_Click);
 			// 
 			// contextMenuStrip1
 			// 
@@ -400,6 +397,13 @@
 			this.tCurrentTime.Interval = 1000;
 			this.tCurrentTime.Tick += new System.EventHandler(this.tCurrentTime_Tick);
 			// 
+			// guestListToolStripMenuItem
+			// 
+			this.guestListToolStripMenuItem.Name = "guestListToolStripMenuItem";
+			this.guestListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.guestListToolStripMenuItem.Text = "Guest List";
+			this.guestListToolStripMenuItem.Click += new System.EventHandler(this.guestListToolStripMenuItem_Click);
+			// 
 			// frmMain
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,8 +467,8 @@
         private System.Windows.Forms.ToolStripMenuItem roomsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripMenuItem checkInListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checkOutListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.Timer tCurrentTime;
+		private System.Windows.Forms.ToolStripMenuItem guestListToolStripMenuItem;
 	}
 }

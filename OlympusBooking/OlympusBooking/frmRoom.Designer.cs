@@ -302,7 +302,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tcRoom;
+        public System.Windows.Forms.TabControl tcRoom;
         private System.Windows.Forms.TabPage tpNewRoom;
         private System.Windows.Forms.TextBox txtRoomRate;
         private System.Windows.Forms.TextBox txtRoomType;

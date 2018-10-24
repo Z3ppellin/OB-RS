@@ -457,7 +457,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tcReservation;
+        public System.Windows.Forms.TabControl tcReservation;
         private System.Windows.Forms.TabPage tpReservation;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnReserve;

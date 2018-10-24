@@ -136,5 +136,35 @@ namespace OlympusBooking
             frmAddUser frmAddUser = new frmAddUser();
             frmAddUser.ShowDialog();
         }
-    }
+
+		private void reservationsToolStripMenuItem_Click(object sender, EventArgs e)
+		{			
+			frmReservation RES = new frmReservation();
+			RES.tcReservation.SelectedIndex = 1;
+			RES.ShowDialog();
+			
+			
+		}
+
+		private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmRoom FR = new frmRoom();
+			FR.tcRoom.SelectedIndex = 1;
+			FR.ShowDialog();
+		}
+
+		private void checkInListToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmCheckIn CI = new frmCheckIn();
+			CI.tbcCheckIn.SelectedIndex = 1;
+			CI.ShowDialog();
+		}		
+
+		private void guestListToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			frmGuest FG = new frmGuest();
+			FG.tcGuest.SelectedIndex = 1;
+			FG.ShowDialog();
+		}
+	}
 }

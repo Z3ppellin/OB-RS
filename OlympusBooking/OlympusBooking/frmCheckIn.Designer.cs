@@ -486,7 +486,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tbcCheckIn;
+        public System.Windows.Forms.TabControl tbcCheckIn;
         private System.Windows.Forms.TabPage tpCheckInForm;
         private System.Windows.Forms.Label lblCheckInForm;
         private System.Windows.Forms.TabPage tbCheckInList;
