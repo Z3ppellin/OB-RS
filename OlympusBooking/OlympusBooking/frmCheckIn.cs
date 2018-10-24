@@ -17,6 +17,7 @@ namespace OlympusBooking
         //Initialises 2 DateTime variables to calculate the number of days a guest will stay.
         DateTime d1;
         DateTime d2;
+
         //Global variables.
         int subTotalDays;
         int subTotalPeople = 0;
@@ -46,9 +47,6 @@ namespace OlympusBooking
             string numPeople = (numAdults.Value).ToString();
 			DateTime currentDate = DateTime.Now;
 
-            //Initialising variables to given values.
-
-
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             //Checks whether text box fields have values entered.
             if ((epGuestName.GetError(this.txtGuestName).Length > 0) || (epRoomNo.GetError(this.txtRoomNumber).Length > 0) || (epNumPeople.GetError(this.numAdults).Length > 0))
@@ -60,7 +58,7 @@ namespace OlympusBooking
                 //Create a new instance of the UseDatabase case.
                 UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
                 useDb.ConnectToDatabase();
-                string b = useDb.CheckIn(guestName, roomNum, numPeople);
+                string b = useDb.CheckIn(guestName, d1.ToString(), roomNum, numPeople, subTotal);
 
                 //Informs user of success or failure of database entry.
                 if (b == "success")
