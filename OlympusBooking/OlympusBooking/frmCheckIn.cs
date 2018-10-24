@@ -66,7 +66,7 @@ namespace OlympusBooking
                 if (b == "success")
                 {
                     MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Check-In.txt", "Guest : " + guestName + " Has been Checked-in ,on : " + currentDate + Environment.NewLine);///////////////////////////////////////////////////////////////////////////////////////
+					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Check-In.txt", "Guest : " + guestName + " Has been Checked-in ,on : " + currentDate + Environment.NewLine);
 				}
                 else
                 {

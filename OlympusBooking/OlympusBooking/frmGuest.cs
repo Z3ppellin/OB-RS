@@ -67,7 +67,7 @@ namespace OlympusBooking
                     {
                         MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //Appends details to a log file.
-						File.AppendAllText("..\\..\\App_Data\\LogFiles\\Guest.txt", "Guest : " + sName + " Has been added :" + currentDate + Environment.NewLine);///////////////////////////////////////////////////////////////////////////////////////////
+						File.AppendAllText("..\\..\\App_Data\\LogFiles\\Guest.txt", "Guest : " + sName + " Has been added :" + currentDate + Environment.NewLine);
 					}
                     else
                     {
