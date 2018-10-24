@@ -43,30 +43,36 @@ namespace OlympusBooking
             string roomNum = txtRoomNumber.Text;
             string roomType = txtRoomType.Text;
             string numPeople = (numAdults.Value).ToString();
-            
+
 
             //Initialising variables to given values.
 
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            //Create a new instance of the UseDatabase case.
-            UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
-            useDb.ConnectToDatabase();
-            string b = useDb.CheckIn(guestName, roomNum, numPeople);
-
-            //Informs user of success or failure of database entry.
-            if (b == "success")
+            //Checks whether text box fields have values entered.
+            if ((epGuestName.GetError(this.txtGuestName).Length > 0) || (epRoomNo.GetError(this.txtRoomNumber).Length > 0) || (epNumPeople.GetError(this.numAdults).Length > 0))
             {
-                MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please attend to any errors", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-            {
-                MessageBox.Show("Fail");
-            }
-            
-            useDb.DisconnectDatabase();
+            { 
+                //Create a new instance of the UseDatabase case.
+                UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
+                useDb.ConnectToDatabase();
+                string b = useDb.CheckIn(guestName, roomNum, numPeople);
 
+                //Informs user of success or failure of database entry.
+                if (b == "success")
+                {
+                    MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Fail");
+                }
+
+                useDb.DisconnectDatabase();
+            }
         }
 
         //Already inserts the check in date and time when the form loads.
@@ -139,32 +145,34 @@ namespace OlympusBooking
         //Changes the subtotal value to increase the price by 30% for each person more than two living in the room.
         private void numAdults_ValueChanged(object sender, EventArgs e)
         {
-            if()
-            if (numAdults.Value > 2)
+            if (txtRoomNumber.Text != "")
             {
-                if (numAdults.Value >= c)
+                if (numAdults.Value > 2)
                 {
-                    roomRate = Convert.ToInt32(txtRoomRate.Text);
-                    subTotalPeople = subTotalPeople + Convert.ToInt32((roomRate * 0.3));
-                    subTotalDays = (Convert.ToInt32(txtRoomRate.Text) * Convert.ToInt32(txtNoDays.Text));
-                    subTotal = subTotalDays + subTotalPeople;
-                    txtSubTotal.Text = "R" + subTotal.ToString();
-                }
-                else if ((numAdults.Value < c) && subTotalPeople != 0)
-                {
-                    roomRate = Convert.ToInt32(txtRoomRate.Text);
-                    subTotalPeople = subTotalPeople - Convert.ToInt32((roomRate * 0.3));
-                    subTotal = subTotalDays + subTotalPeople;
-                    txtSubTotal.Text = "R" + subTotal.ToString();
-                }
+                    if (numAdults.Value >= c)
+                    {
+                        roomRate = Convert.ToInt32(txtRoomRate.Text);
+                        subTotalPeople = subTotalPeople + Convert.ToInt32((roomRate * 0.3));
+                        subTotalDays = (Convert.ToInt32(txtRoomRate.Text) * Convert.ToInt32(txtNoDays.Text));
+                        subTotal = subTotalDays + subTotalPeople;
+                        txtSubTotal.Text = "R" + subTotal.ToString();
+                    }
+                    else if ((numAdults.Value < c) && subTotalPeople != 0)
+                    {
+                        roomRate = Convert.ToInt32(txtRoomRate.Text);
+                        subTotalPeople = subTotalPeople - Convert.ToInt32((roomRate * 0.3));
+                        subTotal = subTotalDays + subTotalPeople;
+                        txtSubTotal.Text = "R" + subTotal.ToString();
+                    }
 
-                c = Convert.ToInt32(numAdults.Value);
-            }
-            else if (numAdults.Value < 3)
-            {
-                subTotalPeople = 0;
-                subTotal = roomRate * Convert.ToInt32(txtNoDays.Text);
-                txtSubTotal.Text = "R" + subTotal.ToString();
+                    c = Convert.ToInt32(numAdults.Value);
+                }
+                else if (numAdults.Value < 3)
+                {
+                    subTotalPeople = 0;
+                    subTotal = roomRate * Convert.ToInt32(txtNoDays.Text);
+                    txtSubTotal.Text = "R" + subTotal.ToString();
+                }
             }
         }
 
