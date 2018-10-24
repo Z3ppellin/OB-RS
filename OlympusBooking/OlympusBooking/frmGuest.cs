@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace OlympusBooking
 {
@@ -39,7 +40,7 @@ namespace OlympusBooking
             string sGender = cbGender.Text;
             string sEmail = txtEmail.Text;
             string sStatus = "";
-
+			DateTime currentDate = DateTime.Now;
             //Validates if all the fields are entered and that there are no error messages before saving the data to the database.
             if ((txtName.Text == "") || (txtSurname.Text == "") || (txtAddress.Text == "") || (txtNum.Text == "") || (txtEmail.Text == ""))
             {
@@ -65,7 +66,8 @@ namespace OlympusBooking
                     if (b == "success")
                     {
                         MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+						File.AppendAllText("..\\..\\App_Data\\LogFiles\\Guest.txt", "Guest : " + sName + " Has been added :" + currentDate + Environment.NewLine);///////////////////////////////////////////////////////////////////////////////////////////
+					}
                     else
                     {
                         MessageBox.Show("There was a problem with inserting into the database", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Error);
