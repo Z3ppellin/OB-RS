@@ -47,6 +47,7 @@
 			this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 			this.checkInListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.guestListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.tsMenu = new System.Windows.Forms.ToolStrip();
 			this.toolbarGuest = new System.Windows.Forms.ToolStripButton();
@@ -68,7 +69,6 @@
 			this.lblDateTime = new System.Windows.Forms.ToolStripStatusLabel();
 			this.pbMain = new System.Windows.Forms.PictureBox();
 			this.tCurrentTime = new System.Windows.Forms.Timer(this.components);
-			this.guestListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.tsMenu.SuspendLayout();
 			this.status.SuspendLayout();
@@ -184,14 +184,14 @@
 			// reservationsToolStripMenuItem
 			// 
 			this.reservationsToolStripMenuItem.Name = "reservationsToolStripMenuItem";
-			this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.reservationsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.reservationsToolStripMenuItem.Text = "Reservation List";
 			this.reservationsToolStripMenuItem.Click += new System.EventHandler(this.reservationsToolStripMenuItem_Click);
 			// 
 			// roomsToolStripMenuItem
 			// 
 			this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-			this.roomsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.roomsToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.roomsToolStripMenuItem.Text = "Room List";
 			this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
 			// 
@@ -203,9 +203,16 @@
 			// checkInListToolStripMenuItem
 			// 
 			this.checkInListToolStripMenuItem.Name = "checkInListToolStripMenuItem";
-			this.checkInListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.checkInListToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
 			this.checkInListToolStripMenuItem.Text = "Check-In List";
 			this.checkInListToolStripMenuItem.Click += new System.EventHandler(this.checkInListToolStripMenuItem_Click);
+			// 
+			// guestListToolStripMenuItem
+			// 
+			this.guestListToolStripMenuItem.Name = "guestListToolStripMenuItem";
+			this.guestListToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+			this.guestListToolStripMenuItem.Text = "Guest List";
+			this.guestListToolStripMenuItem.Click += new System.EventHandler(this.guestListToolStripMenuItem_Click);
 			// 
 			// contextMenuStrip1
 			// 
@@ -382,8 +389,9 @@
 			this.pbMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.pbMain.BackgroundImage = global::OlympusBooking.Properties.Resources.light_blue_background;
-			this.pbMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.pbMain.BackColor = System.Drawing.SystemColors.InactiveCaption;
+			this.pbMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbMain.BackgroundImage")));
+			this.pbMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.pbMain.Image = ((System.Drawing.Image)(resources.GetObject("pbMain.Image")));
 			this.pbMain.Location = new System.Drawing.Point(0, 63);
 			this.pbMain.Name = "pbMain";
@@ -396,13 +404,6 @@
 			// 
 			this.tCurrentTime.Interval = 1000;
 			this.tCurrentTime.Tick += new System.EventHandler(this.tCurrentTime_Tick);
-			// 
-			// guestListToolStripMenuItem
-			// 
-			this.guestListToolStripMenuItem.Name = "guestListToolStripMenuItem";
-			this.guestListToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.guestListToolStripMenuItem.Text = "Guest List";
-			this.guestListToolStripMenuItem.Click += new System.EventHandler(this.guestListToolStripMenuItem_Click);
 			// 
 			// frmMain
 			// 
