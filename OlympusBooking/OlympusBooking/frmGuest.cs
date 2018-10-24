@@ -1,6 +1,6 @@
 ﻿////////////////////////////////////////////////////////////////////////////////////////////////////
 // Filename         :                                                                             //
-// Author           :                                                                             //
+// Author           : CodingMasters                                                               //
 // Created          :                                                                             //
 // Created using    :                                                                             //
 // Usable on        :                                                                             //
@@ -66,6 +66,7 @@ namespace OlympusBooking
                     if (b == "success")
                     {
                         MessageBox.Show("A guest has been successfully added", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Appends details to a log file.
 						File.AppendAllText("..\\..\\App_Data\\LogFiles\\Guest.txt", "Guest : " + sName + " Has been added :" + currentDate + Environment.NewLine);///////////////////////////////////////////////////////////////////////////////////////////
 					}
                     else
