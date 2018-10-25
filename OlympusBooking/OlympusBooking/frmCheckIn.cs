@@ -58,17 +58,17 @@ namespace OlympusBooking
                 //Create a new instance of the UseDatabase case.
                 UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
                 useDb.ConnectToDatabase();
-                string b = useDb.CheckIn(guestName, d1.ToString(), roomNum, numPeople, subTotal);
+                string b = useDb.CheckIn(guestName, d1.ToString(), roomNum, txtNoDays.Text, numPeople, subTotal);
 
                 //Informs user of success or failure of database entry.
                 if (b == "success")
                 {
-                    MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("User has been checked in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Check-In.txt", "Guest : " + guestName + " Has been Checked-in ,on : " + currentDate + Environment.NewLine);
 				}
                 else
                 {
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("Failed to check-in", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 useDb.DisconnectDatabase();
@@ -102,7 +102,7 @@ namespace OlympusBooking
             //Checks if the room no field is empty.
             if (txtRoomNumber.Text != "")
             {
-                epGuestName.Clear();
+                epRoomNo.Clear();
 
                 //New instance of UseDatabase class.
                 UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
