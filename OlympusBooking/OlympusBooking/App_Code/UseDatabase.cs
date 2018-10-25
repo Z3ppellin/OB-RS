@@ -133,18 +133,45 @@ namespace OlympusBooking
             try
             {
                 //Updates the guest as checked in.
-                String myQuery = "UPDATE [Guest] Set [Status] = 'Checked-In', [TotalDue] = '" + subTotal + "', [CheckInDate] = '" + CheckInDate + "' WHERE [GuestName] = '" + sName + "'";
+                String myQuery = "UPDATE [Guest] Set [Status] = 'Checked-In' WHERE [GuestName] = '" + sName + "'";
                 OleDbCommand cmd1 = new OleDbCommand(myQuery, conn);
                 cmd1.ExecuteNonQuery();
                 
                 //Updates the Room to be unavailable.
-                String myQuery2 = "UPDATE [Room] Set [Status] = 'Checked-In' WHERE [RoomNumber] = '" + roomNo + "'"; //[NoOfPeople] = '" + noPeople + "' 
+                String myQuery2 = "UPDATE [Room] Set [Status] = 'Checked-In' WHERE [RoomNumber] = '" + roomNo + "'";
                 OleDbCommand cmd2 = new OleDbCommand(myQuery2, conn);
                 cmd2.ExecuteNonQuery();
 
                 //Inserts a new entry into the CheckIn table.
-                String myQuery3 = "INSERT INTO CheckIn(GuestName,RoomNum,CheckInDate, NoOfDays, NoOfPeople) " +
-                                  "VALUES('" + sName + "','" + roomNo + "','" + CheckInDate + "','" + roomNo + "','" + noOfDays + "','" + noPeople + "')";
+                String myQuery3 = "INSERT INTO CheckIn(GuestName,RoomNum,CheckInDate, NoOfDays, NoOfPeople, TotalDue) " +
+                                  "VALUES('" + sName.ToLower() + "','" + roomNo + "','" + CheckInDate + "','" + noOfDays + "','" + noPeople + "', '" + subTotal + "')";
+                OleDbCommand cmd3 = new OleDbCommand(myQuery3, conn);
+                cmd3.ExecuteNonQuery();
+
+                return "success";
+            }
+            catch (OleDbException)
+            {
+                return "fail";
+            }
+        }
+
+        public string CheckOut(string guestName, string roomNo, string checkOutDate)
+        {
+            try
+            {
+                //Updates the guest as checked out.
+                String myQuery = "UPDATE [Guest] Set [Status] = 'Checked-out' WHERE [GuestName] = '" + guestName + "'";
+                OleDbCommand cmd1 = new OleDbCommand(myQuery, conn);
+                cmd1.ExecuteNonQuery();
+
+                //Updates the Room to be available.
+                String myQuery2 = "UPDATE [Room] Set [Status] = 'Available' WHERE [RoomNumber] = '" + roomNo + "'";
+                OleDbCommand cmd2 = new OleDbCommand(myQuery2, conn);
+                cmd2.ExecuteNonQuery();
+
+                //Updates the entry in the CheckIn table.
+                String myQuery3 = "UPDATE [CheckIn] Set [CheckOutDate] = '" + checkOutDate + "' WHERE [GuestName] = '" + guestName + "'";
                 OleDbCommand cmd3 = new OleDbCommand(myQuery3, conn);
                 cmd3.ExecuteNonQuery();
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
@@ -50,7 +51,11 @@
             this.lblRoomNum = new System.Windows.Forms.Label();
             this.lblGuestName = new System.Windows.Forms.Label();
             this.lblCheckOutGuest = new System.Windows.Forms.Label();
+            this.epGuest = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epRoomNo = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epGuest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRoomNo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -88,7 +93,7 @@
             this.btnCancel.Location = new System.Drawing.Point(588, 298);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 37);
-            this.btnCancel.TabIndex = 55;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
@@ -98,9 +103,10 @@
             this.btnCheckOut.Location = new System.Drawing.Point(484, 298);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(98, 37);
-            this.btnCheckOut.TabIndex = 54;
+            this.btnCheckOut.TabIndex = 1;
             this.btnCheckOut.Text = "Checkout";
             this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // txtSubTotal
             // 
@@ -116,6 +122,7 @@
             this.txtNoPeople.Location = new System.Drawing.Point(540, 95);
             this.txtNoPeople.Multiline = true;
             this.txtNoPeople.Name = "txtNoPeople";
+            this.txtNoPeople.ReadOnly = true;
             this.txtNoPeople.Size = new System.Drawing.Size(90, 22);
             this.txtNoPeople.TabIndex = 52;
             // 
@@ -124,6 +131,7 @@
             this.txtNoDays.Location = new System.Drawing.Point(540, 62);
             this.txtNoDays.Multiline = true;
             this.txtNoDays.Name = "txtNoDays";
+            this.txtNoDays.ReadOnly = true;
             this.txtNoDays.Size = new System.Drawing.Size(90, 22);
             this.txtNoDays.TabIndex = 51;
             // 
@@ -132,6 +140,7 @@
             this.txtCheckOut.Location = new System.Drawing.Point(155, 230);
             this.txtCheckOut.Multiline = true;
             this.txtCheckOut.Name = "txtCheckOut";
+            this.txtCheckOut.ReadOnly = true;
             this.txtCheckOut.Size = new System.Drawing.Size(188, 21);
             this.txtCheckOut.TabIndex = 50;
             // 
@@ -140,6 +149,7 @@
             this.txtCheckIn.Location = new System.Drawing.Point(155, 196);
             this.txtCheckIn.Multiline = true;
             this.txtCheckIn.Name = "txtCheckIn";
+            this.txtCheckIn.ReadOnly = true;
             this.txtCheckIn.Size = new System.Drawing.Size(188, 21);
             this.txtCheckIn.TabIndex = 49;
             // 
@@ -148,6 +158,7 @@
             this.txtRoomRate.Location = new System.Drawing.Point(155, 163);
             this.txtRoomRate.Multiline = true;
             this.txtRoomRate.Name = "txtRoomRate";
+            this.txtRoomRate.ReadOnly = true;
             this.txtRoomRate.Size = new System.Drawing.Size(188, 21);
             this.txtRoomRate.TabIndex = 48;
             // 
@@ -156,6 +167,7 @@
             this.txtRoomType.Location = new System.Drawing.Point(155, 129);
             this.txtRoomType.Multiline = true;
             this.txtRoomType.Name = "txtRoomType";
+            this.txtRoomType.ReadOnly = true;
             this.txtRoomType.Size = new System.Drawing.Size(188, 21);
             this.txtRoomType.TabIndex = 47;
             // 
@@ -165,13 +177,15 @@
             this.txtRoomNo.Multiline = true;
             this.txtRoomNo.Name = "txtRoomNo";
             this.txtRoomNo.Size = new System.Drawing.Size(188, 22);
-            this.txtRoomNo.TabIndex = 46;
+            this.txtRoomNo.TabIndex = 0;
+            this.txtRoomNo.Leave += new System.EventHandler(this.txtRoomNo_Leave);
             // 
             // txtGuestName
             // 
             this.txtGuestName.Location = new System.Drawing.Point(155, 62);
             this.txtGuestName.Multiline = true;
             this.txtGuestName.Name = "txtGuestName";
+            this.txtGuestName.ReadOnly = true;
             this.txtGuestName.Size = new System.Drawing.Size(188, 22);
             this.txtGuestName.TabIndex = 45;
             // 
@@ -274,6 +288,14 @@
             this.lblCheckOutGuest.TabIndex = 35;
             this.lblCheckOutGuest.Text = "Check Out Guest";
             // 
+            // epGuest
+            // 
+            this.epGuest.ContainerControl = this;
+            // 
+            // epRoomNo
+            // 
+            this.epRoomNo.ContainerControl = this;
+            // 
             // frmCheckOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +308,8 @@
             this.Text = "Check Out";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epGuest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epRoomNo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,5 +337,7 @@
         private System.Windows.Forms.Label lblRoomNum;
         private System.Windows.Forms.Label lblGuestName;
         private System.Windows.Forms.Label lblCheckOutGuest;
+        private System.Windows.Forms.ErrorProvider epGuest;
+        private System.Windows.Forms.ErrorProvider epRoomNo;
     }
 }
