@@ -128,7 +128,7 @@ namespace OlympusBooking
         }
 
         //Updates the neccessary tables so the user status is checked-in.
-        public string CheckIn(string sName, string CheckInDate, string roomNo, string noPeople, int subTotal)
+        public string CheckIn(string sName, string CheckInDate, string roomNo, string noOfDays, string noPeople, int subTotal)
         {
             try
             {
@@ -138,13 +138,13 @@ namespace OlympusBooking
                 cmd1.ExecuteNonQuery();
                 
                 //Updates the Room to be unavailable.
-                String myQuery2 = "UPDATE [Room] Set [Status] = 'Checked-In',[NoOfPeople] = '" + noPeople + "' WHERE [RoomNumber] = '" + roomNo + "'";
+                String myQuery2 = "UPDATE [Room] Set [Status] = 'Checked-In' WHERE [RoomNumber] = '" + roomNo + "'"; //[NoOfPeople] = '" + noPeople + "' 
                 OleDbCommand cmd2 = new OleDbCommand(myQuery2, conn);
                 cmd2.ExecuteNonQuery();
 
                 //Inserts a new entry into the CheckIn table.
-                String myQuery3 = "INSERT INTO CheckIn(GuestName,RoomNum,CheckInDate,NoOfPeople) " +
-                                  "VALUES('" + sName + "','" + roomNo + "','" + CheckInDate + "','" + roomNo + "','" + noPeople + "')";
+                String myQuery3 = "INSERT INTO CheckIn(GuestName,RoomNum,CheckInDate, NoOfDays, NoOfPeople) " +
+                                  "VALUES('" + sName + "','" + roomNo + "','" + CheckInDate + "','" + roomNo + "','" + noOfDays + "','" + noPeople + "')";
                 OleDbCommand cmd3 = new OleDbCommand(myQuery3, conn);
                 cmd3.ExecuteNonQuery();
 

@@ -19,34 +19,17 @@ namespace OlympusBooking
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            //Declaring variables used in check out guest form
-            string guestName;
-            string roomNum;
-            string roomType;
-            string roomRate;
-            string checkIn;
-            string checkOut;
-            string days;
-            string children;
-            string adults;
-            string subTotal;
-            string totBalance;
+            
+        }
 
-            //Initialising variables in check out guest form
-            guestName = txtGuestName.Text;
-            roomNum = txtRoomNo.Text.ToString();
-            roomType = txtRoomType.Text;
-            roomRate = txtRoomRate.Text.ToString();
-            checkIn = txtCheckIn.Text;
-            checkOut = txtCheckOut.Text;
-            days = txtNoDays.Text.ToString();
-            children = tbChildren.Text.ToString();
-            adults = txtNoPeople.Text.ToString();
-            subTotal = tbTotal.Text.ToString();
-            totBalance = tbBalance.Text.ToString();
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
 
-            //Displaying a message to confirm that guest is checked out
-            MessageBox.Show("Guest/s checked out successfuly!");
+        }
+
+        //Cancel buttons closes the form.
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

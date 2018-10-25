@@ -129,7 +129,7 @@
             // 
             // numAdults
             // 
-            this.numAdults.Location = new System.Drawing.Point(567, 74);
+            this.numAdults.Location = new System.Drawing.Point(558, 109);
             this.numAdults.Maximum = new decimal(new int[] {
             6,
             0,
@@ -152,16 +152,16 @@
             // 
             // txtSubTotal
             // 
-            this.txtSubTotal.Location = new System.Drawing.Point(567, 141);
+            this.txtSubTotal.Location = new System.Drawing.Point(558, 238);
             this.txtSubTotal.Multiline = true;
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.ReadOnly = true;
-            this.txtSubTotal.Size = new System.Drawing.Size(141, 22);
+            this.txtSubTotal.Size = new System.Drawing.Size(134, 30);
             this.txtSubTotal.TabIndex = 36;
             // 
             // txtNoDays
             // 
-            this.txtNoDays.Location = new System.Drawing.Point(171, 281);
+            this.txtNoDays.Location = new System.Drawing.Point(558, 73);
             this.txtNoDays.Multiline = true;
             this.txtNoDays.Name = "txtNoDays";
             this.txtNoDays.ReadOnly = true;
@@ -181,7 +181,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnCancel.Location = new System.Drawing.Point(632, 336);
+            this.btnCancel.Location = new System.Drawing.Point(639, 336);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 37);
             this.btnCancel.TabIndex = 33;
@@ -192,7 +192,7 @@
             // btnCheckIn
             // 
             this.btnCheckIn.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnCheckIn.Location = new System.Drawing.Point(523, 336);
+            this.btnCheckIn.Location = new System.Drawing.Point(535, 336);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(98, 37);
             this.btnCheckIn.TabIndex = 32;
@@ -269,18 +269,18 @@
             // lblSubTotal
             // 
             this.lblSubTotal.AutoSize = true;
-            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.Location = new System.Drawing.Point(451, 142);
+            this.lblSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTotal.Location = new System.Drawing.Point(426, 246);
             this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(66, 16);
+            this.lblSubTotal.Size = new System.Drawing.Size(115, 22);
             this.lblSubTotal.TabIndex = 13;
-            this.lblSubTotal.Text = "Sub Total";
+            this.lblSubTotal.Text = "SUBTOTAL";
             // 
             // lblPeople
             // 
             this.lblPeople.AutoSize = true;
             this.lblPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeople.Location = new System.Drawing.Point(451, 74);
+            this.lblPeople.Location = new System.Drawing.Point(451, 109);
             this.lblPeople.Name = "lblPeople";
             this.lblPeople.Size = new System.Drawing.Size(90, 16);
             this.lblPeople.TabIndex = 10;
@@ -290,7 +290,7 @@
             // 
             this.lblNoDays.AutoSize = true;
             this.lblNoDays.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoDays.Location = new System.Drawing.Point(46, 282);
+            this.lblNoDays.Location = new System.Drawing.Point(451, 74);
             this.lblNoDays.Name = "lblNoDays";
             this.lblNoDays.Size = new System.Drawing.Size(80, 16);
             this.lblNoDays.TabIndex = 9;
