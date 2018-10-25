@@ -33,15 +33,15 @@ namespace OlympusBooking
             string totBalance;
 
             //Initialising variables in check out guest form
-            guestName = tbGuestName.Text;
-            roomNum = tbRoomNumber.Text.ToString();
-            roomType = tbRoomType.Text;
-            roomRate = tbRoomRate.Text.ToString();
-            checkIn = tbCheckIn.Text;
-            checkOut = tbCheckOut.Text;
-            days = tbDays.Text.ToString();
+            guestName = txtGuestName.Text;
+            roomNum = txtRoomNo.Text.ToString();
+            roomType = txtRoomType.Text;
+            roomRate = txtRoomRate.Text.ToString();
+            checkIn = txtCheckIn.Text;
+            checkOut = txtCheckOut.Text;
+            days = txtNoDays.Text.ToString();
             children = tbChildren.Text.ToString();
-            adults = tbAdults.Text.ToString();
+            adults = txtNoPeople.Text.ToString();
             subTotal = tbTotal.Text.ToString();
             totBalance = tbBalance.Text.ToString();
 
