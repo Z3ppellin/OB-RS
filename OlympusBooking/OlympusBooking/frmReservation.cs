@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace OlympusBooking
 {
@@ -20,31 +21,56 @@ namespace OlympusBooking
         private void btnReserve_Click(object sender, EventArgs e)
         {
             //declaring variables used in the reservation form
-            string gName;
-            string rNum;
+            string guestName;
+            string roomNum;
             string rType;
             string rRate;
             string checkInDate;
             string checkOutDate;
             string noDays;
-            string adults;
-            string children;
+            string noOfPeople;            
             string subTotal;
-            string total;
+			DateTime currentDate = DateTime.Now;
 
             //initialising the variable2s used in the reservation form
-            gName = tbGuestName.Text;
-            rNum = tbRoomNum.Text.ToString();
+            guestName = tbGuestName.Text;
+            roomNum = tbRoomNum.Text.ToString();
             rType = tbRoomType.Text;
             rRate = tbRoomRate.Text.ToString();
             checkInDate = dtpCheckIn.Text;
             checkOutDate = dtpCheckOut.Text;
             noDays = tbNoDays.Text.ToString();
-            adults = cbAdults.Text.ToString();
-            children = cbChildren.Text.ToString();
+            noOfPeople = cbAdults.Text.ToString();            
             subTotal = tbSubTotal.Text.ToString();
-            total = tbTotal.Text.ToString();
-              
+
+			////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			//Check whether text box fields have values entered.
+
+			if ((epGuestName.GetError(this.tbGuestName).Length > 0) || ((epRoomNum.GetError(this.tbRoomNum).Length > 0)))
+			{
+				MessageBox.Show("Please attend to any errors", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				//Create a new instance of the UseDatabase case.
+				UseDatabase useDb = new UseDatabase("..\\..\\App_Data\\database.accdb");
+				useDb.ConnectToDatabase();
+				string b = useDb.Reservation(guestName, roomNum, checkInDate,noOfPeople,subTotal);
+
+				if (b == "success")
+				{
+					MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Check-In.txt", "Guest : " + guestName + " Has been Checked-in ,on : " + currentDate + Environment.NewLine);
+				}
+				else
+				{
+					MessageBox.Show("Fail");
+				}
+
+				useDb.DisconnectDatabase();
+
+			}
+			
         }
 
         private void frmReservation_Load(object sender, EventArgs e)

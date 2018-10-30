@@ -1,9 +1,9 @@
 ﻿////////////////////////////////////////////////////////////////////////////////////////////////////
 // Filename         :                                                                             //
-// Author           :                                                                             //
+// Author           : CODING-MASTERS (Group 5)                                                                            //
 // Created          :                                                                             //
-// Created using    :                                                                             //
-// Usable on        :                                                                             //
+// Created using    :  Visual c#                                                                           //
+// Usable on        :  Microsoft Systems                                                                            //
 // Discription      :                                                                             //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -155,6 +155,29 @@ namespace OlympusBooking
                 return "fail";
             }
         }
+
+		//Adds values to the Reservation table in the database
+		public string Reservation(string sName,string roomNo ,string CheckInDate,string noPeople,string subTotal)
+		{
+			try
+			{
+				//Updates the guest as Made Reservation
+				String myQuery = "UPDATE [Guest] Set [Status] = 'Reservation', [TotalDue] = '" + subTotal + "', [CheckInDate] = '" + CheckInDate + "' WHERE [GuestName] = '" + sName + "'";
+				OleDbCommand cmd1 = new OleDbCommand(myQuery, conn);
+				cmd1.ExecuteNonQuery();
+
+				//Updates the Room to be unavailable.
+				String myQuery2 = "UPDATE [Room] Set [Status] = 'Reserved',[NoOfPeople] = '" + noPeople + "' WHERE [RoomNumber] = '" + roomNo + "'";
+				OleDbCommand cmd2 = new OleDbCommand(myQuery2, conn);
+				cmd2.ExecuteNonQuery();
+
+				return "success";
+			}
+			catch (OleDbException)
+			{
+				return "fail";
+			}
+		}
         #endregion
     }
 }

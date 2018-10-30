@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace OlympusBooking {
+namespace OlympusBooking.App_Data {
     
     
     /// <summary>
@@ -3080,7 +3080,7 @@ namespace OlympusBooking {
         }
     }
 }
-namespace OlympusBooking.databaseDataSetTableAdapters {
+namespace OlympusBooking.App_Data.databaseDataSetTableAdapters {
     
     
     /// <summary>
