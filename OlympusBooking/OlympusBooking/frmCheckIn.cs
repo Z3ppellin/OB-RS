@@ -79,7 +79,6 @@ namespace OlympusBooking
         private void frmCheckIn_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.CheckIn' table. You can move, or remove it, as needed.
-            this.checkInTableAdapter.Fill(this.databaseDataSet.CheckIn);
             dtpCheckOutTime.ShowUpDown = true;
         }
 
