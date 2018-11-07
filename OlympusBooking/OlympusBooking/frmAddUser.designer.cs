@@ -132,6 +132,7 @@
             this.Name = "frmAddUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add User";
+            this.Load += new System.EventHandler(this.frmAddUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epPasswordCheck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

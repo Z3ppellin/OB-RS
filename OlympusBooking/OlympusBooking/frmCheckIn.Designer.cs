@@ -54,17 +54,16 @@
             this.lblGuestName = new System.Windows.Forms.Label();
             this.lblCheckInForm = new System.Windows.Forms.Label();
             this.tbCheckInList = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkInBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new OlympusBooking.App_Data.databaseDataSet();
             this.checkInBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new OlympusBooking.App_Data.databaseDataSet();
-            this.lblCheckInList = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.checkInTableAdapter = new OlympusBooking.App_Data.databaseDataSetTableAdapters.CheckInTableAdapter();
             this.epRoomNo = new System.Windows.Forms.ErrorProvider(this.components);
             this.epGuestName = new System.Windows.Forms.ErrorProvider(this.components);
             this.epNumPeople = new System.Windows.Forms.ErrorProvider(this.components);
-            this.checkInBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.checkInBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.transIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkInDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,14 +76,15 @@
             this.tpCheckInForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAdults)).BeginInit();
             this.tbCheckInList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRoomNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epGuestName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNumPeople)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcCheckIn
@@ -362,8 +362,6 @@
             // 
             this.tbCheckInList.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.tbCheckInList.Controls.Add(this.dataGridView1);
-            this.tbCheckInList.Controls.Add(this.lblCheckInList);
-            this.tbCheckInList.Controls.Add(this.listView1);
             this.tbCheckInList.Location = new System.Drawing.Point(4, 22);
             this.tbCheckInList.Name = "tbCheckInList";
             this.tbCheckInList.Padding = new System.Windows.Forms.Padding(3);
@@ -371,28 +369,15 @@
             this.tbCheckInList.TabIndex = 1;
             this.tbCheckInList.Text = "Check in list";
             // 
-            // dataGridView1
+            // checkInBindingSource1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.transIDDataGridViewTextBoxColumn,
-            this.roomNumDataGridViewTextBoxColumn,
-            this.checkInDateDataGridViewTextBoxColumn,
-            this.checkOutDateDataGridViewTextBoxColumn,
-            this.guestNameDataGridViewTextBoxColumn,
-            this.noOfDaysDataGridViewTextBoxColumn,
-            this.noOfPeopleDataGridViewTextBoxColumn,
-            this.totalDueDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.checkInBindingSource1;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(782, 392);
-            this.dataGridView1.TabIndex = 5;
+            this.checkInBindingSource1.DataMember = "CheckIn";
+            this.checkInBindingSource1.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "databaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // checkInBindingSource
             // 
@@ -403,29 +388,6 @@
             // 
             this.databaseDataSetBindingSource.DataSource = this.databaseDataSet;
             this.databaseDataSetBindingSource.Position = 0;
-            // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "databaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblCheckInList
-            // 
-            this.lblCheckInList.AutoSize = true;
-            this.lblCheckInList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCheckInList.Location = new System.Drawing.Point(11, 14);
-            this.lblCheckInList.Name = "lblCheckInList";
-            this.lblCheckInList.Size = new System.Drawing.Size(114, 20);
-            this.lblCheckInList.TabIndex = 4;
-            this.lblCheckInList.Text = "Check In List";
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(15, 37);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(767, 327);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // checkInTableAdapter
             // 
@@ -443,10 +405,33 @@
             // 
             this.epNumPeople.ContainerControl = this;
             // 
-            // checkInBindingSource1
+            // dataGridView1
             // 
-            this.checkInBindingSource1.DataMember = "CheckIn";
-            this.checkInBindingSource1.DataSource = this.databaseDataSet;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.transIDDataGridViewTextBoxColumn,
+            this.roomNumDataGridViewTextBoxColumn,
+            this.checkInDateDataGridViewTextBoxColumn,
+            this.checkOutDateDataGridViewTextBoxColumn,
+            this.guestNameDataGridViewTextBoxColumn,
+            this.noOfDaysDataGridViewTextBoxColumn,
+            this.noOfPeopleDataGridViewTextBoxColumn,
+            this.totalDueDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.checkInBindingSource2;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(782, 392);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // checkInBindingSource2
+            // 
+            this.checkInBindingSource2.DataMember = "CheckIn";
+            this.checkInBindingSource2.DataSource = this.databaseDataSetBindingSource;
             // 
             // transIDDataGridViewTextBoxColumn
             // 
@@ -519,15 +504,15 @@
             this.tpCheckInForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numAdults)).EndInit();
             this.tbCheckInList.ResumeLayout(false);
-            this.tbCheckInList.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epRoomNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epGuestName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epNumPeople)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkInBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -549,8 +534,6 @@
         private System.Windows.Forms.Label lblRoomRate;
         private System.Windows.Forms.Label lblRoomType;
         private System.Windows.Forms.Label lblGuestName;
-        private System.Windows.Forms.Label lblCheckInList;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox txtCheckInDate;
         private System.Windows.Forms.Label lblRoomNumber;
         private System.Windows.Forms.TextBox txtRoomRate;
@@ -561,7 +544,6 @@
         private System.Windows.Forms.TextBox txtNoDays;
         private System.Windows.Forms.DateTimePicker dtpCheckOutTime;
         private System.Windows.Forms.NumericUpDown numAdults;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource databaseDataSetBindingSource;
         private App_Data.databaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource checkInBindingSource;
@@ -573,6 +555,8 @@
         private System.Windows.Forms.ErrorProvider epRoomNo;
         private System.Windows.Forms.ErrorProvider epGuestName;
         private System.Windows.Forms.ErrorProvider epNumPeople;
+        private System.Windows.Forms.BindingSource checkInBindingSource1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn transIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkInDateDataGridViewTextBoxColumn;
@@ -581,6 +565,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn noOfDaysDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn noOfPeopleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource checkInBindingSource1;
+        private System.Windows.Forms.BindingSource checkInBindingSource2;
     }
 }

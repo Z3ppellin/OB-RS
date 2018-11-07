@@ -22,9 +22,16 @@ namespace OlympusBooking
 {
     public partial class frmRoom : Form
     {
-        public frmRoom()
+        public frmRoom(String sUsername)
         {
+            
             InitializeComponent();
+            //Checks if the admin is logged in to enable the ability to add new rooms to the database.
+            if (sUsername.ToLower() != "admin")
+            {
+                tpNewRoom.Enabled = false;
+                tcRoom.SelectedIndex = 1;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -58,14 +65,13 @@ namespace OlympusBooking
                 if (b == "success")
                 {
                     MessageBox.Show("A Room has been successfully added", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Room.txt", "Room : " + roomNum + " Has been added :" + currentDate + Environment.NewLine);////////////////////////////////////////////////////////////////////////////////////
-				}
+					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Room.txt", "Room : " + roomNum + " Has been added :" + currentDate + Environment.NewLine);
+                    this.Close();
+                }
                 else
                 {
                     MessageBox.Show("There was a problem with inserting into the database", "Caption", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                this.Close();
+                } 
             }
         }
 
@@ -77,9 +83,7 @@ namespace OlympusBooking
 
         private void frmRoom_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'databaseDataSet.Room' table. You can move, or remove it, as needed.
             this.roomTableAdapter.Fill(this.databaseDataSet.Room);
-
         }
     }
 }

@@ -22,17 +22,21 @@ namespace OlympusBooking
 {
     public partial class frmMain : Form
     {
+        string userName;
         public frmMain(string sUsername)
         {
             InitializeComponent();
-            lblLoggedIn.Text = "Logged in: " + sUsername;
+            //Shows which user is logged in and capatalizes the first letter for appearances.
+            userName = char.ToUpper(sUsername[0]) + sUsername.Substring(1);
+            lblLoggedIn.Text = "Logged in: " + userName;
             tCurrentTime.Start();
 
-            //If the admin is logged in the New User toolstrip menu item becomes available to add new users to the system.
+            //If the admin is logged in the New User and Remove User toolstrip menu item becomes available to add and remove users to the system. Also makes the add new room form available.
             if (sUsername.ToLower() == "admin")
             {
                 newUserToolStripMenuItem.Visible = true;
-                toolStripSeparator3.Visible = true;
+                removeUserToolStripMenuItem.Visible = true;
+                toolStripSeparator3.Visible = true;      
             }
         }
 
@@ -59,7 +63,7 @@ namespace OlympusBooking
         //Opens the Room form.
         private void toolbarRoom_Click(object sender, EventArgs e)
         {
-            frmRoom fRoom = new frmRoom();
+            frmRoom fRoom = new frmRoom(userName);
             fRoom.ShowDialog();
         }
 
@@ -131,28 +135,30 @@ namespace OlympusBooking
             Application.Restart();
         }
 
+        //Opens the add user form.
         private void newUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddUser frmAddUser = new frmAddUser();
             frmAddUser.ShowDialog();
         }
 
+        //Opens a new reservation form.
 		private void reservationsToolStripMenuItem_Click(object sender, EventArgs e)
 		{			
 			frmReservation RES = new frmReservation();
 			RES.tcReservation.SelectedIndex = 1;
 			RES.ShowDialog();
-			
-			
 		}
 
+        //Opens a new room form.
 		private void roomsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			frmRoom FR = new frmRoom();
+			frmRoom FR = new frmRoom(userName);
 			FR.tcRoom.SelectedIndex = 1;
 			FR.ShowDialog();
 		}
 
+        //Opens a new check in form.
 		private void checkInListToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			frmCheckIn CI = new frmCheckIn();
@@ -160,11 +166,18 @@ namespace OlympusBooking
 			CI.ShowDialog();
 		}		
 
+        //Opens a new guest form.
 		private void guestListToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			frmGuest FG = new frmGuest();
 			FG.tcGuest.SelectedIndex = 1;
 			FG.ShowDialog();
 		}
-	}
+
+        private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRemoveUser RU = new frmRemoveUser();
+            RU.ShowDialog();
+        }
+    }
 }

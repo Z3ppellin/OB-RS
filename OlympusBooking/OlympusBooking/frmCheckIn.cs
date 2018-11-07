@@ -65,6 +65,7 @@ namespace OlympusBooking
                 {
                     MessageBox.Show("User has been checked in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Check-In.txt", "Guest : " + guestName + " Has been Checked-in ,on : " + currentDate + Environment.NewLine);
+                    this.Close();
 				}
                 else
                 {
@@ -79,7 +80,6 @@ namespace OlympusBooking
         private void frmCheckIn_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'databaseDataSet.CheckIn' table. You can move, or remove it, as needed.
-            this.checkInTableAdapter.Fill(this.databaseDataSet.CheckIn);
             dtpCheckOutTime.ShowUpDown = true;
         }
 
