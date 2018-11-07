@@ -65,6 +65,7 @@ namespace OlympusBooking
                 {
                     MessageBox.Show("User has been checked in", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					File.AppendAllText("..\\..\\App_Data\\LogFiles\\Check-In.txt", "Guest : " + guestName + " Has been Checked-in ,on : " + currentDate + Environment.NewLine);
+                    this.Close();
 				}
                 else
                 {

@@ -68,5 +68,10 @@ namespace OlympusBooking
                 epPasswordCheck.SetError(this.tbConfirmPassword, "Passwords do not match");
             }
         }
+
+        private void frmAddUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

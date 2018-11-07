@@ -22,9 +22,15 @@ namespace OlympusBooking
 {
     public partial class frmRoom : Form
     {
-        public frmRoom()
+        public frmRoom(String sUsername)
         {
             InitializeComponent();
+            //Checks if the admin is logged in to enable the ability to add new rooms to the database.
+            if (sUsername.ToLower() != "Admin")
+            {
+                tpNewRoom.Enabled = false;
+                tcRoom.SelectedIndex = 1;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
