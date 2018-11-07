@@ -173,5 +173,11 @@ namespace OlympusBooking
 			FG.tcGuest.SelectedIndex = 1;
 			FG.ShowDialog();
 		}
-	}
+
+        private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRemoveUser RU = new frmRemoveUser();
+            RU.ShowDialog();
+        }
+    }
 }
