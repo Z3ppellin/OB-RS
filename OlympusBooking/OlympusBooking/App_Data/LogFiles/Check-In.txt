@@ -3,3 +3,11 @@ Guest : jac Has been Checked-out ,on : 25 Oct 2018 17:37:15
 Guest : Jac Has been Checked-out ,on : 25 Oct 2018 17:39:22
 Guest : Rohan Has been Checked-in ,on : 02 Nov 2018 13:28:05
 Guest : Jac Has been Checked-out ,on : 02 Nov 2018 13:28:22
+Guest : Johnnie Has been Checked-in ,on : 2018/11/08 12:23:06
+Guest : Jac Has been Checked-out ,on : 2018/11/08 12:23:24
+Guest : Jac Has been Checked-out ,on : 2018/11/08 12:26:23
+Guest : jac Has made a reservation ,on : 2018/11/08 12:32:16
+Guest : Jac Has been Checked-out ,on : 2018/11/08 12:54:41
+Guest : Jac Has made a reservation ,on : 2018/11/08 12:54:52
+Guest : Jac Has made a reservation ,on : 09 Nov 2018 02:19:14
+Guest : Jac Has made a reservation ,on : 09 Nov 2018 02:22:24

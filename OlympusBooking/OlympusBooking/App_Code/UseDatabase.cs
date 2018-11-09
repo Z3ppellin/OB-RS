@@ -69,7 +69,7 @@ namespace OlympusBooking
             {
                 OleDbCommand cmd = new OleDbCommand();
                 OleDbConnection conn = new OleDbConnection(@"Provider = Microsoft.ACE.OLEDB.12.0; Data Source = ..\\..\\App_Data\\database.accdb");
-
+					
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = @"INSERT INTO Users([Username],[Password]) VALUES (@sUserName,@sPassword)";
                 cmd.Parameters.AddWithValue("@sUserName", userName);
@@ -181,7 +181,37 @@ namespace OlympusBooking
             {
                 return "fail";
             }
+
+
         }
-        #endregion
-    }
+
+		public string Reservation(string sName, string roomNo, string CheckInDate, string CheckOutDate, string noPeople, string noOfDays, string subTotal)
+		{
+			try
+			{
+				//Updates the guest as Made Reservation
+				String myQuery = "UPDATE [Guest] Set [Status] = 'Reserved' WHERE [GuestName] = '" + sName + "'";
+				OleDbCommand cmd1 = new OleDbCommand(myQuery, conn);
+				cmd1.ExecuteNonQuery();
+
+				//Updates the Room to be unavailable.
+				String myQuery2 = "UPDATE [Room] Set [Status] = 'Reserved',[NoOfPeople] = '" + noPeople + "' WHERE [RoomNumber] = '" + roomNo + "'";
+				OleDbCommand cmd2 = new OleDbCommand(myQuery2, conn);
+				cmd2.ExecuteNonQuery();
+
+				String myQuery3 = "INSERT INTO Reservation (GuestName,RoomNum,CheckInDate,CheckOutDate, NoOfDays, NoOfPeople, TotalDue) " +
+								  "VALUES('" + sName.ToLower() + "','" + roomNo + "','" + CheckInDate + "','" + CheckOutDate + "','" + noOfDays + "','" + noPeople + "', '" + subTotal + "')";
+				OleDbCommand cmd3 = new OleDbCommand(myQuery3, conn);
+				cmd3.ExecuteNonQuery();
+
+				return "success";
+			}
+			catch (OleDbException)
+			{
+
+				return "fail";
+			}
+		}
+		#endregion
+	}
 }
